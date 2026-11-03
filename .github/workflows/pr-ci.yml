@@ -1,0 +1,36 @@
+name: Pull Request CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Install, lint, unit test and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate npm projects and scripts
+        run: node scripts/ci-projects.mjs validate
+      - name: Install
+        run: node scripts/ci-projects.mjs install
+      - name: Lint
+        run: node scripts/ci-projects.mjs lint
+      - name: Unit test
+        run: node scripts/ci-projects.mjs test
+      - name: Build
+        run: node scripts/ci-projects.mjs build
