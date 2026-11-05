@@ -1,0 +1,219 @@
+{
+  "observedAt": "2026-11-04T09:22:41Z",
+  "provider": "Railway",
+  "source": "Read-only describe_environment and describe_service via connected Railway",
+  "project": {
+    "id": "9c809637-11be-486c-9fcb-52b7c18a0278",
+    "name": "aware-clarity",
+    "workspaceName": "Akira's Projects"
+  },
+  "environment": {
+    "id": "a7669a80-4d9a-4429-8649-d8237195e8aa",
+    "name": "production",
+    "isEphemeral": false
+  },
+  "actualApplicationRepository": "akira-yami/BrewLite_A1",
+  "a2Baseline": "00b7c6972c8ef47b74a03013c8980bd94b7bc904",
+  "a2DeploymentVerified": false,
+  "staged": {
+    "patchId": "88b11e77-08ea-4b06-a459-a6658447249a",
+    "status": "STAGED",
+    "changeCount": 1,
+    "message": null,
+    "createdAt": "2026-11-04T09:08:22.699Z",
+    "updatedAt": "2026-11-04T09:08:22.699Z"
+  },
+  "services": [
+    {
+      "name": "web",
+      "id": "aca63b19-0e07-448a-ba36-f2721cf900d7",
+      "state": "live-with-staged-changes",
+      "source": {
+        "repo": "akira-yami/BrewLite_A1",
+        "rootDirectory": "/apps/web"
+      },
+      "liveRootDirectory": "/apps/web/",
+      "build": {
+        "builder": "DOCKERFILE",
+        "watchPatterns": [
+          "/apps/web/**"
+        ],
+        "buildEnvironment": "V3",
+        "dockerfilePath": "/apps/web/Dockerfile.railway"
+      },
+      "deploy": {
+        "healthcheckPath": "/health",
+        "healthcheckTimeout": 180,
+        "useLegacyStacker": false,
+        "ipv6EgressEnabled": false,
+        "runtime": "V2",
+        "multiRegionConfig": {
+          "sfo": {
+            "numReplicas": 1
+          }
+        }
+      },
+      "domains": {
+        "serviceDomains": [
+          {
+            "id": "00a6bba5-4c19-405c-b251-87781064278d",
+            "domain": "web-production-b910e.up.railway.app",
+            "targetPort": 3000
+          }
+        ],
+        "customDomains": []
+      },
+      "tcpProxies": [],
+      "volumes": [],
+      "variableNames": [
+        "NEXT_PUBLIC_API_URL",
+        "NODE_ENV",
+        "PORT",
+        "RAILWAY_DOCKERFILE_PATH"
+      ],
+      "latestDeployment": {
+        "id": "c43efda9-4c8d-44d0-a22a-20ece1f4e21f",
+        "status": "SUCCESS",
+        "createdAt": "2026-11-04T09:08:09.390Z",
+        "url": null
+      },
+      "stagedChanges": [
+        {
+          "path": "services.aca63b19-0e07-448a-ba36-f2721cf900d7.source.rootDirectory",
+          "displayName": "Root Directory",
+          "type": "updated",
+          "from": "/apps/web/",
+          "to": "/apps/web",
+          "destructive": false
+        }
+      ]
+    },
+    {
+      "name": "api",
+      "id": "582864b4-b1f2-4ed5-8c86-533365dcd1ef",
+      "state": "live",
+      "source": {
+        "repo": "akira-yami/BrewLite_A1",
+        "rootDirectory": "/apps/api/"
+      },
+      "liveRootDirectory": "/apps/api/",
+      "build": {
+        "builder": "DOCKERFILE",
+        "watchPatterns": [
+          "/apps/api/**"
+        ],
+        "buildCommand": "",
+        "buildEnvironment": "V3",
+        "dockerfilePath": "/apps/api/Dockerfile.railway"
+      },
+      "deploy": {
+        "startCommand": "node dist/main.js",
+        "preDeployCommand": [
+          "npm run prisma:deploy"
+        ],
+        "healthcheckPath": "/api/v1/health",
+        "healthcheckTimeout": 180,
+        "useLegacyStacker": false,
+        "ipv6EgressEnabled": false,
+        "runtime": "V2",
+        "multiRegionConfig": {
+          "sfo": {
+            "numReplicas": 1
+          }
+        }
+      },
+      "domains": {
+        "serviceDomains": [
+          {
+            "id": "e1380638-993c-4a14-b9ba-bf69133ceac0",
+            "domain": "api-production-1be6.up.railway.app",
+            "targetPort": 3001
+          }
+        ],
+        "customDomains": []
+      },
+      "tcpProxies": [],
+      "volumes": [],
+      "variableNames": [
+        "DATABASE_URL",
+        "JWT_AUDIENCE",
+        "JWT_EXPIRES_IN",
+        "JWT_ISSUER",
+        "JWT_SECRET",
+        "MOCK_PAYMENT_MODE",
+        "NODE_ENV",
+        "ORDER_RESERVATION_TTL_MINUTES",
+        "PORT",
+        "RAILPACK_NODE_VERSION",
+        "RAILWAY_DOCKERFILE_PATH",
+        "WEB_ORIGIN"
+      ],
+      "latestDeployment": {
+        "id": "264254d8-7b7c-4e69-b782-7ecf157448e4",
+        "status": "SUCCESS",
+        "createdAt": "2026-11-04T09:08:09.390Z",
+        "url": null
+      },
+      "stagedChanges": []
+    },
+    {
+      "name": "Postgres",
+      "id": "ac0793da-9b17-4dd9-9c38-1ed5fdb7326c",
+      "state": "live",
+      "source": {
+        "image": "ghcr.io/railwayapp-templates/postgres-ssl:18"
+      },
+      "liveRootDirectory": null,
+      "build": {
+        "builder": "RAILPACK",
+        "buildEnvironment": "V3"
+      },
+      "deploy": {
+        "region": "sfo",
+        "replicas": 1
+      },
+      "domains": {
+        "serviceDomains": [],
+        "customDomains": []
+      },
+      "tcpProxies": [],
+      "volumes": [
+        {
+          "id": "e4995980-f350-485a-9c7e-8773139c604f",
+          "name": "postgres-volume",
+          "mountPath": "/var/lib/postgresql/data",
+          "sizeMB": 500,
+          "region": "sfo",
+          "state": "live"
+        }
+      ],
+      "variableNames": [
+        "DATABASE_URL",
+        "PGDATA",
+        "PGDATABASE",
+        "PGHOST",
+        "PGPASSWORD",
+        "PGPORT",
+        "PGUSER",
+        "POSTGRES_DB",
+        "POSTGRES_PASSWORD",
+        "POSTGRES_USER",
+        "RAILWAY_DEPLOYMENT_DRAINING_SECONDS",
+        "SSL_CERT_DAYS"
+      ],
+      "latestDeployment": {
+        "id": "19acf04c-ee9a-4983-9eee-60aafc25c552",
+        "status": "SUCCESS",
+        "createdAt": "2026-11-04T01:25:17.089Z",
+        "url": null
+      },
+      "stagedChanges": []
+    }
+  ],
+  "limitations": [
+    "No secret values were read or stored.",
+    "Service config includes staged values; liveRootDirectory preserves the currently live Web root.",
+    "Deployment SUCCESS is not an HTTP/E2E/NFR result.",
+    "Application image digests and deployed source commit were not available in these reads."
+  ]
+}

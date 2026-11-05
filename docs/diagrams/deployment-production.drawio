@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram name="Deployment production - Railway">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageWidth="1740" pageHeight="1220">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="frame" value="dd  Deployment of Components — BrewLite / Railway" style="shape=umlFrame;fillColor=none;strokeColor=#222222;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacingLeft=12;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="frame">
+          <mxGeometry x="1" y="1" width="1738" height="1218" as="geometry" />
+        </mxCell>
+        <mxCell id="production" value="PRODUCTION  |  Railway · aware-clarity · sfo · 1 replica / service" style="shape=umlFrame;fillColor=none;strokeColor=#222222;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacingLeft=12;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="frame">
+          <mxGeometry x="360" y="65" width="1350" height="810" as="geometry" />
+        </mxCell>
+        <mxCell id="client" value="«device»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Customer Workstation&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«device»&#10;:Customer Workstation">
+          <mxGeometry x="28" y="145" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Browser / PWA&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="client" renderKind="node" renderValue="«executionEnvironment»&#10;:Browser / PWA">
+          <mxGeometry x="14" y="76" width="246" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="pwa" value="&lt;b&gt;&lt;u&gt;:BrewLite Web Client&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="browser" renderKind="artifact" renderValue=":BrewLite Web Client">
+          <mxGeometry x="18" y="91" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Railway HTTPS Edge&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«executionEnvironment»&#10;:Railway HTTPS Edge">
+          <mxGeometry x="395" y="145" width="260" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="tls" value="&lt;b&gt;&lt;u&gt;:TLS Termination&lt;br&gt;HTTPS :443&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="edge" renderKind="artifact" renderValue=":TLS Termination&#10;HTTPS :443">
+          <mxGeometry x="18" y="92" width="224" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="web" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Web Service&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«executionEnvironment»&#10;:Web Service">
+          <mxGeometry x="740" y="125" width="390" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="nextruntime" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Node.js / Next.js&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="web" renderKind="node" renderValue="«executionEnvironment»&#10;:Node.js / Next.js">
+          <mxGeometry x="15" y="78" width="358" height="197" as="geometry" />
+        </mxCell>
+        <mxCell id="nextartifact" value="&lt;b&gt;&lt;u&gt;:server.js + .next/static&lt;br&gt;Next.js standalone · :3000&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="nextruntime" renderKind="artifact" renderValue=":server.js + .next/static&#10;Next.js standalone · :3000">
+          <mxGeometry x="18" y="82" width="320" height="87" as="geometry" />
+        </mxCell>
+        <mxCell id="api" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:API Service&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«executionEnvironment»&#10;:API Service">
+          <mxGeometry x="740" y="495" width="450" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="nest" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Node.js / NestJS&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="api" renderKind="node" renderValue="«executionEnvironment»&#10;:Node.js / NestJS">
+          <mxGeometry x="15" y="76" width="416" height="238" as="geometry" />
+        </mxCell>
+        <mxCell id="apiartifact" value="&lt;b&gt;&lt;u&gt;:dist/main.js&lt;br&gt;REST /api/v1 · :3001&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="nest" renderKind="artifact" renderValue=":dist/main.js&#10;REST /api/v1 · :3001">
+          <mxGeometry x="18" y="76" width="220" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="mockartifact" value="&lt;b&gt;&lt;u&gt;:Mock Payment&lt;br&gt;Adapter&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="nest" renderKind="artifact" renderValue=":Mock Payment&#10;Adapter">
+          <mxGeometry x="250" y="76" width="145" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="migrate" value="&lt;b&gt;&lt;u&gt;:Prisma Migrations  [pre-deploy]&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="nest" renderKind="artifact" renderValue=":Prisma Migrations  [pre-deploy]">
+          <mxGeometry x="18" y="162" width="377" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="db" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Database Service&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«executionEnvironment»&#10;:Database Service">
+          <mxGeometry x="1280" y="495" width="390" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="pg" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:PostgreSQL 18&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="db" renderKind="node" renderValue="«executionEnvironment»&#10;:PostgreSQL 18">
+          <mxGeometry x="15" y="76" width="356" height="238" as="geometry" />
+        </mxCell>
+        <mxCell id="schema" value="&lt;b&gt;&lt;u&gt;:BrewLite Schema · TCP :5432&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="pg" renderKind="artifact" renderValue=":BrewLite Schema · TCP :5432">
+          <mxGeometry x="18" y="76" width="320" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="volume" value="&lt;b&gt;&lt;u&gt;:postgres-volume · 500 MB&lt;br&gt;/var/lib/postgresql/data&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="pg" renderKind="artifact" renderValue=":postgres-volume · 500 MB&#10;/var/lib/postgresql/data">
+          <mxGeometry x="18" y="151" width="320" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="ops" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Railway Operations&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«executionEnvironment»&#10;:Railway Operations">
+          <mxGeometry x="1280" y="125" width="390" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="secrets" value="&lt;b&gt;&lt;u&gt;:Service Variables / Secrets&lt;br&gt;DATABASE_URL · JWT_* · WEB_ORIGIN&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="ops" renderKind="artifact" renderValue=":Service Variables / Secrets&#10;DATABASE_URL · JWT_* · WEB_ORIGIN">
+          <mxGeometry x="18" y="82" width="352" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="health" value="&lt;b&gt;&lt;u&gt;:Health Checks / Runtime Logs&lt;br&gt;/health · /api/v1/health · 180 s&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="ops" renderKind="artifact" renderValue=":Health Checks / Runtime Logs&#10;/health · /api/v1/health · 180 s">
+          <mxGeometry x="18" y="184" width="352" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="networknote" value="Private DB network&#10;No public TCP proxy&#10;Mock payment is inside API." style="shape=note;fillColor=#f7f4f7;strokeColor=#222222;whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="note">
+          <mxGeometry x="395" y="720" width="310" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="localframe" value="LOCAL" style="shape=umlFrame;fillColor=none;strokeColor=#222222;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacingLeft=12;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="frame">
+          <mxGeometry x="25" y="920" width="290" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="local" value="«device»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Developer Workstation&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«device»&#10;:Developer Workstation">
+          <mxGeometry x="42" y="960" width="250" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="localart" value="&lt;b&gt;&lt;u&gt;:Source Code / .env&lt;br&gt;No production secrets in Git&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="local" renderKind="artifact" renderValue=":Source Code / .env&#10;No production secrets in Git">
+          <mxGeometry x="16" y="85" width="216" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="ciframe" value="CI / BUILD" style="shape=umlFrame;fillColor=none;strokeColor=#222222;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacingLeft=12;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="frame">
+          <mxGeometry x="360" y="920" width="830" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ci" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:GitHub Actions&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«executionEnvironment»&#10;:GitHub Actions">
+          <mxGeometry x="380" y="960" width="350" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="ciart" value="&lt;b&gt;&lt;u&gt;:Quality Gate [A2 target]&lt;br&gt;Install → Lint → Unit → Build&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="ci" renderKind="artifact" renderValue=":Quality Gate [A2 target]&#10;Install → Lint → Unit → Build">
+          <mxGeometry x="18" y="85" width="312" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="builder" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Railway Build / Deploy&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«executionEnvironment»&#10;:Railway Build / Deploy">
+          <mxGeometry x="810" y="960" width="360" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="buildart" value="&lt;b&gt;&lt;u&gt;:Dockerfile.railway&lt;br&gt;Platform-managed app images&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="builder" renderKind="artifact" renderValue=":Dockerfile.railway&#10;Platform-managed app images">
+          <mxGeometry x="18" y="85" width="322" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="reg" value="«executionEnvironment»&lt;br&gt;&lt;b&gt;&lt;u&gt;:Container Registry — GHCR&lt;/u&gt;&lt;/b&gt;" style="shape=cube;size=8;fillColor=#fcf0df;strokeColor=#222222;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=18;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="1" renderKind="node" renderValue="«executionEnvironment»&#10;:Container Registry — GHCR">
+          <mxGeometry x="1280" y="960" width="390" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="regart" value="&lt;b&gt;&lt;u&gt;:postgres-ssl:18&lt;br&gt;railwayapp-templates&lt;/u&gt;&lt;/b&gt;" style="shape=mxgraph.uml25.artifact;fillColor=#fcf0df;strokeColor=#222222;shadow=1;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=14;align=center;" vertex="1" parent="reg" renderKind="artifact" renderValue=":postgres-ssl:18&#10;railwayapp-templates">
+          <mxGeometry x="18" y="85" width="352" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="client-edge" value="" style="endArrow=none;html=0;strokeColor=#222222;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="308" y="255" as="sourcePoint" />
+            <mxPoint x="395" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="client-edge-label" value="HTTPS" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="309" y="213" width="85" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-web" value="" style="endArrow=none;html=0;strokeColor=#222222;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="655" y="255" as="sourcePoint" />
+            <mxPoint x="740" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-web-label" value="HTTP&#10;:3000" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="655" y="206" width="85" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-api" value="" style="endArrow=none;html=0;strokeColor=#222222;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="525" y="355" as="sourcePoint" />
+            <mxPoint x="740" y="641" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="525" y="641" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-api-label" value="HTTP :3001&#10;REST / JSON" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="535" y="586" width="180" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="api-db" value="" style="endArrow=none;html=0;strokeColor=#222222;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1190" y="670" as="sourcePoint" />
+            <mxPoint x="1280" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="api-db-label" value="TCP&#10;:5432" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="1191" y="620" width="87" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-web" value="" style="endArrow=none;html=0;strokeColor=#222222;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1280" y="250" as="sourcePoint" />
+            <mxPoint x="1130" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ops-web-label" value="env / probe / log" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="1135" y="213" width="140" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-api" value="" style="endArrow=none;html=0;strokeColor=#222222;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1280" y="320" as="sourcePoint" />
+            <mxPoint x="1190" y="545" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1230" y="320" />
+              <mxPoint x="1230" y="545" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="local-ci" value="" style="endArrow=none;html=0;strokeColor=#222222;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="292" y="1060" as="sourcePoint" />
+            <mxPoint x="380" y="1060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="local-ci-label" value="Git push" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="294" y="1013" width="84" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-build" value="" style="endArrow=none;html=0;strokeColor=#222222;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="1060" as="sourcePoint" />
+            <mxPoint x="810" y="1060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ci-build-label" value="gate¹" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="732" y="1013" width="77" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="build-prod" value="" style="endArrow=none;html=0;strokeColor=#222222;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1000" y="960" as="sourcePoint" />
+            <mxPoint x="1000" y="875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="build-prod-label" value="build / deploy" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="1005" y="890" width="160" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="registry-db" value="" style="endArrow=none;html=0;strokeColor=#222222;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1475" y="960" as="sourcePoint" />
+            <mxPoint x="1475" y="835" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="registry-db-label" value="pull DB image" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="1480" y="887" width="150" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="footnote" value="Production source: BrewLite_A1 · snapshot 04 Nov 2026 · ¹ A2 CI/CD is a target, not verified live." style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;" vertex="1" parent="1" renderKind="text">
+          <mxGeometry x="400" y="844" width="1130" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
