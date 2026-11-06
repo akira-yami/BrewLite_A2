@@ -2,7 +2,7 @@
 
 Phiên bản 1.0 · 06/11/2026 · [A2-1.3.2 / #6](https://github.com/akira-yami/BrewLite_A2/issues/6).
 
-[Nguồn PlantUML use-case](../diagrams/use-case-uc08.puml) · [SVG](../diagrams/use-case-uc08.svg) · [PNG](../diagrams/use-case-uc08.png) · [Chỉnh sửa trực tuyến (draw.io)](https://app.diagrams.net/#G1FNDTtNJdXpwdBC4I4odtzJzhnXiy5YuZ#%7B%22pageId%22%3A%22ZMIl_fwBii4pXiM0QtPu%22%7D)
+[Nguồn PlantUML use-case](../diagrams/use-case-uc08.puml) · [SVG](../diagrams/use-case-uc08.svg) · [PNG](../diagrams/use-case-uc08.png) · [Chỉnh sửa trực tuyến (draw.io)](https://app.diagrams.net/#G1iec3HEIGhhwMGesnvXXwvqJSkOI5Z0jw#%7B%22pageId%22%3A%22GQHZdUctXlZdyJI08YLY%22%7D)
 
 ![UC-08: Thực hiện thanh toán](../diagrams/use-case-uc08.png)
 
