@@ -37,6 +37,7 @@ enum PaymentStatus {
   PROCESSING
   SUCCEEDED
   FAILED
+  MANUAL_REVIEW
 }
 
 enum IngredientUnit {
