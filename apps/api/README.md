@@ -39,6 +39,32 @@ Rebuild after source changes before starting again.
 Only CatalogModule is enabled. Auth/order/payment/health/deployment remain
 separate issues. See [PR CI](../../docs/ci-pull-request.md).
 
+## Migration và rollback
+
+Tất cả migration là **forward-only** — không dùng `prisma migrate revert` hoặc xóa
+migration đã apply. Để rollback schema, tạo migration mới đảo ngược thay đổi.
+
+```powershell
+# Xem trạng thái migration hiện tại (cần DATABASE_URL)
+npm run db:status
+
+# Apply migration lên DB target (production/staging)
+npm run db:migrate
+# hoặc alias dùng trong Railway pre-deploy:
+npm run prisma:deploy
+
+# Kiểm tra API sau deploy/rollback
+node scripts/smoke.mjs http://localhost:3001
+# hoặc với production URL:
+node scripts/smoke.mjs https://api-production-1be6.up.railway.app
+```
+
+**Railway pre-deploy command:** `npm run prisma:deploy` — chạy tự động trước khi
+Railway start container mới. Migration fail → deploy dừng, traffic giữ revision cũ.
+
+Hướng dẫn đầy đủ về backup/restore, rollback app revision và evidence NFR-11:
+[docs/evidence/cd/rollback-guide.md](../../docs/evidence/cd/rollback-guide.md)
+
 ## Catalog test suites
 
 `npm test` discovers unit tests in both `src/**/*.spec.ts` and `test/**/*.spec.ts`.

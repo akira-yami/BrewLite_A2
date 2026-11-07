@@ -39,7 +39,10 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "db:migrate": "prisma migrate deploy",
-    "db:seed": "tsx prisma/seed.ts"
+    "prisma:deploy": "prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:status": "prisma migrate status",
+    "smoke": "node scripts/smoke.mjs"
   },
   "allowScripts": {
     "@prisma/engines@7.10.0": true,

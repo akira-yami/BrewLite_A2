@@ -1,0 +1,55 @@
+# syntax=docker/dockerfile:1.7
+# Build context: apps/api (not the repository root).
+# Railway sets rootDirectory: /apps/api so this file receives apps/api/ as context.
+#
+# Stages:
+#   base         — Node Alpine + working directory
+#   dependencies — npm ci (generates Prisma Client via postinstall)
+#   build        — TypeScript compile
+#   runtime      — minimal image with dist/ and generated Prisma Client
+#
+# Pre-deploy (Railway UI → Deploy → Pre-deploy command):
+#   npm run db:migrate
+# This runs `prisma migrate deploy` on the live DATABASE_URL before the new
+# container starts, ensuring schema is up-to-date and stopping the deploy on error.
+#
+# Rollback:
+#   See docs/evidence/cd/rollback-guide.md for full rollback procedure.
+
+FROM node:24.21.0-alpine3.23 AS base
+WORKDIR /app
+
+# ── Install production + dev deps (dev needed for tsc, prisma CLI) ──────────
+FROM base AS dependencies
+COPY package.json package-lock.json ./
+# postinstall runs prisma generate → src/generated/prisma
+RUN --mount=type=cache,target=/root/.npm npm ci
+
+# ── Build TypeScript → dist/ ─────────────────────────────────────────────────
+FROM dependencies AS build
+COPY . .
+ENV NODE_ENV=production
+RUN npm run build
+
+# ── Minimal runtime image ────────────────────────────────────────────────────
+FROM base AS runtime
+
+# Only copy what the server needs to start
+COPY --chown=node:node --from=build /app/dist ./dist
+COPY --chown=node:node --from=build /app/src/generated ./src/generated
+COPY --chown=node:node --from=build /app/node_modules ./node_modules
+COPY --chown=node:node --from=build /app/package.json ./package.json
+COPY --chown=node:node --from=build /app/prisma ./prisma
+
+ENV NODE_ENV=production \
+    PORT=3001 \
+    HOSTNAME=0.0.0.0
+
+USER node
+EXPOSE 3001
+
+# Health check — Railway also probes /api/v1/health via its own health path config.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
+  CMD wget -qO- http://localhost:3001/api/v1/health || exit 1
+
+CMD ["node", "dist/main.js"]

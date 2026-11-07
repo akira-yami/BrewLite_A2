@@ -1,5 +1,4 @@
 ﻿@startuml
-hide footbox
 autonumber
 skinparam defaultFontName Arial
 skinparam shadowing false
@@ -23,26 +22,26 @@ skinparam actor {
 
 ' ── Arrow / message ───────────────────────────────────────────────────
 skinparam sequence {
-  ArrowColor               #000000
-  ArrowFontColor           #000000
-  ArrowFontSize            12
-  LifeLineBorderColor      #ADB5BD
-  LifeLineBackgroundColor  #FFFFFF
-  DividerBackgroundColor   #DEE2E6
-  DividerBorderColor       #ADB5BD
-  DividerFontColor         #000000
-  DividerFontSize          12
-  GroupBackgroundColor     #F8F9FA
-  GroupBorderColor         #ADB5BD
-  GroupHeaderFontColor     #000000
-  GroupHeaderFontSize      12
-  GroupBodyBackgroundColor #FFFFFF
-  BoxBackgroundColor       #F8F9FA
-  BoxBorderColor           #ADB5BD
-  BoxFontColor             #000000
-  ReferenceBackgroundColor #F8F9FA
-  ReferenceBorderColor     #ADB5BD
-  ReferenceFontColor       #000000
+  ArrowColor                #000000
+  ArrowFontColor            #000000
+  ArrowFontSize             12
+  LifeLineBorderColor       #ADB5BD
+  LifeLineBackgroundColor   #FFFFFF
+  DividerBackgroundColor    #DEE2E6
+  DividerBorderColor        #ADB5BD
+  DividerFontColor          #000000
+  DividerFontSize           12
+  GroupBackgroundColor      #F8F9FA
+  GroupBorderColor          #ADB5BD
+  GroupHeaderFontColor      #000000
+  GroupHeaderFontSize       12
+  GroupBodyBackgroundColor  #FFFFFF
+  BoxBackgroundColor        #F8F9FA
+  BoxBorderColor            #ADB5BD
+  BoxFontColor              #000000
+  ReferenceBackgroundColor  #F8F9FA
+  ReferenceBorderColor      #ADB5BD
+  ReferenceFontColor        #000000
 }
 
 ' ── Note ──────────────────────────────────────────────────────────────
@@ -54,10 +53,10 @@ skinparam note {
 }
 
 ' ── Alt/opt/break group colors (override PlantUML red default) ─────────
-skinparam SequenceGroupBackgroundColor     #F8F9FA
-skinparam SequenceGroupBorderColor         #ADB5BD
-skinparam SequenceGroupBodyBackgroundColor #FFFFFF
-skinparam SequenceGroupHeaderFontColor     #000000
+skinparam SequenceGroupBackgroundColor       #F8F9FA
+skinparam SequenceGroupBorderColor           #ADB5BD
+skinparam SequenceGroupBodyBackgroundColor   #FFFFFF
+skinparam SequenceGroupHeaderFontColor       #000000
 skinparam SequenceGroupHeaderBackgroundColor #DEE2E6
 
 ' ── PlantUML style block (overrides legacy hardcoded colors) ───────────
@@ -83,14 +82,14 @@ skinparam legend {
   FontSize        12
 }
 
-title <b>BrewLite — UC-08: Thực hiện thanh toán (sequence)</b>
+title <b><size:60>BrewLite — UC-08: Thực hiện thanh toán (sequence)</size></b>
 
-actor "Khách hàng"                        as C
-boundary "Next.js UI"                     as UI
-control "NestJS API\nPaymentsController"  as API
-control "PaymentsService"                 as PaySvc
-control "PaymentGateway\n(Mock Adapter)"  as GW
-database "PostgreSQL"                     as DB
+actor "Khách hàng"                       as C
+boundary "Next.js UI"                    as UI
+control "NestJS API\nPaymentsController" as API
+control "PaymentsService"                as PaySvc
+control "PaymentGateway\n(Mock Adapter)" as GW
+database "PostgreSQL"                    as DB
 
 C -> UI: Chọn phương thức E_WALLET / CARD\nvà nhấn Thanh toán
 UI -> UI: Sinh Idempotency-Key mới; khóa nút;\nhiển thị tạm tính từ đơn server
@@ -180,16 +179,16 @@ alt <b>Luồng 1 — Gateway trả success</b>
   GW --> PaySvc: {status: "success", gatewayTxId}
 
   PaySvc -> DB: BEGIN tx finalize\nSELECT FOR UPDATE order + attempt
-  PaySvc -> DB: UPDATE Payment → SUCCEEDED\n         (gatewayTxId, processedAt)
+  PaySvc -> DB: UPDATE Payment → SUCCEEDED\n          (gatewayTxId, processedAt)
   PaySvc -> DB: UPDATE Order  → PAID
-  PaySvc -> DB: INSERT OrderStatusHistory\n         (PENDING/PAYMENT_FAILED → PAID)
-  PaySvc -> DB: UPDATE InventoryReservation → CONSUMED\n         (InventoryReservationItem không đổi lượng)
+  PaySvc -> DB: INSERT OrderStatusHistory\n          (PENDING/PAYMENT_FAILED → PAID)
+  PaySvc -> DB: UPDATE InventoryReservation → CONSUMED\n          (InventoryReservationItem không đổi lượng)
 
   opt Có CouponRedemption RESERVED cho đơn này
-    PaySvc -> DB: UPDATE CouponRedemption → CONSUMED\n             (consumedAt)
+    PaySvc -> DB: UPDATE CouponRedemption → CONSUMED\n              (consumedAt)
   end
 
-  PaySvc -> DB: INSERT LoyaltyTransaction(EARN,\n         points = floor(total / 1000))\nUPDATE User.loyaltyBalance += points\n── hàng rào: unique(orderId) EARN và SUCCEEDED ──
+  PaySvc -> DB: INSERT LoyaltyTransaction(EARN,\n          points = floor(total / 1000))\nUPDATE User.loyaltyBalance += points\n── hàng rào: unique(orderId) EARN và SUCCEEDED ──
 
   PaySvc -> DB: COMMIT
   DB --> PaySvc: Commit xác nhận
