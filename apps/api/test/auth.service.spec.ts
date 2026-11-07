@@ -20,9 +20,9 @@ const baseUser = {
 
 function makeService() {
   const users = {
-    findByUsername: vi.fn<Parameters<UsersService['findByUsername']>, ReturnType<UsersService['findByUsername']>>(),
-    findById: vi.fn<Parameters<UsersService['findById']>, ReturnType<UsersService['findById']>>(),
-    create: vi.fn<Parameters<UsersService['create']>, ReturnType<UsersService['create']>>(),
+    findByUsername: vi.fn(),
+    findById: vi.fn(),
+    create: vi.fn(),
   };
   const auth = new AuthService(users as unknown as UsersService);
   return { auth, users };

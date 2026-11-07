@@ -1,0 +1,403 @@
+@startuml
+autonumber
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam maxMessageSize 280
+skinparam backgroundColor #FFFFFF
+
+' ── Participant / actor boxes ────────────────────────────────────────────
+skinparam participant {
+  BackgroundColor #F8F9FA
+  BorderColor     #000000
+  FontColor       #000000
+  FontSize        13
+}
+
+skinparam actor {
+  BackgroundColor #F8F9FA
+  BorderColor     #000000
+  FontColor       #000000
+  FontSize        13
+}
+
+' ── Arrow / message ─────────────────────────────────────────────────────
+skinparam sequence {
+  ArrowColor                #000000
+  ArrowFontColor            #000000
+  ArrowFontSize             12
+  LifeLineBorderColor       #ADB5BD
+  LifeLineBackgroundColor   #FFFFFF
+  DividerBackgroundColor    #DEE2E6
+  DividerBorderColor        #ADB5BD
+  DividerFontColor          #000000
+  DividerFontSize           12
+  GroupBackgroundColor      #F8F9FA
+  GroupBorderColor          #ADB5BD
+  GroupHeaderFontColor      #000000
+  GroupHeaderFontSize       12
+  GroupBodyBackgroundColor  #FFFFFF
+  BoxBackgroundColor        #F8F9FA
+  BoxBorderColor            #ADB5BD
+  BoxFontColor              #000000
+  ReferenceBackgroundColor  #F8F9FA
+  ReferenceBorderColor      #ADB5BD
+  ReferenceFontColor        #000000
+}
+
+' ── Note ────────────────────────────────────────────────────────────────
+skinparam note {
+  BackgroundColor #E9ECEF
+  BorderColor     #ADB5BD
+  FontColor       #000000
+  FontSize        12
+}
+
+' ── Alt/opt/break/loop group colors ─────────────────────────────────────
+skinparam SequenceGroupBackgroundColor       #F8F9FA
+skinparam SequenceGroupBorderColor           #ADB5BD
+skinparam SequenceGroupBodyBackgroundColor   #FFFFFF
+skinparam SequenceGroupHeaderFontColor       #000000
+skinparam SequenceGroupHeaderBackgroundColor #DEE2E6
+
+' ── PlantUML style block ─────────────────────────────────────────────────
+<style>
+  .group {
+    BackgroundColor #F8F9FA
+    BorderColor     #ADB5BD
+    FontColor       #000000
+    HeaderBackgroundColor #DEE2E6
+  }
+  note {
+    BackgroundColor #E9ECEF
+    BorderColor     #ADB5BD
+    FontColor       #000000
+  }
+</style>
+
+' ── Legend ──────────────────────────────────────────────────────────────
+skinparam legend {
+  BackgroundColor #F8F9FA
+  BorderColor     #ADB5BD
+  FontColor       #000000
+  FontSize        12
+}
+
+title <b><size:16>BrewLite — Sequence Checkout\nUC-06: Đặt hàng → UC-08: Thực hiện thanh toán</size></b>
+
+' ── Participants ─────────────────────────────────────────────────────────
+actor      "Khách hàng"                      as C
+boundary   "Next.js UI"                      as UI
+control    "NestJS API"                      as API
+control    "OrdersService"                   as Orders
+control    "InventoryService"                as Inventory
+control    "PaymentsService"                 as PaySvc
+control    "PaymentGateway\n(Mock Adapter)"  as GW
+database   "PostgreSQL"                      as DB
+
+' ════════════════════════════════════════════════════════════════════════
+== UC-06: Đặt hàng ==
+' ════════════════════════════════════════════════════════════════════════
+
+C -> UI: Kiểm tra giỏ, chọn tùy chọn size/topping/đường/đá/note\nvà nhập coupon tùy chọn rồi nhấn Đặt hàng
+
+opt Chưa có phiên CUSTOMER
+  ref over C, API: UC-02: Đăng nhập; giữ giỏ rồi tiếp tục khi có JWT
+end
+
+UI -> API: POST /api/v1/orders + Bearer JWT\nBody: {items, couponCode?} — không gửi giá/userId/status
+
+API -> API: Validate JWT / role CUSTOMER / ValidationPipe\nChuẩn hóa: 1..20 dòng, quantity 1..20, topping hợp lệ/không trùng\nsugar/ice null hoặc 0..100, note trim <=500
+
+break JWT/role/DTO không hợp lệ
+  API --> UI: 401 / 403 / 400 — không ghi DB
+  UI --> C: Báo lỗi, giữ giỏ
+end
+
+API -> Orders: createOrder(principal.id, dto)
+Orders -> Orders: Chuẩn hóa/gộp dòng; null khác 0; trim note
+
+loop Attempt đầu hoặc retry conflict tạm thời (tối đa 3 lần)
+
+  Orders -> DB: BEGIN Serializable
+  Orders -> DB: Kiểm tra CUSTOMER active; đọc variant/product/topping\nRecipeItem + ToppingRecipeItem + Ingredient (stockQuantity/version)
+  DB --> Orders: Catalog, giá, BOM và tồn kho nguyên liệu
+
+  Orders -> Orders: Cộng nhu cầu ingredient trên mọi dòng/variant/topping\nKiểm tra công thức đủ và ingredient active
+
+  break Thiếu BOM hoặc ingredient inactive
+    Orders -> DB: ROLLBACK
+    Orders --> API: 409 OUT_OF_STOCK
+    API --> UI: 409 — không ghi DB
+    UI --> C: Thông báo hết hàng; giữ giỏ
+  end
+
+  opt Có coupon (UC-07: Áp dụng coupon)
+    Orders -> DB: Khóa coupon; kiểm tra active/thời gian/min-order/quota/per-user
+    DB --> Orders: Discount hợp lệ
+
+    break Coupon không hợp lệ hoặc hết lượt
+      Orders -> DB: ROLLBACK
+      Orders --> API: 422 COUPON_NOT_APPLICABLE
+      API --> UI: 422 — không thay giá, không đặt đơn
+      UI --> C: Thông báo mã coupon không hợp lệ; giữ giỏ
+    end
+  end
+
+  Orders -> Orders: Tính subtotal - discount = total >= 0\nOrderItem.unitPrice = giá variant; topping snapshot riêng\nlineTotal = (unitPrice + Σ topping.unitPrice) × quantity
+
+  Orders -> DB: INSERT Order(PENDING) + OrderItem + OrderItemTopping\n(snapshot tên/giá/đường/đá/note; reservationExpiresAt từ config)
+  DB --> Orders: orderId trong transaction
+
+  Orders -> Inventory: reserve(tx, orderId, expiresAt, ingredientNeeds)
+
+  loop Ingredient theo ingredientId tăng dần
+    Inventory -> DB: UPDATE Ingredient SET stockQuantity -= need, version += 1\nWHERE id = ? AND version = expected AND stockQuantity >= need AND isActive
+    DB --> Inventory: rowCount = 1
+
+    break rowCount = 0 — race condition tồn kho
+      Inventory --> Orders: Conflict version/serialization
+      Orders -> DB: ROLLBACK (hoàn toàn stockQuantity/version)
+      Orders -> Orders: Retry toàn transaction nếu còn lượt, else INVENTORY_CONFLICT
+    end
+  end
+
+  loop Mỗi variant đã tổng hợp
+    Inventory -> DB: INSERT InventoryReservation(ACTIVE, số ly)\n+ InventoryReservationItem(ingredientId, lượng thực tế đã giữ)
+    DB --> Inventory: Snapshot nguyên liệu ghi trong cùng tx
+  end
+
+  Inventory --> Orders: Đã giữ đủ nguyên liệu
+
+  opt Có coupon hợp lệ
+    Orders -> DB: INSERT CouponRedemption(RESERVED, expiresAt)
+  end
+
+  Orders -> DB: INSERT OrderStatusHistory(NULL → PENDING)
+  Orders -> DB: COMMIT
+  DB --> Orders: Commit xác nhận
+  Orders -> Orders: Thành công; thoát vòng loop
+end
+
+Orders --> API: Order PENDING + snapshot + total + reservationExpiresAt
+API --> UI: 201 Created — {orderId, orderNumber, status: PENDING,\nsubtotal, discountAmount, total, items, reservationExpiresAt}
+UI --> C: Hiển thị tóm tắt đơn PENDING; chưa xóa giỏ\n→ UC-06 kết thúc; khách chuyển tiếp sang UC-08
+
+' ════════════════════════════════════════════════════════════════════════
+== UC-08: Thực hiện thanh toán ==
+' ════════════════════════════════════════════════════════════════════════
+
+C -> UI: Chọn phương thức E_WALLET / CARD\nvà nhấn Thanh toán
+UI -> UI: Sinh Idempotency-Key mới; khóa nút;\nhiển thị total từ đơn server
+
+UI -> API: POST /api/v1/payments + Bearer JWT\nHeader: Idempotency-Key\nBody: {orderId, method} — không gửi amount/userId
+
+API -> API: Validate JWT / role CUSTOMER / ValidationPipe\nChuẩn hóa orderId/method\nTính requestHash = hash(orderId + method) server-side
+
+break JWT sai/hết hạn hoặc role không phải CUSTOMER
+  API --> UI: 401 / 403 — không ghi DB
+  UI --> C: Báo lỗi xác thực; giữ giỏ
+end
+
+break DTO sai: thiếu Idempotency-Key, method không hợp lệ\nhoặc orderId không phải UUID
+  API --> UI: 400 — không ghi DB
+  UI --> C: Báo lỗi validation; giữ giỏ
+end
+
+API -> PaySvc: initiatePayment(principal.id, key, requestHash, orderId, method)
+
+note over PaySvc #E9ECEF
+  <b>Bước 1 — Ownership check</b>
+  Bắt buộc TRƯỚC mọi tra cứu idempotency
+  để chặn replay của người khác.
+end note
+
+PaySvc -> DB: SELECT order WHERE id = orderId
+DB --> PaySvc: Order hoặc null
+
+break Order không tồn tại hoặc không thuộc principal.id
+  PaySvc --> API: 403 FORBIDDEN
+  API --> UI: 403 — không lộ nội dung đơn người khác
+  UI --> C: Báo lỗi quyền truy cập; giữ giỏ
+end
+
+note over PaySvc #E9ECEF
+  <b>Bước 2 — Idempotency check</b>
+end note
+
+PaySvc -> DB: SELECT payment WHERE idempotencyKey = key
+DB --> PaySvc: Attempt hiện tại hoặc null
+
+alt Key đã tồn tại — attempt đã hoàn tất (SUCCEEDED hoặc FAILED)
+  PaySvc --> API: Kết quả đã lưu (replay path)
+  API --> UI: 200 — snapshot kết quả attempt đã có
+  UI --> C: Hiển thị kết quả đã xác nhận\n(không charge mới)
+
+else Key đã tồn tại — attempt đang PROCESSING chưa đối soát
+  PaySvc --> API: 409 PAYMENT_IN_PROGRESS
+  API --> UI: 409 — giữ giỏ; hướng dẫn tra cứu lại cùng key
+  UI --> C: Báo đang xử lý; hiển thị nút Kiểm tra trạng thái
+
+else Key đã tồn tại — orderId/method khác (hash không khớp)
+  PaySvc --> API: 409 IDEMPOTENCY_KEY_REUSED
+  API --> UI: 409 — client sinh key mới nếu muốn thay đổi
+  UI --> C: Báo lỗi key đã dùng với thông tin khác; giữ giỏ
+end
+
+note over PaySvc #E9ECEF
+  <b>Bước 3 — Tạo attempt mới (key chưa tồn tại)</b>
+end note
+
+PaySvc -> DB: BEGIN tx ngắn\nSELECT FOR UPDATE order\nKiểm tra: status PENDING/PAYMENT_FAILED\nKhông có PROCESSING khác trên cùng order\nReservation chưa hết hạn
+
+break Order không ở PENDING/PAYMENT_FAILED\n(đã PAID, CANCELLED, COMPLETED)
+  PaySvc -> DB: ROLLBACK
+  PaySvc --> API: 409 ORDER_NOT_PAYABLE
+  API --> UI: 409
+  UI --> C: Thông báo đơn không thể thanh toán; giữ giỏ
+end
+
+break Reservation đã hết hạn
+  PaySvc -> DB: ROLLBACK
+  PaySvc --> API: 409 ORDER_EXPIRED
+  API --> UI: 409
+  UI --> C: Thông báo đơn hết hạn; đề nghị đặt lại
+end
+
+break Đã có attempt PROCESSING chưa đối soát trên cùng order
+  PaySvc -> DB: ROLLBACK
+  PaySvc --> API: 409 PAYMENT_IN_PROGRESS
+  API --> UI: 409
+  UI --> C: Báo đang xử lý; hướng dẫn tra cứu lại cùng key
+end
+
+PaySvc -> DB: INSERT Payment(PROCESSING, key, requestHash, orderId,\namount = order.total, method)\nCOMMIT\n── unique(idempotencyKey) constraint bảo vệ race 20-concurrent ──
+DB --> PaySvc: Attempt PROCESSING đã ghi
+
+note over PaySvc, GW #E9ECEF
+  <b>Bước 4 — Gọi gateway NGOÀI transaction DB</b>
+  Không giữ lock dài trong khi chờ phản hồi gateway.
+end note
+
+PaySvc -> GW: charge(key, amount, method)
+
+' ════════════════════════════════════════════════════════════════════════
+alt <b>Luồng A — Gateway trả success</b>
+
+  GW --> PaySvc: {status: "success", gatewayTxId}
+
+  PaySvc -> DB: BEGIN tx finalize\nSELECT FOR UPDATE order + attempt
+  PaySvc -> DB: UPDATE Payment → SUCCEEDED (gatewayTxId, processedAt)
+  PaySvc -> DB: UPDATE Order  → PAID
+  PaySvc -> DB: INSERT OrderStatusHistory\n(PENDING / PAYMENT_FAILED → PAID)
+  PaySvc -> DB: UPDATE InventoryReservation → CONSUMED\n(InventoryReservationItem giữ nguyên snapshot lượng đã giữ)
+
+  opt Có CouponRedemption RESERVED cho đơn này
+    PaySvc -> DB: UPDATE CouponRedemption → CONSUMED (consumedAt)
+  end
+
+  PaySvc -> DB: INSERT LoyaltyTransaction(EARN,\npoints = floor(total / 1000))\nUPDATE User.loyaltyBalance += points\n── hàng rào DB: unique(orderId) EARN và unique SUCCEEDED/order ──
+  PaySvc -> DB: COMMIT
+  DB --> PaySvc: Commit xác nhận
+
+  PaySvc --> API: Snapshot SUCCEEDED + PAID + earnedPoints
+  API --> UI: 201 Created\n{paymentStatus: SUCCEEDED, orderStatus: PAID,\norderId, total, earnedPoints}
+  UI --> C: Xóa phần giỏ đã checkout\nChuyển màn xác nhận UC-09
+
+' ────────────────────────────────────────────────────────────────────────
+else <b>Luồng B — Gateway từ chối xác định (decline)</b>
+
+  GW --> PaySvc: {status: "declined", failureCode}
+
+  PaySvc -> DB: BEGIN tx finalize\nSELECT FOR UPDATE order + attempt
+  PaySvc -> DB: UPDATE Payment → FAILED (failureCode, processedAt)
+  PaySvc -> DB: UPDATE Order  → PAYMENT_FAILED
+  PaySvc -> DB: INSERT OrderStatusHistory (→ PAYMENT_FAILED)
+  PaySvc -> DB: COMMIT
+  DB --> PaySvc: Commit xác nhận
+
+  note over PaySvc #E9ECEF
+    Không consume reservation, không EARN.
+    Tồn kho giữ nguyên; khách có thể retry bằng key mới.
+  end note
+
+  PaySvc --> API: Payment FAILED
+  API --> UI: 200 PAYMENT_FAILED
+  UI --> C: Thông báo thanh toán thất bại\nHiển thị nút "Thử lại"
+
+  note over C, UI #E9ECEF
+    <b>Retry sau PAYMENT_FAILED (Luồng A4):</b>
+    Khách sinh Idempotency-Key MỚI → POST /payments lại.
+    API chuyển đơn về PENDING trước khi tạo attempt mới.
+    Không reserve tồn lần hai — reservation vẫn ACTIVE.
+    Không cho retry nếu reservation đã hết hạn.
+  end note
+
+' ────────────────────────────────────────────────────────────────────────
+else <b>Luồng C — Gateway timeout / kết quả chưa xác định</b>
+
+  GW --> PaySvc: Timeout / lỗi mạng / kết quả không đọc được
+
+  note over PaySvc #E9ECEF
+    Giữ attempt PROCESSING.
+    Không đoán FAILED, không hoàn tồn kho.
+    Không charge key mới.
+  end note
+
+  PaySvc -> GW: lookup(key)
+
+  alt Mock đã lưu kết quả bền vững — lookup thành công
+    GW --> PaySvc: Kết quả thực tế (success hoặc declined)
+    note over PaySvc: Finalize theo kết quả — xem Luồng A hoặc B
+  else Lookup cũng chưa có kết quả
+    PaySvc --> API: Kết quả chưa xác định
+    API --> UI: 503 tạm thời + Retry-After header
+    UI --> C: Báo đang kiểm tra; không xóa giỏ\nKhông charge mới; tra cứu lại cùng key sau
+
+    note over C, UI #E9ECEF
+      <b>Client offline (E10):</b>
+      Giữ giỏ; không queue mutation khi offline.
+      Khi online, tra cứu UC-09 trước khi retry.
+    end note
+  end
+
+' ────────────────────────────────────────────────────────────────────────
+else <b>Luồng D — DB lỗi tại bước finalize</b>
+
+  PaySvc -> DB: BEGIN tx finalize → lỗi DB\n(timeout / deadlock / unique constraint)
+  DB --> PaySvc: Lỗi
+
+  note over PaySvc #E9ECEF
+    Attempt vẫn PROCESSING; không có side-effect kép.
+    Recovery job sẽ lookup và finalize đúng một lần.
+  end note
+
+  PaySvc --> API: Lỗi finalize tạm thời
+  API --> UI: 503 tạm thời + Retry-After header
+  UI --> C: Giữ giỏ; báo đang kiểm tra;\nrecovery sẽ xử lý sau
+
+end
+
+' ════════════════════════════════════════════════════════════════════════
+== UC-09: Xem xác nhận (sau payment success) ==
+' ════════════════════════════════════════════════════════════════════════
+
+C -> UI: Mở màn xác nhận đơn
+UI -> API: GET /api/v1/orders/:id + Bearer JWT
+API -> DB: SELECT order + items + payments + history\nWHERE userId = principal.id
+DB --> API: Snapshot đơn đã PAID
+API --> UI: 200 — {orderId, orderNumber, status: PAID,\nitems, total, payment, earnedPoints, statusHistory}
+UI --> C: Hiển thị xác nhận: mã đơn, tổng tiền, trạng thái PAID\nĐiểm tích lũy, lịch sử trạng thái
+
+legend bottom
+  UC-06: Đặt hàng → Order PENDING + giữ nguyên liệu. Không gọi gateway.
+  UC-08: Thanh toán → Payment attempt, gateway mock, finalize nguyên tử.
+  UC-06 và UC-08 là hai use case độc lập; UC-08 dùng orderId đã có từ UC-06.
+  Ownership check TRƯỚC idempotency check để chặn replay của người khác.
+  Gateway gọi NGOÀI transaction DB để tránh lock dài.
+  Mock adapter lưu kết quả bền vững theo key; lookup sau restart vẫn trả đúng.
+  Unique: uq_one_successful_payment_per_order và uq_earn_per_order tại DB.
+  Retry sau PAYMENT_FAILED: key mới, đơn về PENDING, không reserve tồn lần hai.
+  floor(total VND / 1000) = điểm EARN; tỷ lệ cần PO review trước code production.
+endlegend
+
+@enduml

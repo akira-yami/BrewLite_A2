@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="7135px" preserveAspectRatio="none" style="width:1966px;height:7135px;" version="1.1" viewBox="0 0 1966 7135" width="1966px" zoomAndPan="magnify"><defs><filter height="300%" id="f17r3csmu8iesq" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="none" height="47.7344" style="stroke:none;stroke-width:1.0;" width="416.4375" x="770.7813" y="10"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="247.5" x="855.25" y="31.6094">BrewLite — Sequence Checkout</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="406.4375" x="775.7813" y="49.6582">UC-06: Đặt hàng → UC-08: Thực hiện thanh toán&lt;/size&gt;&lt;/b&gt;</text><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="64.7969" style="stroke:#000000;stroke-width:2.0;" width="741" x="30" y="272.75"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="79.0547" style="stroke:#000000;stroke-width:2.0;" width="741" x="30" y="523.3594"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="1564.7422" style="stroke:#000000;stroke-width:2.0;" width="1939" x="10" y="690.1172"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="931.6328"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="249.1641" style="stroke:#000000;stroke-width:2.0;" width="1919" x="20" y="1085.3906"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="1187.7969"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="280.8672" style="stroke:#000000;stroke-width:2.0;" width="986.5" x="952.5" y="1597.4219"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="138.7578" style="stroke:#000000;stroke-width:2.0;" width="966.5" x="962.5" y="1732.5313"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="111.7578" style="stroke:#000000;stroke-width:2.0;" width="660.5" x="1268.5" y="1892.2891"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="65.0547" style="stroke:#000000;stroke-width:2.0;" width="966.5" x="962.5" y="2048.3984"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="79.0547" style="stroke:#000000;stroke-width:2.0;" width="741" x="30" y="2796.9453"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="91.7266" style="stroke:#000000;stroke-width:2.0;" width="741" x="30" y="2890"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="109.4063" style="stroke:#000000;stroke-width:2.0;" width="1494.5" x="30" y="3176.1875"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="339.5391" style="stroke:#000000;stroke-width:2.0;" width="1494.5" x="30" y="3417"/><rect fill="#FFFFFF" height="106.8906" style="stroke:none;stroke-width:1.0;" width="1494.5" x="30" y="3542.7578"/><rect fill="#FFFFFF" height="106.8906" style="stroke:none;stroke-width:1.0;" width="1494.5" x="30" y="3649.6484"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="152.4297" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="3906.6484"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="4073.0781"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="156.1094" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="4226.8359"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="1927.3594" style="stroke:#000000;stroke-width:2.0;" width="1919" x="20" y="4626.4609"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="65.0547" style="stroke:#000000;stroke-width:2.0;" width="539.5" x="1389.5" y="4915.6797"/><rect fill="#FFFFFF" height="547.2188" style="stroke:none;stroke-width:1.0;" width="1919" x="20" y="5300.6563"/><rect fill="#FFFFFF" height="448.9453" style="stroke:none;stroke-width:1.0;" width="1919" x="20" y="5847.875"/><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="285.3516" style="stroke:#000000;stroke-width:2.0;" width="1806" x="30" y="6004.4688"/><rect fill="#FFFFFF" height="196.2969" style="stroke:none;stroke-width:1.0;" width="1806" x="30" y="6093.5234"/><rect fill="#FFFFFF" height="257" style="stroke:none;stroke-width:1.0;" width="1919" x="20" y="6296.8203"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="81" x2="81" y1="148.3438" y2="6879.0391"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="407.5" x2="407.5" y1="148.3438" y2="6879.0391"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="724" x2="724" y1="148.3438" y2="6879.0391"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1020.5" x2="1020.5" y1="148.3438" y2="6879.0391"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1333.5" x2="1333.5" y1="148.3438" y2="6879.0391"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1456.5" x2="1456.5" y1="148.3438" y2="6879.0391"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1768" x2="1768" y1="148.3438" y2="6879.0391"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1877" x2="1877" y1="148.3438" y2="6879.0391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="40" y="145.2676">Khách hàng</text><ellipse cx="81" cy="73.7344" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M81,81.7344 L81,108.7344 M68,89.7344 L94,89.7344 M81,108.7344 L68,123.7344 M81,108.7344 L94,123.7344 " fill="none" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="40" y="6892.5723">Khách hàng</text><ellipse cx="81" cy="6905.6484" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M81,6913.6484 L81,6940.6484 M68,6921.6484 L94,6921.6484 M81,6940.6484 L68,6955.6484 M81,6940.6484 L94,6955.6484 " fill="none" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="376.5" y="145.2676">Next.js UI</text><path d="M387.5,102.7344 L387.5,126.7344 M387.5,114.7344 L404.5,114.7344 " fill="none" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:2.0;"/><ellipse cx="416.5" cy="114.7344" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="376.5" y="6892.5723">Next.js UI</text><path d="M387.5,6899.6484 L387.5,6923.6484 M387.5,6911.6484 L404.5,6911.6484 " fill="none" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:2.0;"/><ellipse cx="416.5" cy="6911.6484" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="687" y="145.2676">NestJS API</text><ellipse cx="724" cy="114.7344" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="720,102.7344,726,97.7344,724,102.7344,726,107.7344,720,102.7344" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="687" y="6892.5723">NestJS API</text><ellipse cx="724" cy="6911.6484" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="720,6899.6484,726,6894.6484,724,6899.6484,726,6904.6484,720,6899.6484" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="972.5" y="145.2676">OrdersService</text><ellipse cx="1021" cy="114.7344" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1017,102.7344,1023,97.7344,1021,102.7344,1023,107.7344,1017,102.7344" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="972.5" y="6892.5723">OrdersService</text><ellipse cx="1021" cy="6911.6484" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1017,6899.6484,1023,6894.6484,1021,6899.6484,1023,6904.6484,1017,6899.6484" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="1278.5" y="145.2676">InventoryService</text><ellipse cx="1334" cy="114.7344" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1330,102.7344,1336,97.7344,1334,102.7344,1336,107.7344,1330,102.7344" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="1278.5" y="6892.5723">InventoryService</text><ellipse cx="1334" cy="6911.6484" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1330,6899.6484,1336,6894.6484,1334,6899.6484,1336,6904.6484,1330,6899.6484" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="1399.5" y="145.2676">PaymentsService</text><ellipse cx="1457" cy="114.7344" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1453,102.7344,1459,97.7344,1457,102.7344,1459,107.7344,1453,102.7344" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="1399.5" y="6892.5723">PaymentsService</text><ellipse cx="1457" cy="6911.6484" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1453,6899.6484,1459,6894.6484,1457,6899.6484,1459,6904.6484,1453,6899.6484" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="1710" y="127.6582">PaymentGateway</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="1716.5" y="145.2676">(Mock Adapter)</text><ellipse cx="1768" cy="97.125" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1764,85.125,1770,80.125,1768,85.125,1770,90.125,1764,85.125" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="1710" y="6892.5723">PaymentGateway</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="1716.5" y="6910.1816">(Mock Adapter)</text><ellipse cx="1768" cy="6929.2578" fill="#FEFECE" filter="url(#f17r3csmu8iesq)" rx="12" ry="12" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1764,6917.2578,1770,6912.2578,1768,6917.2578,1770,6922.2578,1764,6917.2578" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="1836" y="145.2676">PostgreSQL</text><path d="M1859.5,94.7344 C1859.5,84.7344 1877.5,84.7344 1877.5,84.7344 C1877.5,84.7344 1895.5,84.7344 1895.5,94.7344 L1895.5,120.7344 C1895.5,130.7344 1877.5,130.7344 1877.5,130.7344 C1877.5,130.7344 1859.5,130.7344 1859.5,120.7344 L1859.5,94.7344 " fill="#FEFECE" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.5;"/><path d="M1859.5,94.7344 C1859.5,104.7344 1877.5,104.7344 1877.5,104.7344 C1877.5,104.7344 1895.5,104.7344 1895.5,94.7344 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="1836" y="6892.5723">PostgreSQL</text><path d="M1859.5,6905.6484 C1859.5,6895.6484 1877.5,6895.6484 1877.5,6895.6484 C1877.5,6895.6484 1895.5,6895.6484 1895.5,6905.6484 L1895.5,6931.6484 C1895.5,6941.6484 1877.5,6941.6484 1877.5,6941.6484 C1877.5,6941.6484 1859.5,6941.6484 1859.5,6931.6484 L1859.5,6905.6484 " fill="#FEFECE" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.5;"/><path d="M1859.5,6905.6484 C1859.5,6915.6484 1877.5,6915.6484 1877.5,6915.6484 C1877.5,6915.6484 1895.5,6915.6484 1895.5,6905.6484 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="1959" x="0" y="179.5195"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1959" y1="179.5195" y2="179.5195"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1959" y1="182.5195" y2="182.5195"/><rect fill="#EEEEEE" height="24.3516" style="stroke:#000000;stroke-width:2.0;" width="119" x="920" y="168.3438"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="101" x="926" y="185.8389">UC-06: Đặt hàng</text><polygon fill="#A80036" points="396,253.75,406,257.75,396,261.75,400,257.75" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="81" x2="402" y1="257.75" y2="257.75"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="88" y="236.542">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="99" y="220.1904">Kiểm tra giỏ, chọn tùy chọn</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="99" y="236.542">size/topping/đường/đá/note</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="250" x="99" y="252.8936">và nhập coupon tùy chọn rồi nhấn Đặt hàng</text><path d="M30,272.75 L95,272.75 L95,280.75 L85,290.75 L30,290.75 L30,272.75 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="64.7969" style="stroke:#000000;stroke-width:2.0;" width="741" x="30" y="272.75"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="20" x="45" y="287.2451">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="150" x="110" y="286.1689">[Chưa có phiên CUSTOMER]</text><rect fill="#FFFFFF" filter="url(#f17r3csmu8iesq)" height="41.4453" style="stroke:#000000;stroke-width:2.0;" width="723" x="37" y="291.1016"/><polygon fill="#EEEEEE" points="37,291.1016,99,291.1016,99,299.1016,89,309.1016,37,309.1016,37,291.1016" style="stroke:#000000;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17" x="50" y="306.5967">ref</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="268" x="266.5" y="325.5586">UC-02: Đăng nhập; giữ giỏ rồi tiếp tục khi có JWT</text><polygon fill="#A80036" points="712,395.6016,722,399.6016,712,403.6016,716,399.6016" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="408" x2="718" y1="399.6016" y2="399.6016"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="415" y="378.3936">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="200" x="426" y="362.042">POST /api/v1/orders + Bearer JWT</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="244" x="426" y="378.3936">Body: {items, couponCode?} — không gửi</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="426" y="394.7451">giá/userId/status</text><line style="stroke:#A80036;stroke-width:1.0;" x1="724" x2="766" y1="495.3594" y2="495.3594"/><line style="stroke:#A80036;stroke-width:1.0;" x1="766" x2="766" y1="495.3594" y2="508.3594"/><line style="stroke:#A80036;stroke-width:1.0;" x1="725" x2="766" y1="508.3594" y2="508.3594"/><polygon fill="#A80036" points="735,504.3594,725,508.3594,735,512.3594,731,508.3594" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="731" y="457.7998">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="195" x="742" y="425.0967">Validate JWT / role CUSTOMER /</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="83" x="742" y="441.4482">ValidationPipe</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="268" x="742" y="457.7998">Chuẩn hóa: 1..20 dòng, quantity 1..20, topping</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109" x="742" y="474.1514">hợp lệ/không trùng</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="249" x="742" y="490.5029">sugar/ice null hoặc 0..100, note trim &lt;=500</text><path d="M30,523.3594 L111,523.3594 L111,531.3594 L101,541.3594 L30,541.3594 L30,523.3594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="79.0547" style="stroke:#000000;stroke-width:2.0;" width="741" x="30" y="523.3594"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="45" y="537.8545">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="157" x="126" y="536.7783">[JWT/role/DTO không hợp lệ]</text><polygon fill="#A80036" points="419,560.0625,409,564.0625,419,568.0625,415,564.0625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="564.0625" y2="564.0625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="425" y="559.2061">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="186" x="436" y="559.2061">401 / 403 / 400 — không ghi DB</text><polygon fill="#A80036" points="92,590.4141,82,594.4141,92,598.4141,88,594.4141" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="594.4141" y2="594.4141"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="98" y="589.5576">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="109" y="589.5576">Báo lỗi, giữ giỏ</text><polygon fill="#A80036" points="1009,627.7656,1019,631.7656,1009,635.7656,1013,631.7656" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="724" x2="1015" y1="631.7656" y2="631.7656"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="731" y="626.9092">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="742" y="626.9092">createOrder(principal.id, dto)</text><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1063" y1="662.1172" y2="662.1172"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1063" x2="1063" y1="662.1172" y2="675.1172"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1022" x2="1063" y1="675.1172" y2="675.1172"/><polygon fill="#A80036" points="1032,671.1172,1022,675.1172,1032,679.1172,1028,675.1172" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="1028" y="657.2607">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="249" x="1039" y="657.2607">Chuẩn hóa/gộp dòng; null khác 0; trim note</text><path d="M10,690.1172 L83,690.1172 L83,698.1172 L73,708.1172 L10,708.1172 L10,690.1172 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="1564.7422" style="stroke:#000000;stroke-width:2.0;" width="1939" x="10" y="690.1172"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="25" y="704.6123">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="296" x="98" y="703.5361">[Attempt đầu hoặc retry conflict tạm thời (tối đa 3 lần)]</text><polygon fill="#A80036" points="1865.5,726.8203,1875.5,730.8203,1865.5,734.8203,1869.5,730.8203" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="730.8203" y2="730.8203"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="1028" y="725.9639">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="1039" y="725.9639">BEGIN Serializable</text><polygon fill="#A80036" points="1865.5,806.2266,1875.5,810.2266,1865.5,814.2266,1869.5,810.2266" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="810.2266" y2="810.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="1028" y="780.8428">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="192" x="1039" y="756.3154">Kiểm tra CUSTOMER active; đọc</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="130" x="1039" y="772.667">variant/product/topping</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="263" x="1039" y="789.0186">RecipeItem + ToppingRecipeItem + Ingredient</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="1039" y="805.3701">(stockQuantity/version)</text><polygon fill="#A80036" points="1032,836.5781,1022,840.5781,1032,844.5781,1028,840.5781" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1026" x2="1876.5" y1="840.5781" y2="840.5781"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1038" y="835.7217">10</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="240" x="1056" y="835.7217">Catalog, giá, BOM và tồn kho nguyên liệu</text><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1063" y1="903.6328" y2="903.6328"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1063" x2="1063" y1="903.6328" y2="916.6328"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1022" x2="1063" y1="916.6328" y2="916.6328"/><polygon fill="#A80036" points="1032,912.6328,1022,916.6328,1032,920.6328,1028,916.6328" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="882.4248">11</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="191" x="1046" y="866.0732">Cộng nhu cầu ingredient trên mọi</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="1046" y="882.4248">dòng/variant/topping</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="243" x="1046" y="898.7764">Kiểm tra công thức đủ và ingredient active</text><path d="M30,931.6328 L111,931.6328 L111,939.6328 L101,949.6328 L30,949.6328 L30,931.6328 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="931.6328"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="45" y="946.1279">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="201" x="126" y="945.0518">[Thiếu BOM hoặc ingredient inactive]</text><polygon fill="#A80036" points="1865.5,968.3359,1875.5,972.3359,1865.5,976.3359,1869.5,972.3359" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="972.3359" y2="972.3359"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="967.4795">12</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1046" y="967.4795">ROLLBACK</text><polygon fill="#A80036" points="735,998.6875,725,1002.6875,735,1006.6875,731,1002.6875" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1020" y1="1002.6875" y2="1002.6875"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="997.8311">13</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="759" y="997.8311">409 OUT_OF_STOCK</text><polygon fill="#A80036" points="419,1029.0391,409,1033.0391,419,1037.0391,415,1033.0391" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="1033.0391" y2="1033.0391"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="1028.1826">14</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="443" y="1028.1826">409 — không ghi DB</text><polygon fill="#A80036" points="92,1059.3906,82,1063.3906,92,1067.3906,88,1063.3906" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="1063.3906" y2="1063.3906"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="1058.5342">15</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="116" y="1058.5342">Thông báo hết hàng; giữ giỏ</text><path d="M20,1085.3906 L85,1085.3906 L85,1093.3906 L75,1103.3906 L20,1103.3906 L20,1085.3906 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="249.1641" style="stroke:#000000;stroke-width:2.0;" width="1919" x="20" y="1085.3906"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="20" x="35" y="1099.8857">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="205" x="100" y="1098.8096">[Có coupon (UC-07: Áp dụng coupon)]</text><polygon fill="#A80036" points="1865.5,1138.4453,1875.5,1142.4453,1865.5,1146.4453,1869.5,1142.4453" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="1142.4453" y2="1142.4453"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="1129.4131">16</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="195" x="1046" y="1121.2373">Khóa coupon; kiểm tra active/thời</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="169" x="1046" y="1137.5889">gian/min-order/quota/per-user</text><polygon fill="#A80036" points="1032,1168.7969,1022,1172.7969,1032,1176.7969,1028,1172.7969" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1026" x2="1876.5" y1="1172.7969" y2="1172.7969"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1038" y="1167.9404">17</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="1056" y="1167.9404">Discount hợp lệ</text><path d="M30,1187.7969 L111,1187.7969 L111,1195.7969 L101,1205.7969 L30,1205.7969 L30,1187.7969 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="1187.7969"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="45" y="1202.292">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="203" x="126" y="1201.2158">[Coupon không hợp lệ hoặc hết lượt]</text><polygon fill="#A80036" points="1865.5,1224.5,1875.5,1228.5,1865.5,1232.5,1869.5,1228.5" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="1228.5" y2="1228.5"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="1223.6436">18</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1046" y="1223.6436">ROLLBACK</text><polygon fill="#A80036" points="735,1254.8516,725,1258.8516,735,1262.8516,731,1258.8516" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1020" y1="1258.8516" y2="1258.8516"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="1253.9951">19</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="201" x="759" y="1253.9951">422 COUPON_NOT_APPLICABLE</text><polygon fill="#A80036" points="419,1285.2031,409,1289.2031,419,1293.2031,415,1289.2031" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="1289.2031" y2="1289.2031"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="1284.3467">20</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="219" x="443" y="1284.3467">422 — không thay giá, không đặt đơn</text><polygon fill="#A80036" points="92,1315.5547,82,1319.5547,92,1323.5547,88,1319.5547" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="1319.5547" y2="1319.5547"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="1314.6982">21</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="256" x="116" y="1314.6982">Thông báo mã coupon không hợp lệ; giữ giỏ</text><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1063" y1="1429.3125" y2="1429.3125"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1063" x2="1063" y1="1429.3125" y2="1442.3125"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1022" x2="1063" y1="1442.3125" y2="1442.3125"/><polygon fill="#A80036" points="1032,1438.3125,1022,1442.3125,1032,1446.3125,1028,1442.3125" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="1391.7529">22</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="207" x="1046" y="1359.0498">Tính subtotal - discount = total &gt;= 0</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="236" x="1046" y="1375.4014">OrderItem.unitPrice = giá variant; topping</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="1046" y="1391.7529">snapshot riêng</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="260" x="1046" y="1408.1045">lineTotal = (unitPrice + Σ topping.unitPrice) ×</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="46" x="1046" y="1424.4561">quantity</text><polygon fill="#A80036" points="1865.5,1517.7188,1875.5,1521.7188,1865.5,1525.7188,1869.5,1521.7188" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="1521.7188" y2="1521.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="1492.335">23</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="233" x="1046" y="1467.8076">INSERT Order(PENDING) + OrderItem +</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="1046" y="1484.1592">OrderItemTopping</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="194" x="1046" y="1500.5107">(snapshot tên/giá/đường/đá/note;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="1046" y="1516.8623">reservationExpiresAt từ config)</text><polygon fill="#A80036" points="1032,1548.0703,1022,1552.0703,1032,1556.0703,1028,1552.0703" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1026" x2="1876.5" y1="1552.0703" y2="1552.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1038" y="1547.2139">24</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="1056" y="1547.2139">orderId trong transaction</text><polygon fill="#A80036" points="1322,1578.4219,1332,1582.4219,1322,1586.4219,1326,1582.4219" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1328" y1="1582.4219" y2="1582.4219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="1577.5654">25</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="271" x="1046" y="1577.5654">reserve(tx, orderId, expiresAt, ingredientNeeds)</text><path d="M952.5,1597.4219 L1025.5,1597.4219 L1025.5,1605.4219 L1015.5,1615.4219 L952.5,1615.4219 L952.5,1597.4219 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="280.8672" style="stroke:#000000;stroke-width:2.0;" width="986.5" x="952.5" y="1597.4219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="967.5" y="1611.917">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="213" x="1040.5" y="1610.8408">[Ingredient theo ingredientId tăng dần]</text><polygon fill="#A80036" points="1865.5,1683.1797,1875.5,1687.1797,1865.5,1691.1797,1869.5,1687.1797" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1334" x2="1871.5" y1="1687.1797" y2="1687.1797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1341" y="1657.7959">26</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="278" x="1359" y="1633.2686">UPDATE Ingredient SET stockQuantity -= need,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="1359" y="1649.6201">version += 1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="261" x="1359" y="1665.9717">WHERE id = ? AND version = expected AND</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="213" x="1359" y="1682.3232">stockQuantity &gt;= need AND isActive</text><polygon fill="#A80036" points="1345,1713.5313,1335,1717.5313,1345,1721.5313,1341,1717.5313" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1339" x2="1876.5" y1="1717.5313" y2="1717.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1351" y="1712.6748">27</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="1369" y="1712.6748">rowCount = 1</text><path d="M962.5,1732.5313 L1043.5,1732.5313 L1043.5,1740.5313 L1033.5,1750.5313 L962.5,1750.5313 L962.5,1732.5313 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="138.7578" style="stroke:#000000;stroke-width:2.0;" width="966.5" x="962.5" y="1732.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="977.5" y="1747.0264">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="221.3438" x="1058.5" y="1745.9502">[rowCount = 0 — race condition tồn kho]</text><polygon fill="#A80036" points="1032,1769.2344,1022,1773.2344,1032,1777.2344,1028,1773.2344" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1026" x2="1333" y1="1773.2344" y2="1773.2344"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1038" y="1768.3779">28</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="1056" y="1768.3779">Conflict version/serialization</text><polygon fill="#A80036" points="1865.5,1799.5859,1875.5,1803.5859,1865.5,1807.5859,1869.5,1803.5859" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="1803.5859" y2="1803.5859"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="1798.7295">29</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="267" x="1046" y="1798.7295">ROLLBACK (hoàn toàn stockQuantity/version)</text><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1063" y1="1850.2891" y2="1850.2891"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1063" x2="1063" y1="1850.2891" y2="1863.2891"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1022" x2="1063" y1="1863.2891" y2="1863.2891"/><polygon fill="#A80036" points="1032,1859.2891,1022,1863.2891,1032,1867.2891,1028,1863.2891" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="1837.2568">30</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="239" x="1046" y="1829.0811">Retry toàn transaction nếu còn lượt, else</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="143" x="1046" y="1845.4326">INVENTORY_CONFLICT</text><path d="M1268.5,1892.2891 L1341.5,1892.2891 L1341.5,1900.2891 L1331.5,1910.2891 L1268.5,1910.2891 L1268.5,1892.2891 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="111.7578" style="stroke:#000000;stroke-width:2.0;" width="660.5" x="1268.5" y="1892.2891"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="1283.5" y="1906.7842">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="137" x="1356.5" y="1905.708">[Mỗi variant đã tổng hợp]</text><polygon fill="#A80036" points="1865.5,1961.6953,1875.5,1965.6953,1865.5,1969.6953,1869.5,1965.6953" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1334" x2="1871.5" y1="1965.6953" y2="1965.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1341" y="1944.4873">31</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="258" x="1359" y="1928.1357">INSERT InventoryReservation(ACTIVE, số ly)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="268" x="1359" y="1944.4873">+ InventoryReservationItem(ingredientId, lượng</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="1359" y="1960.8389">thực tế đã giữ)</text><polygon fill="#A80036" points="1345,1992.0469,1335,1996.0469,1345,2000.0469,1341,1996.0469" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1339" x2="1876.5" y1="1996.0469" y2="1996.0469"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1351" y="1991.1904">32</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="226" x="1369" y="1991.1904">Snapshot nguyên liệu ghi trong cùng tx</text><polygon fill="#A80036" points="1032,2029.3984,1022,2033.3984,1032,2037.3984,1028,2033.3984" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1026" x2="1333" y1="2033.3984" y2="2033.3984"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1038" y="2028.542">33</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="1056" y="2028.542">Đã giữ đủ nguyên liệu</text><path d="M962.5,2048.3984 L1027.5,2048.3984 L1027.5,2056.3984 L1017.5,2066.3984 L962.5,2066.3984 L962.5,2048.3984 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="65.0547" style="stroke:#000000;stroke-width:2.0;" width="966.5" x="962.5" y="2048.3984"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="20" x="977.5" y="2062.8936">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="105" x="1042.5" y="2061.8174">[Có coupon hợp lệ]</text><polygon fill="#A80036" points="1865.5,2101.4531,1875.5,2105.4531,1865.5,2109.4531,1869.5,2105.4531" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="2105.4531" y2="2105.4531"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="2092.4209">34</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="243" x="1046" y="2084.2451">INSERT CouponRedemption(RESERVED,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="1046" y="2100.5967">expiresAt)</text><polygon fill="#A80036" points="1865.5,2138.8047,1875.5,2142.8047,1865.5,2146.8047,1869.5,2142.8047" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="2142.8047" y2="2142.8047"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="2137.9482">35</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="278" x="1046" y="2137.9482">INSERT OrderStatusHistory(NULL → PENDING)</text><polygon fill="#A80036" points="1865.5,2169.1563,1875.5,2173.1563,1865.5,2177.1563,1869.5,2173.1563" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1871.5" y1="2173.1563" y2="2173.1563"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="2168.2998">36</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="1046" y="2168.2998">COMMIT</text><polygon fill="#A80036" points="1032,2199.5078,1022,2203.5078,1032,2207.5078,1028,2203.5078" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1026" x2="1876.5" y1="2203.5078" y2="2203.5078"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1038" y="2198.6514">37</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="1056" y="2198.6514">Commit xác nhận</text><line style="stroke:#A80036;stroke-width:1.0;" x1="1021" x2="1063" y1="2233.8594" y2="2233.8594"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1063" x2="1063" y1="2233.8594" y2="2246.8594"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1022" x2="1063" y1="2246.8594" y2="2246.8594"/><polygon fill="#A80036" points="1032,2242.8594,1022,2246.8594,1032,2250.8594,1028,2246.8594" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1028" y="2229.0029">38</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="1046" y="2229.0029">Thành công; thoát vòng loop</text><polygon fill="#A80036" points="735,2296.5625,725,2300.5625,735,2304.5625,731,2300.5625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1020" y1="2300.5625" y2="2300.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="2287.5303">39</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="216" x="759" y="2279.3545">Order PENDING + snapshot + total +</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="759" y="2295.7061">reservationExpiresAt</text><polygon fill="#A80036" points="419,2375.9688,409,2379.9688,419,2383.9688,415,2379.9688" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="2379.9688" y2="2379.9688"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="2350.585">40</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="264" x="443" y="2326.0576">201 Created — {orderId, orderNumber, status:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="443" y="2342.4092">PENDING,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="225" x="443" y="2358.7607">subtotal, discountAmount, total, items,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="443" y="2375.1123">reservationExpiresAt}</text><polygon fill="#A80036" points="92,2439.0234,82,2443.0234,92,2447.0234,88,2443.0234" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="2443.0234" y2="2443.0234"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="2421.8154">41</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="262" x="116" y="2405.4639">Hiển thị tóm tắt đơn PENDING; chưa xóa giỏ</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="248" x="116" y="2421.8154">→ UC-06 kết thúc; khách chuyển tiếp sang</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="116" y="2438.167">UC-08</text><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="1959" x="0" y="2472.1992"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1959" y1="2472.1992" y2="2472.1992"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1959" y1="2475.1992" y2="2475.1992"/><rect fill="#EEEEEE" height="24.3516" style="stroke:#000000;stroke-width:2.0;" width="198" x="880.5" y="2461.0234"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="180" x="886.5" y="2478.5186">UC-08: Thực hiện thanh toán</text><polygon fill="#A80036" points="396,2530.0781,406,2534.0781,396,2538.0781,400,2534.0781" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="81" x2="402" y1="2534.0781" y2="2534.0781"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="88" y="2521.0459">42</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="231" x="106" y="2512.8701">Chọn phương thức E_WALLET / CARD</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112" x="106" y="2529.2217">và nhấn Thanh toán</text><line style="stroke:#A80036;stroke-width:1.0;" x1="408" x2="450" y1="2580.7813" y2="2580.7813"/><line style="stroke:#A80036;stroke-width:1.0;" x1="450" x2="450" y1="2580.7813" y2="2593.7813"/><line style="stroke:#A80036;stroke-width:1.0;" x1="409" x2="450" y1="2593.7813" y2="2593.7813"/><polygon fill="#A80036" points="419,2589.7813,409,2593.7813,419,2597.7813,415,2593.7813" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="415" y="2567.749">43</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="220" x="433" y="2559.5732">Sinh Idempotency-Key mới; khóa nút;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="433" y="2575.9248">hiển thị total từ đơn server</text><polygon fill="#A80036" points="712,2669.1875,722,2673.1875,712,2677.1875,716,2673.1875" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="408" x2="718" y1="2673.1875" y2="2673.1875"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="415" y="2643.8037">44</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="221" x="433" y="2619.2764">POST /api/v1/payments + Bearer JWT</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="150" x="433" y="2635.6279">Header: Idempotency-Key</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="215" x="433" y="2651.9795">Body: {orderId, method} — không gửi</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="82" x="433" y="2668.3311">amount/userId</text><line style="stroke:#A80036;stroke-width:1.0;" x1="724" x2="766" y1="2768.9453" y2="2768.9453"/><line style="stroke:#A80036;stroke-width:1.0;" x1="766" x2="766" y1="2768.9453" y2="2781.9453"/><line style="stroke:#A80036;stroke-width:1.0;" x1="725" x2="766" y1="2781.9453" y2="2781.9453"/><polygon fill="#A80036" points="735,2777.9453,725,2781.9453,735,2785.9453,731,2781.9453" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="731" y="2731.3857">45</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="195" x="749" y="2698.6826">Validate JWT / role CUSTOMER /</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="83" x="749" y="2715.0342">ValidationPipe</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="749" y="2731.3857">Chuẩn hóa orderId/method</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="251" x="749" y="2747.7373">Tính requestHash = hash(orderId + method)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="749" y="2764.0889">server-side</text><path d="M30,2796.9453 L111,2796.9453 L111,2804.9453 L101,2814.9453 L30,2814.9453 L30,2796.9453 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="79.0547" style="stroke:#000000;stroke-width:2.0;" width="741" x="30" y="2796.9453"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="45" y="2811.4404">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="275" x="126" y="2810.3643">[JWT sai/hết hạn hoặc role không phải CUSTOMER]</text><polygon fill="#A80036" points="419,2833.6484,409,2837.6484,419,2841.6484,415,2837.6484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="2837.6484" y2="2837.6484"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="2832.792">46</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="443" y="2832.792">401 / 403 — không ghi DB</text><polygon fill="#A80036" points="92,2864,82,2868,92,2872,88,2868" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="2868" y2="2868"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="2863.1436">47</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="144" x="116" y="2863.1436">Báo lỗi xác thực; giữ giỏ</text><path d="M30,2890 L111,2890 L111,2898 L101,2908 L30,2908 L30,2890 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="91.7266" style="stroke:#000000;stroke-width:2.0;" width="741" x="30" y="2890"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="45" y="2904.4951">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="303" x="126" y="2903.4189">[DTO sai: thiếu Idempotency-Key, method không hợp lệ</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="165" x="126" y="2917.2549">hoặc orderId không phải UUID]</text><polygon fill="#A80036" points="419,2939.375,409,2943.375,419,2947.375,415,2943.375" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="2943.375" y2="2943.375"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="2938.5186">48</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="443" y="2938.5186">400 — không ghi DB</text><polygon fill="#A80036" points="92,2969.7266,82,2973.7266,92,2977.7266,88,2973.7266" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="2973.7266" y2="2973.7266"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="2968.8701">49</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="145" x="116" y="2968.8701">Báo lỗi validation; giữ giỏ</text><polygon fill="#A80036" points="1445,3023.4297,1455,3027.4297,1445,3031.4297,1449,3027.4297" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="724" x2="1451" y1="3027.4297" y2="3027.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="731" y="3014.3975">50</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="270" x="749" y="3006.2217">initiatePayment(principal.id, key, requestHash,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="749" y="3022.5732">orderId, method)</text><path d="M1318,3040.4297 L1318,3099.4297 L1591,3099.4297 L1591,3050.4297 L1581,3040.4297 L1318,3040.4297 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1581,3040.4297 L1581,3050.4297 L1591,3050.4297 L1581,3040.4297 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="175.4063" x="1324" y="3058.9248">Bước 1 — Ownership check</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="252" x="1324" y="3075.2764">Bắt buộc TRƯỚC mọi tra cứu idempotency</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="1324" y="3091.6279">để chặn replay của người khác.</text><polygon fill="#A80036" points="1865.5,3126.8359,1875.5,3130.8359,1865.5,3134.8359,1869.5,3130.8359" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="3130.8359" y2="3130.8359"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="3125.9795">51</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="205" x="1482" y="3125.9795">SELECT order WHERE id = orderId</text><polygon fill="#A80036" points="1468,3157.1875,1458,3161.1875,1468,3165.1875,1464,3161.1875" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1876.5" y1="3161.1875" y2="3161.1875"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1474" y="3156.3311">52</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="1492" y="3156.3311">Order hoặc null</text><path d="M30,3176.1875 L111,3176.1875 L111,3184.1875 L101,3194.1875 L30,3194.1875 L30,3176.1875 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="109.4063" style="stroke:#000000;stroke-width:2.0;" width="1494.5" x="30" y="3176.1875"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="45" y="3190.6826">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="279" x="126" y="3189.6064">[Order không tồn tại hoặc không thuộc principal.id]</text><polygon fill="#A80036" points="735,3212.8906,725,3216.8906,735,3220.8906,731,3216.8906" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="3216.8906" y2="3216.8906"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="3212.0342">53</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="759" y="3212.0342">403 FORBIDDEN</text><polygon fill="#A80036" points="419,3243.2422,409,3247.2422,419,3251.2422,415,3247.2422" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="3247.2422" y2="3247.2422"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="3242.3857">54</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="242" x="443" y="3242.3857">403 — không lộ nội dung đơn người khác</text><polygon fill="#A80036" points="92,3273.5938,82,3277.5938,92,3281.5938,88,3277.5938" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="3277.5938" y2="3277.5938"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="3272.7373">55</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="116" y="3272.7373">Báo lỗi quyền truy cập; giữ giỏ</text><path d="M1349,3297.5938 L1349,3323.5938 L1559,3323.5938 L1559,3307.5938 L1549,3297.5938 L1349,3297.5938 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1549,3297.5938 L1549,3307.5938 L1559,3307.5938 L1549,3297.5938 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="189.4063" x="1355" y="3316.0889">Bước 2 — Idempotency check</text><polygon fill="#A80036" points="1865.5,3367.6484,1875.5,3371.6484,1865.5,3375.6484,1869.5,3371.6484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="3371.6484" y2="3371.6484"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="3358.6162">56</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="270" x="1482" y="3350.4404">SELECT payment WHERE idempotencyKey =</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="1482" y="3366.792">key</text><polygon fill="#A80036" points="1468,3398,1458,3402,1468,3406,1464,3402" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1876.5" y1="3402" y2="3402"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1474" y="3397.1436">57</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="1492" y="3397.1436">Attempt hiện tại hoặc null</text><path d="M30,3417 L91,3417 L91,3425 L81,3435 L30,3435 L30,3417 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="339.5391" style="stroke:#000000;stroke-width:2.0;" width="1494.5" x="30" y="3417"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="45" y="3431.4951">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="346.3438" x="106" y="3430.4189">[Key đã tồn tại — attempt đã hoàn tất (SUCCEEDED hoặc FAILED)]</text><polygon fill="#A80036" points="735,3453.7031,725,3457.7031,735,3461.7031,731,3457.7031" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="3457.7031" y2="3457.7031"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="3452.8467">58</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="759" y="3452.8467">Kết quả đã lưu (replay path)</text><polygon fill="#A80036" points="419,3484.0547,409,3488.0547,419,3492.0547,415,3488.0547" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="3488.0547" y2="3488.0547"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="3483.1982">59</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="226" x="443" y="3483.1982">200 — snapshot kết quả attempt đã có</text><polygon fill="#A80036" points="92,3530.7578,82,3534.7578,92,3538.7578,88,3534.7578" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="3534.7578" y2="3534.7578"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="3521.7256">60</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="116" y="3513.5498">Hiển thị kết quả đã xác nhận</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="113" x="116" y="3529.9014">(không charge mới)</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="30" x2="1524.5" y1="3543.7578" y2="3543.7578"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="319.3438" x="35" y="3555.1768">[Key đã tồn tại — attempt đang PROCESSING chưa đối soát]</text><polygon fill="#A80036" points="735,3576.9453,725,3580.9453,735,3584.9453,731,3580.9453" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="3580.9453" y2="3580.9453"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="3576.0889">61</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="188" x="759" y="3576.0889">409 PAYMENT_IN_PROGRESS</text><polygon fill="#A80036" points="419,3607.2969,409,3611.2969,419,3615.2969,415,3611.2969" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="3611.2969" y2="3611.2969"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="3606.4404">62</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="274" x="443" y="3606.4404">409 — giữ giỏ; hướng dẫn tra cứu lại cùng key</text><polygon fill="#A80036" points="92,3637.6484,82,3641.6484,92,3645.6484,88,3641.6484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="3641.6484" y2="3641.6484"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="3636.792">63</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="272" x="116" y="3636.792">Báo đang xử lý; hiển thị nút Kiểm tra trạng thái</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="30" x2="1524.5" y1="3650.6484" y2="3650.6484"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="322.3438" x="35" y="3662.0674">[Key đã tồn tại — orderId/method khác (hash không khớp)]</text><polygon fill="#A80036" points="735,3683.8359,725,3687.8359,735,3691.8359,731,3687.8359" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="3687.8359" y2="3687.8359"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="3682.9795">64</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="214" x="759" y="3682.9795">409 IDEMPOTENCY_KEY_REUSED</text><polygon fill="#A80036" points="419,3714.1875,409,3718.1875,419,3722.1875,415,3718.1875" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="3718.1875" y2="3718.1875"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="3713.3311">65</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="264" x="443" y="3713.3311">409 — client sinh key mới nếu muốn thay đổi</text><polygon fill="#A80036" points="92,3744.5391,82,3748.5391,92,3752.5391,88,3748.5391" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="3748.5391" y2="3748.5391"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="3743.6826">66</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="270" x="116" y="3743.6826">Báo lỗi key đã dùng với thông tin khác; giữ giỏ</text><path d="M1301,3768.5391 L1301,3794.5391 L1607,3794.5391 L1607,3778.5391 L1597,3768.5391 L1301,3768.5391 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1597,3768.5391 L1597,3778.5391 L1607,3778.5391 L1597,3768.5391 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="285.4063" x="1307" y="3787.0342">Bước 3 — Tạo attempt mới (key chưa tồn tại)</text><polygon fill="#A80036" points="1865.5,3887.6484,1875.5,3891.6484,1865.5,3895.6484,1869.5,3891.6484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="3891.6484" y2="3891.6484"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="3854.0889">67</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="1482" y="3821.3857">BEGIN tx ngắn</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="170" x="1482" y="3837.7373">SELECT FOR UPDATE order</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="274" x="1482" y="3854.0889">Kiểm tra: status PENDING/PAYMENT_FAILED</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="268" x="1482" y="3870.4404">Không có PROCESSING khác trên cùng order</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="1482" y="3886.792">Reservation chưa hết hạn</text><path d="M30,3906.6484 L111,3906.6484 L111,3914.6484 L101,3924.6484 L30,3924.6484 L30,3906.6484 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="152.4297" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="3906.6484"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="45" y="3921.1436">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="231" x="126" y="3920.0674">[Order không ở PENDING/PAYMENT_FAILED</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="195" x="126" y="3933.9033">(đã PAID, CANCELLED, COMPLETED)]</text><polygon fill="#A80036" points="1865.5,3956.0234,1875.5,3960.0234,1865.5,3964.0234,1869.5,3960.0234" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="3960.0234" y2="3960.0234"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="3955.167">68</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1482" y="3955.167">ROLLBACK</text><polygon fill="#A80036" points="735,3986.375,725,3990.375,735,3994.375,731,3990.375" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="3990.375" y2="3990.375"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="3985.5186">69</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="172" x="759" y="3985.5186">409 ORDER_NOT_PAYABLE</text><polygon fill="#A80036" points="419,4016.7266,409,4020.7266,419,4024.7266,415,4020.7266" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="4020.7266" y2="4020.7266"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="4015.8701">70</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="443" y="4015.8701">409</text><polygon fill="#A80036" points="92,4047.0781,82,4051.0781,92,4055.0781,88,4051.0781" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="4051.0781" y2="4051.0781"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="4046.2217">71</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="261" x="116" y="4046.2217">Thông báo đơn không thể thanh toán; giữ giỏ</text><path d="M30,4073.0781 L111,4073.0781 L111,4081.0781 L101,4091.0781 L30,4091.0781 L30,4073.0781 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="139.7578" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="4073.0781"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="45" y="4087.5732">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="134" x="126" y="4086.4971">[Reservation đã hết hạn]</text><polygon fill="#A80036" points="1865.5,4109.7813,1875.5,4113.7813,1865.5,4117.7813,1869.5,4113.7813" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="4113.7813" y2="4113.7813"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4108.9248">72</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1482" y="4108.9248">ROLLBACK</text><polygon fill="#A80036" points="735,4140.1328,725,4144.1328,735,4148.1328,731,4144.1328" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="4144.1328" y2="4144.1328"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="4139.2764">73</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="759" y="4139.2764">409 ORDER_EXPIRED</text><polygon fill="#A80036" points="419,4170.4844,409,4174.4844,419,4178.4844,415,4174.4844" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="4174.4844" y2="4174.4844"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="4169.6279">74</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="443" y="4169.6279">409</text><polygon fill="#A80036" points="92,4200.8359,82,4204.8359,92,4208.8359,88,4204.8359" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="4204.8359" y2="4204.8359"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="4199.9795">75</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="223" x="116" y="4199.9795">Thông báo đơn hết hạn; đề nghị đặt lại</text><path d="M30,4226.8359 L111,4226.8359 L111,4234.8359 L101,4244.8359 L30,4244.8359 L30,4226.8359 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="156.1094" style="stroke:#000000;stroke-width:2.0;" width="1899" x="30" y="4226.8359"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="36" x="45" y="4241.3311">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="322" x="126" y="4240.2549">[Đã có attempt PROCESSING chưa đối soát trên cùng order]</text><polygon fill="#A80036" points="1865.5,4263.5391,1875.5,4267.5391,1865.5,4271.5391,1869.5,4267.5391" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="4267.5391" y2="4267.5391"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4262.6826">76</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1482" y="4262.6826">ROLLBACK</text><polygon fill="#A80036" points="735,4293.8906,725,4297.8906,735,4301.8906,731,4297.8906" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="4297.8906" y2="4297.8906"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="4293.0342">77</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="188" x="759" y="4293.0342">409 PAYMENT_IN_PROGRESS</text><polygon fill="#A80036" points="419,4324.2422,409,4328.2422,419,4332.2422,415,4328.2422" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="4328.2422" y2="4328.2422"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="4323.3857">78</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="443" y="4323.3857">409</text><polygon fill="#A80036" points="92,4370.9453,82,4374.9453,92,4378.9453,88,4374.9453" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="4374.9453" y2="4374.9453"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="4361.9131">79</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="256" x="116" y="4353.7373">Báo đang xử lý; hướng dẫn tra cứu lại cùng</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="116" y="4370.0889">key</text><polygon fill="#A80036" points="1865.5,4490.0547,1875.5,4494.0547,1865.5,4498.0547,1869.5,4494.0547" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="4494.0547" y2="4494.0547"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4448.3193">80</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="225" x="1482" y="4407.4404">INSERT Payment(PROCESSING, key,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="1482" y="4423.792">requestHash, orderId,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="172" x="1482" y="4440.1436">amount = order.total, method)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="1482" y="4456.4951">COMMIT</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="263" x="1482" y="4472.8467">── unique(idempotencyKey) constraint bảo vệ</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126" x="1482" y="4489.1982">race 20-concurrent ──</text><polygon fill="#A80036" points="1468,4520.4063,1458,4524.4063,1468,4528.4063,1464,4524.4063" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1876.5" y1="4524.4063" y2="4524.4063"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1474" y="4519.5498">81</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="175" x="1492" y="4519.5498">Attempt PROCESSING đã ghi</text><path d="M1401,4537.4063 L1401,4579.4063 L1822,4579.4063 L1822,4547.4063 L1812,4537.4063 L1401,4537.4063 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1812,4537.4063 L1812,4547.4063 L1822,4547.4063 L1812,4537.4063 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="288.4063" x="1455.75" y="4555.9014">Bước 4 — Gọi gateway NGOÀI transaction DB</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="299" x="1455.75" y="4572.2529">Không giữ lock dài trong khi chờ phản hồi gateway.</text><polygon fill="#A80036" points="1756,4607.4609,1766,4611.4609,1756,4615.4609,1760,4611.4609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1762" y1="4611.4609" y2="4611.4609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4606.6045">82</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="170" x="1482" y="4606.6045">charge(key, amount, method)</text><path d="M20,4626.4609 L81,4626.4609 L81,4634.4609 L71,4644.4609 L20,4644.4609 L20,4626.4609 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="1927.3594" style="stroke:#000000;stroke-width:2.0;" width="1919" x="20" y="4626.4609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="35" y="4640.9561">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="4" x="96" y="4639.8799">[</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="178.3438" x="100" y="4639.8799">Luồng A — Gateway trả success</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="4" x="278.3438" y="4639.8799">]</text><polygon fill="#A80036" points="1468,4663.1641,1458,4667.1641,1468,4671.1641,1464,4667.1641" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1767" y1="4667.1641" y2="4667.1641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1474" y="4662.3076">83</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="191" x="1492" y="4662.3076">{status: "success", gatewayTxId}</text><polygon fill="#A80036" points="1865.5,4709.8672,1875.5,4713.8672,1865.5,4717.8672,1869.5,4713.8672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="4713.8672" y2="4713.8672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4700.835">84</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="1482" y="4692.6592">BEGIN tx finalize</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="230" x="1482" y="4709.0107">SELECT FOR UPDATE order + attempt</text><polygon fill="#A80036" points="1865.5,4756.5703,1875.5,4760.5703,1865.5,4764.5703,1869.5,4760.5703" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="4760.5703" y2="4760.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4747.5381">85</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="208" x="1482" y="4739.3623">UPDATE Payment → SUCCEEDED</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="161" x="1482" y="4755.7139">(gatewayTxId, processedAt)</text><polygon fill="#A80036" points="1865.5,4786.9219,1875.5,4790.9219,1865.5,4794.9219,1869.5,4790.9219" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="4790.9219" y2="4790.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4786.0654">86</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="141" x="1482" y="4786.0654">UPDATE Order  → PAID</text><polygon fill="#A80036" points="1865.5,4833.625,1875.5,4837.625,1865.5,4841.625,1869.5,4837.625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="4837.625" y2="4837.625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4824.5928">87</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="161" x="1482" y="4816.417">INSERT OrderStatusHistory</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="242" x="1482" y="4832.7686">(PENDING / PAYMENT_FAILED → PAID)</text><polygon fill="#A80036" points="1865.5,4896.6797,1875.5,4900.6797,1865.5,4904.6797,1869.5,4900.6797" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="4900.6797" y2="4900.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4879.4717">88</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="268" x="1482" y="4863.1201">UPDATE InventoryReservation → CONSUMED</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="273" x="1482" y="4879.4717">(InventoryReservationItem giữ nguyên snapshot</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="1482" y="4895.8232">lượng đã giữ)</text><path d="M1389.5,4915.6797 L1454.5,4915.6797 L1454.5,4923.6797 L1444.5,4933.6797 L1389.5,4933.6797 L1389.5,4915.6797 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="65.0547" style="stroke:#000000;stroke-width:2.0;" width="539.5" x="1389.5" y="4915.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="20" x="1404.5" y="4930.1748">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="263" x="1469.5" y="4929.0986">[Có CouponRedemption RESERVED cho đơn này]</text><polygon fill="#A80036" points="1865.5,4968.7344,1875.5,4972.7344,1865.5,4976.7344,1869.5,4972.7344" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="4972.7344" y2="4972.7344"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="4959.7021">89</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="263" x="1482" y="4951.5264">UPDATE CouponRedemption → CONSUMED</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="1482" y="4967.8779">(consumedAt)</text><polygon fill="#A80036" points="1865.5,5071.4922,1875.5,5075.4922,1865.5,5079.4922,1869.5,5075.4922" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="5075.4922" y2="5075.4922"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="5037.9326">90</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="203" x="1482" y="5005.2295">INSERT LoyaltyTransaction(EARN,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="1482" y="5021.5811">points = floor(total / 1000))</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="231" x="1482" y="5037.9326">UPDATE User.loyaltyBalance += points</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="239" x="1482" y="5054.2842">── hàng rào DB: unique(orderId) EARN và</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174" x="1482" y="5070.6357">unique SUCCEEDED/order ──</text><polygon fill="#A80036" points="1865.5,5101.8438,1875.5,5105.8438,1865.5,5109.8438,1869.5,5105.8438" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="5105.8438" y2="5105.8438"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="5100.9873">91</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="1482" y="5100.9873">COMMIT</text><polygon fill="#A80036" points="1468,5132.1953,1458,5136.1953,1468,5140.1953,1464,5136.1953" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1876.5" y1="5136.1953" y2="5136.1953"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1474" y="5131.3389">92</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="1492" y="5131.3389">Commit xác nhận</text><polygon fill="#A80036" points="735,5162.5469,725,5166.5469,735,5170.5469,731,5166.5469" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="5166.5469" y2="5166.5469"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="741" y="5161.6904">93</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="278" x="759" y="5161.6904">Snapshot SUCCEEDED + PAID + earnedPoints</text><polygon fill="#A80036" points="419,5241.9531,409,5245.9531,419,5249.9531,415,5245.9531" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="5245.9531" y2="5245.9531"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="425" y="5216.5693">94</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="443" y="5192.042">201 Created</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="260" x="443" y="5208.3936">{paymentStatus: SUCCEEDED, orderStatus:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="443" y="5224.7451">PAID,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="443" y="5241.0967">orderId, total, earnedPoints}</text><polygon fill="#A80036" points="92,5288.6563,82,5292.6563,92,5296.6563,88,5292.6563" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="5292.6563" y2="5292.6563"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="98" y="5279.624">95</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="116" y="5271.4482">Xóa phần giỏ đã checkout</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="170" x="116" y="5287.7998">Chuyển màn xác nhận UC-09</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="1939" y1="5301.6563" y2="5301.6563"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="4" x="25" y="5313.0752">[</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="249.3438" x="29" y="5313.0752">Luồng B — Gateway từ chối xác định (decline)</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="4" x="278.3438" y="5313.0752">]</text><polygon fill="#A80036" points="1468,5334.8438,1458,5338.8438,1468,5342.8438,1464,5338.8438" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1767" y1="5338.8438" y2="5338.8438"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1474" y="5333.9873">96</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="182" x="1492" y="5333.9873">{status: "declined", failureCode}</text><polygon fill="#A80036" points="1865.5,5381.5469,1875.5,5385.5469,1865.5,5389.5469,1869.5,5385.5469" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="5385.5469" y2="5385.5469"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="5372.5146">97</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="1482" y="5364.3389">BEGIN tx finalize</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="230" x="1482" y="5380.6904">SELECT FOR UPDATE order + attempt</text><polygon fill="#A80036" points="1865.5,5428.25,1875.5,5432.25,1865.5,5436.25,1869.5,5432.25" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="5432.25" y2="5432.25"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="5419.2178">98</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="248" x="1482" y="5411.042">UPDATE Payment → FAILED (failureCode,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="1482" y="5427.3936">processedAt)</text><polygon fill="#A80036" points="1865.5,5458.6016,1875.5,5462.6016,1865.5,5466.6016,1869.5,5462.6016" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="5462.6016" y2="5462.6016"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1464" y="5457.7451">99</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="226" x="1482" y="5457.7451">UPDATE Order  → PAYMENT_FAILED</text><polygon fill="#A80036" points="1865.5,5505.3047,1875.5,5509.3047,1865.5,5513.3047,1869.5,5509.3047" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="5509.3047" y2="5509.3047"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="1464" y="5496.2725">100</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="1489" y="5488.0967">INSERT OrderStatusHistory (→</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="1489" y="5504.4482">PAYMENT_FAILED)</text><polygon fill="#A80036" points="1865.5,5535.6563,1875.5,5539.6563,1865.5,5543.6563,1869.5,5539.6563" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="5539.6563" y2="5539.6563"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="1464" y="5534.7998">101</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="1489" y="5534.7998">COMMIT</text><polygon fill="#A80036" points="1468,5566.0078,1458,5570.0078,1468,5574.0078,1464,5570.0078" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1876.5" y1="5570.0078" y2="5570.0078"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="1474" y="5565.1514">102</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="1499" y="5565.1514">Commit xác nhận</text><path d="M1286,5583.0078 L1286,5625.0078 L1623,5625.0078 L1623,5593.0078 L1613,5583.0078 L1286,5583.0078 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1613,5583.0078 L1613,5593.0078 L1623,5593.0078 L1613,5583.0078 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="247" x="1292" y="5601.5029">Không consume reservation, không EARN.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="316" x="1292" y="5617.8545">Tồn kho giữ nguyên; khách có thể retry bằng key mới.</text><polygon fill="#A80036" points="735,5653.0625,725,5657.0625,735,5661.0625,731,5657.0625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="5657.0625" y2="5657.0625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="741" y="5652.2061">103</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="766" y="5652.2061">Payment FAILED</text><polygon fill="#A80036" points="419,5683.4141,409,5687.4141,419,5691.4141,415,5687.4141" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="5687.4141" y2="5687.4141"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="425" y="5682.5576">104</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="450" y="5682.5576">200 PAYMENT_FAILED</text><polygon fill="#A80036" points="92,5730.1172,82,5734.1172,92,5738.1172,88,5734.1172" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="5734.1172" y2="5734.1172"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="98" y="5721.085">105</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="172" x="123" y="5712.9092">Thông báo thanh toán thất bại</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="123" y="5729.2607">Hiển thị nút "Thử lại"</text><path d="M47,5747.1172 L47,5838.1172 L441,5838.1172 L441,5757.1172 L431,5747.1172 L47,5747.1172 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M431,5747.1172 L431,5757.1172 L441,5757.1172 L431,5747.1172 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="254" x="68.25" y="5765.6123">Retry sau PAYMENT_FAILED (Luồng A4):</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="339" x="68.25" y="5781.9639">Khách sinh Idempotency-Key MỚI → POST /payments lại.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="331" x="68.25" y="5798.3154">API chuyển đơn về PENDING trước khi tạo attempt mới.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="306" x="68.25" y="5814.667">Không reserve tồn lần hai — reservation vẫn ACTIVE.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="252" x="68.25" y="5831.0186">Không cho retry nếu reservation đã hết hạn.</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="1939" y1="5848.875" y2="5848.875"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="4" x="25" y="5860.2939">[</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="284.3438" x="29" y="5860.2939">Luồng C — Gateway timeout / kết quả chưa xác định</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="4" x="313.3438" y="5860.2939">]</text><polygon fill="#A80036" points="1468,5882.0625,1458,5886.0625,1468,5890.0625,1464,5886.0625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1767" y1="5886.0625" y2="5886.0625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="1474" y="5881.2061">106</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="262" x="1499" y="5881.2061">Timeout / lỗi mạng / kết quả không đọc được</text><path d="M1322,5899.0625 L1322,5958.0625 L1587,5958.0625 L1587,5909.0625 L1577,5899.0625 L1322,5899.0625 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1577,5899.0625 L1577,5909.0625 L1587,5909.0625 L1577,5899.0625 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="1328" y="5917.5576">Giữ attempt PROCESSING.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="244" x="1328" y="5933.9092">Không đoán FAILED, không hoàn tồn kho.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="136" x="1328" y="5950.2607">Không charge key mới.</text><polygon fill="#A80036" points="1756,5985.4688,1766,5989.4688,1756,5993.4688,1760,5989.4688" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1762" y1="5989.4688" y2="5989.4688"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="1464" y="5984.6123">107</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="1489" y="5984.6123">lookup(key)</text><path d="M30,6004.4688 L91,6004.4688 L91,6012.4688 L81,6022.4688 L30,6022.4688 L30,6004.4688 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="285.3516" style="stroke:#000000;stroke-width:2.0;" width="1806" x="30" y="6004.4688"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="45" y="6018.9639">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="293.3438" x="106" y="6017.8877">[Mock đã lưu kết quả bền vững — lookup thành công]</text><polygon fill="#A80036" points="1468,6041.1719,1458,6045.1719,1468,6049.1719,1464,6045.1719" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1767" y1="6045.1719" y2="6045.1719"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="1474" y="6040.3154">108</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="236" x="1499" y="6040.3154">Kết quả thực tế (success hoặc declined)</text><path d="M1312,6058.1719 L1312,6084.1719 L1597,6084.1719 L1597,6068.1719 L1587,6058.1719 L1312,6058.1719 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1587,6058.1719 L1587,6068.1719 L1597,6068.1719 L1587,6058.1719 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="264" x="1318" y="6076.667">Finalize theo kết quả — xem Luồng A hoặc B</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="30" x2="1836" y1="6094.5234" y2="6094.5234"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="170" x="35" y="6105.9424">[Lookup cũng chưa có kết quả]</text><polygon fill="#A80036" points="735,6127.7109,725,6131.7109,735,6135.7109,731,6131.7109" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="6131.7109" y2="6131.7109"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="741" y="6126.8545">109</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="766" y="6126.8545">Kết quả chưa xác định</text><polygon fill="#A80036" points="419,6158.0625,409,6162.0625,419,6166.0625,415,6162.0625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="6162.0625" y2="6162.0625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="425" y="6157.2061">110</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="195" x="450" y="6157.2061">503 tạm thời + Retry-After header</text><polygon fill="#A80036" points="92,6204.7656,82,6208.7656,92,6212.7656,88,6208.7656" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="6208.7656" y2="6208.7656"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="98" y="6195.7334">111</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="195" x="123" y="6187.5576">Báo đang kiểm tra; không xóa giỏ</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="256" x="123" y="6203.9092">Không charge mới; tra cứu lại cùng key sau</text><path d="M47,6221.7656 L47,6280.7656 L441,6280.7656 L441,6231.7656 L431,6221.7656 L47,6221.7656 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M431,6221.7656 L431,6231.7656 L441,6231.7656 L431,6221.7656 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="119" x="117.25" y="6240.2607">Client offline (E10):</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="241" x="117.25" y="6256.6123">Giữ giỏ; không queue mutation khi offline.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="239" x="117.25" y="6272.9639">Khi online, tra cứu UC-09 trước khi retry.</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="1939" y1="6297.8203" y2="6297.8203"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="4" x="25" y="6309.2393">[</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="182.3438" x="29" y="6309.2393">Luồng D — DB lỗi tại bước finalize</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="4" x="211.3438" y="6309.2393">]</text><polygon fill="#A80036" points="1865.5,6347.3594,1875.5,6351.3594,1865.5,6355.3594,1869.5,6351.3594" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1457" x2="1871.5" y1="6351.3594" y2="6351.3594"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="1464" y="6338.3271">112</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="1489" y="6330.1514">BEGIN tx finalize → lỗi DB</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="226" x="1489" y="6346.5029">(timeout / deadlock / unique constraint)</text><polygon fill="#A80036" points="1468,6377.7109,1458,6381.7109,1468,6385.7109,1464,6381.7109" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1462" x2="1876.5" y1="6381.7109" y2="6381.7109"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="1474" y="6376.8545">113</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="17" x="1499" y="6376.8545">Lỗi</text><path d="M1288,6394.7109 L1288,6436.7109 L1621,6436.7109 L1621,6404.7109 L1611,6394.7109 L1288,6394.7109 " fill="#E9ECEF" filter="url(#f17r3csmu8iesq)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1611,6394.7109 L1611,6404.7109 L1621,6404.7109 L1611,6394.7109 " fill="#E9ECEF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="312" x="1294" y="6413.2061">Attempt vẫn PROCESSING; không có side-effect kép.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="277" x="1294" y="6429.5576">Recovery job sẽ lookup và finalize đúng một lần.</text><polygon fill="#A80036" points="735,6464.7656,725,6468.7656,735,6472.7656,731,6468.7656" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1456" y1="6468.7656" y2="6468.7656"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="741" y="6463.9092">114</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="114" x="766" y="6463.9092">Lỗi finalize tạm thời</text><polygon fill="#A80036" points="419,6495.1172,409,6499.1172,419,6503.1172,415,6499.1172" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="6499.1172" y2="6499.1172"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="425" y="6494.2607">115</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="195" x="450" y="6494.2607">503 tạm thời + Retry-After header</text><polygon fill="#A80036" points="92,6541.8203,82,6545.8203,92,6549.8203,88,6545.8203" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="6545.8203" y2="6545.8203"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="98" y="6532.7881">116</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159" x="123" y="6524.6123">Giữ giỏ; báo đang kiểm tra;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="123" y="6540.9639">recovery sẽ xử lý sau</text><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="1959" x="0" y="6581.9961"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1959" y1="6581.9961" y2="6581.9961"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1959" y1="6584.9961" y2="6584.9961"/><rect fill="#EEEEEE" height="24.3516" style="stroke:#000000;stroke-width:2.0;" width="299" x="830" y="6570.8203"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="281" x="836" y="6588.3154">UC-09: Xem xác nhận (sau payment success)</text><polygon fill="#A80036" points="396,6623.5234,406,6627.5234,396,6631.5234,400,6627.5234" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="81" x2="402" y1="6627.5234" y2="6627.5234"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="88" y="6622.667">117</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="113" y="6622.667">Mở màn xác nhận đơn</text><polygon fill="#A80036" points="712,6653.875,722,6657.875,712,6661.875,716,6657.875" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="408" x2="718" y1="6657.875" y2="6657.875"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="415" y="6653.0186">118</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="209" x="440" y="6653.0186">GET /api/v1/orders/:id + Bearer JWT</text><polygon fill="#A80036" points="1865.5,6700.5781,1875.5,6704.5781,1865.5,6708.5781,1869.5,6704.5781" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="724" x2="1871.5" y1="6704.5781" y2="6704.5781"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="731" y="6691.5459">119</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="259" x="756" y="6683.3701">SELECT order + items + payments + history</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="756" y="6699.7217">WHERE userId = principal.id</text><polygon fill="#A80036" points="735,6730.9297,725,6734.9297,735,6738.9297,731,6734.9297" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="729" x2="1876.5" y1="6734.9297" y2="6734.9297"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="741" y="6730.0732">120</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="134" x="766" y="6730.0732">Snapshot đơn đã PAID</text><polygon fill="#A80036" points="419,6793.9844,409,6797.9844,419,6801.9844,415,6797.9844" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413" x2="723" y1="6797.9844" y2="6797.9844"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="425" y="6776.7764">121</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="253" x="450" y="6760.4248">200 — {orderId, orderNumber, status: PAID,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="211" x="450" y="6776.7764">items, total, payment, earnedPoints,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="450" y="6793.1279">statusHistory}</text><polygon fill="#A80036" points="92,6857.0391,82,6861.0391,92,6865.0391,88,6861.0391" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86" x2="407" y1="6861.0391" y2="6861.0391"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="98" y="6839.8311">122</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="274" x="123" y="6823.4795">Hiển thị xác nhận: mã đơn, tổng tiền, trạng thái</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="123" y="6839.8311">PAID</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="182" x="123" y="6856.1826">Điểm tích lũy, lịch sử trạng thái</text><rect fill="#F8F9FA" height="147.8438" rx="7.5" ry="7.5" style="stroke:#ADB5BD;stroke-width:1.0;" width="467" x="745.5" y="6971.6484"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="407" x="751.5" y="6990.1055">UC-06: Đặt hàng → Order PENDING + giữ nguyên liệu. Không gọi gateway.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="400" x="751.5" y="7005.1992">UC-08: Thanh toán → Payment attempt, gateway mock, finalize nguyên tử.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="424" x="751.5" y="7020.293">UC-06 và UC-08 là hai use case độc lập; UC-08 dùng orderId đã có từ UC-06.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="425" x="751.5" y="7035.3867">Ownership check TRƯỚC idempotency check để chặn replay của người khác.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="287" x="751.5" y="7050.4805">Gateway gọi NGOÀI transaction DB để tránh lock dài.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="417" x="751.5" y="7065.5742">Mock adapter lưu kết quả bền vững theo key; lookup sau restart vẫn trả đúng.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="434" x="751.5" y="7080.668">Unique: uq_one_successful_payment_per_order và uq_earn_per_order tại DB.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="455" x="751.5" y="7095.7617">Retry sau PAYMENT_FAILED: key mới, đơn về PENDING, không reserve tồn lần hai.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="431" x="751.5" y="7110.8555">floor(total VND / 1000) = điểm EARN; tỷ lệ cần PO review trước code production.</text><!--MD5=[2f28aba7723a55626e6d82e2f884a0b5]
+@startuml
+autonumber
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam maxMessageSize 280
+skinparam backgroundColor #FFFFFF
+
+' ── Participant / actor boxes ────────────────────────────────────────────
+skinparam participant {
+  BackgroundColor #F8F9FA
+  BorderColor     #000000
+  FontColor       #000000
+  FontSize        13
+}
+
+skinparam actor {
+  BackgroundColor #F8F9FA
+  BorderColor     #000000
+  FontColor       #000000
+  FontSize        13
+}
+
+' ── Arrow / message ─────────────────────────────────────────────────────
+skinparam sequence {
+  ArrowColor                #000000
+  ArrowFontColor            #000000
+  ArrowFontSize             12
+  LifeLineBorderColor       #ADB5BD
+  LifeLineBackgroundColor   #FFFFFF
+  DividerBackgroundColor    #DEE2E6
+  DividerBorderColor        #ADB5BD
+  DividerFontColor          #000000
+  DividerFontSize           12
+  GroupBackgroundColor      #F8F9FA
+  GroupBorderColor          #ADB5BD
+  GroupHeaderFontColor      #000000
+  GroupHeaderFontSize       12
+  GroupBodyBackgroundColor  #FFFFFF
+  BoxBackgroundColor        #F8F9FA
+  BoxBorderColor            #ADB5BD
+  BoxFontColor              #000000
+  ReferenceBackgroundColor  #F8F9FA
+  ReferenceBorderColor      #ADB5BD
+  ReferenceFontColor        #000000
+}
+
+' ── Note ────────────────────────────────────────────────────────────────
+skinparam note {
+  BackgroundColor #E9ECEF
+  BorderColor     #ADB5BD
+  FontColor       #000000
+  FontSize        12
+}
+
+' ── Alt/opt/break/loop group colors ─────────────────────────────────────
+skinparam SequenceGroupBackgroundColor       #F8F9FA
+skinparam SequenceGroupBorderColor           #ADB5BD
+skinparam SequenceGroupBodyBackgroundColor   #FFFFFF
+skinparam SequenceGroupHeaderFontColor       #000000
+skinparam SequenceGroupHeaderBackgroundColor #DEE2E6
+
+' ── PlantUML style block ─────────────────────────────────────────────────
+<style>
+  .group {
+    BackgroundColor #F8F9FA
+    BorderColor     #ADB5BD
+    FontColor       #000000
+    HeaderBackgroundColor #DEE2E6
+  }
+  note {
+    BackgroundColor #E9ECEF
+    BorderColor     #ADB5BD
+    FontColor       #000000
+  }
+</style>
+
+' ── Legend ──────────────────────────────────────────────────────────────
+skinparam legend {
+  BackgroundColor #F8F9FA
+  BorderColor     #ADB5BD
+  FontColor       #000000
+  FontSize        12
+}
+
+title <b><size:16>BrewLite — Sequence Checkout\nUC-06: Đặt hàng → UC-08: Thực hiện thanh toán</size></b>
+
+' ── Participants ─────────────────────────────────────────────────────────
+actor      "Khách hàng"                      as C
+boundary   "Next.js UI"                      as UI
+control    "NestJS API"                      as API
+control    "OrdersService"                   as Orders
+control    "InventoryService"                as Inventory
+control    "PaymentsService"                 as PaySvc
+control    "PaymentGateway\n(Mock Adapter)"  as GW
+database   "PostgreSQL"                      as DB
+
+' ════════════════════════════════════════════════════════════════════════
+== UC-06: Đặt hàng ==
+' ════════════════════════════════════════════════════════════════════════
+
+C -> UI: Kiểm tra giỏ, chọn tùy chọn size/topping/đường/đá/note\nvà nhập coupon tùy chọn rồi nhấn Đặt hàng
+
+opt Chưa có phiên CUSTOMER
+  ref over C, API: UC-02: Đăng nhập; giữ giỏ rồi tiếp tục khi có JWT
+end
+
+UI -> API: POST /api/v1/orders + Bearer JWT\nBody: {items, couponCode?} — không gửi giá/userId/status
+
+API -> API: Validate JWT / role CUSTOMER / ValidationPipe\nChuẩn hóa: 1..20 dòng, quantity 1..20, topping hợp lệ/không trùng\nsugar/ice null hoặc 0..100, note trim <=500
+
+break JWT/role/DTO không hợp lệ
+  API - -> UI: 401 / 403 / 400 — không ghi DB
+  UI - -> C: Báo lỗi, giữ giỏ
+end
+
+API -> Orders: createOrder(principal.id, dto)
+Orders -> Orders: Chuẩn hóa/gộp dòng; null khác 0; trim note
+
+loop Attempt đầu hoặc retry conflict tạm thời (tối đa 3 lần)
+
+  Orders -> DB: BEGIN Serializable
+  Orders -> DB: Kiểm tra CUSTOMER active; đọc variant/product/topping\nRecipeItem + ToppingRecipeItem + Ingredient (stockQuantity/version)
+  DB - -> Orders: Catalog, giá, BOM và tồn kho nguyên liệu
+
+  Orders -> Orders: Cộng nhu cầu ingredient trên mọi dòng/variant/topping\nKiểm tra công thức đủ và ingredient active
+
+  break Thiếu BOM hoặc ingredient inactive
+    Orders -> DB: ROLLBACK
+    Orders - -> API: 409 OUT_OF_STOCK
+    API - -> UI: 409 — không ghi DB
+    UI - -> C: Thông báo hết hàng; giữ giỏ
+  end
+
+  opt Có coupon (UC-07: Áp dụng coupon)
+    Orders -> DB: Khóa coupon; kiểm tra active/thời gian/min-order/quota/per-user
+    DB - -> Orders: Discount hợp lệ
+
+    break Coupon không hợp lệ hoặc hết lượt
+      Orders -> DB: ROLLBACK
+      Orders - -> API: 422 COUPON_NOT_APPLICABLE
+      API - -> UI: 422 — không thay giá, không đặt đơn
+      UI - -> C: Thông báo mã coupon không hợp lệ; giữ giỏ
+    end
+  end
+
+  Orders -> Orders: Tính subtotal - discount = total >= 0\nOrderItem.unitPrice = giá variant; topping snapshot riêng\nlineTotal = (unitPrice + Σ topping.unitPrice) × quantity
+
+  Orders -> DB: INSERT Order(PENDING) + OrderItem + OrderItemTopping\n(snapshot tên/giá/đường/đá/note; reservationExpiresAt từ config)
+  DB - -> Orders: orderId trong transaction
+
+  Orders -> Inventory: reserve(tx, orderId, expiresAt, ingredientNeeds)
+
+  loop Ingredient theo ingredientId tăng dần
+    Inventory -> DB: UPDATE Ingredient SET stockQuantity -= need, version += 1\nWHERE id = ? AND version = expected AND stockQuantity >= need AND isActive
+    DB - -> Inventory: rowCount = 1
+
+    break rowCount = 0 — race condition tồn kho
+      Inventory - -> Orders: Conflict version/serialization
+      Orders -> DB: ROLLBACK (hoàn toàn stockQuantity/version)
+      Orders -> Orders: Retry toàn transaction nếu còn lượt, else INVENTORY_CONFLICT
+    end
+  end
+
+  loop Mỗi variant đã tổng hợp
+    Inventory -> DB: INSERT InventoryReservation(ACTIVE, số ly)\n+ InventoryReservationItem(ingredientId, lượng thực tế đã giữ)
+    DB - -> Inventory: Snapshot nguyên liệu ghi trong cùng tx
+  end
+
+  Inventory - -> Orders: Đã giữ đủ nguyên liệu
+
+  opt Có coupon hợp lệ
+    Orders -> DB: INSERT CouponRedemption(RESERVED, expiresAt)
+  end
+
+  Orders -> DB: INSERT OrderStatusHistory(NULL → PENDING)
+  Orders -> DB: COMMIT
+  DB - -> Orders: Commit xác nhận
+  Orders -> Orders: Thành công; thoát vòng loop
+end
+
+Orders - -> API: Order PENDING + snapshot + total + reservationExpiresAt
+API - -> UI: 201 Created — {orderId, orderNumber, status: PENDING,\nsubtotal, discountAmount, total, items, reservationExpiresAt}
+UI - -> C: Hiển thị tóm tắt đơn PENDING; chưa xóa giỏ\n→ UC-06 kết thúc; khách chuyển tiếp sang UC-08
+
+' ════════════════════════════════════════════════════════════════════════
+== UC-08: Thực hiện thanh toán ==
+' ════════════════════════════════════════════════════════════════════════
+
+C -> UI: Chọn phương thức E_WALLET / CARD\nvà nhấn Thanh toán
+UI -> UI: Sinh Idempotency-Key mới; khóa nút;\nhiển thị total từ đơn server
+
+UI -> API: POST /api/v1/payments + Bearer JWT\nHeader: Idempotency-Key\nBody: {orderId, method} — không gửi amount/userId
+
+API -> API: Validate JWT / role CUSTOMER / ValidationPipe\nChuẩn hóa orderId/method\nTính requestHash = hash(orderId + method) server-side
+
+break JWT sai/hết hạn hoặc role không phải CUSTOMER
+  API - -> UI: 401 / 403 — không ghi DB
+  UI - -> C: Báo lỗi xác thực; giữ giỏ
+end
+
+break DTO sai: thiếu Idempotency-Key, method không hợp lệ\nhoặc orderId không phải UUID
+  API - -> UI: 400 — không ghi DB
+  UI - -> C: Báo lỗi validation; giữ giỏ
+end
+
+API -> PaySvc: initiatePayment(principal.id, key, requestHash, orderId, method)
+
+note over PaySvc #E9ECEF
+  <b>Bước 1 — Ownership check</b>
+  Bắt buộc TRƯỚC mọi tra cứu idempotency
+  để chặn replay của người khác.
+end note
+
+PaySvc -> DB: SELECT order WHERE id = orderId
+DB - -> PaySvc: Order hoặc null
+
+break Order không tồn tại hoặc không thuộc principal.id
+  PaySvc - -> API: 403 FORBIDDEN
+  API - -> UI: 403 — không lộ nội dung đơn người khác
+  UI - -> C: Báo lỗi quyền truy cập; giữ giỏ
+end
+
+note over PaySvc #E9ECEF
+  <b>Bước 2 — Idempotency check</b>
+end note
+
+PaySvc -> DB: SELECT payment WHERE idempotencyKey = key
+DB - -> PaySvc: Attempt hiện tại hoặc null
+
+alt Key đã tồn tại — attempt đã hoàn tất (SUCCEEDED hoặc FAILED)
+  PaySvc - -> API: Kết quả đã lưu (replay path)
+  API - -> UI: 200 — snapshot kết quả attempt đã có
+  UI - -> C: Hiển thị kết quả đã xác nhận\n(không charge mới)
+
+else Key đã tồn tại — attempt đang PROCESSING chưa đối soát
+  PaySvc - -> API: 409 PAYMENT_IN_PROGRESS
+  API - -> UI: 409 — giữ giỏ; hướng dẫn tra cứu lại cùng key
+  UI - -> C: Báo đang xử lý; hiển thị nút Kiểm tra trạng thái
+
+else Key đã tồn tại — orderId/method khác (hash không khớp)
+  PaySvc - -> API: 409 IDEMPOTENCY_KEY_REUSED
+  API - -> UI: 409 — client sinh key mới nếu muốn thay đổi
+  UI - -> C: Báo lỗi key đã dùng với thông tin khác; giữ giỏ
+end
+
+note over PaySvc #E9ECEF
+  <b>Bước 3 — Tạo attempt mới (key chưa tồn tại)</b>
+end note
+
+PaySvc -> DB: BEGIN tx ngắn\nSELECT FOR UPDATE order\nKiểm tra: status PENDING/PAYMENT_FAILED\nKhông có PROCESSING khác trên cùng order\nReservation chưa hết hạn
+
+break Order không ở PENDING/PAYMENT_FAILED\n(đã PAID, CANCELLED, COMPLETED)
+  PaySvc -> DB: ROLLBACK
+  PaySvc - -> API: 409 ORDER_NOT_PAYABLE
+  API - -> UI: 409
+  UI - -> C: Thông báo đơn không thể thanh toán; giữ giỏ
+end
+
+break Reservation đã hết hạn
+  PaySvc -> DB: ROLLBACK
+  PaySvc - -> API: 409 ORDER_EXPIRED
+  API - -> UI: 409
+  UI - -> C: Thông báo đơn hết hạn; đề nghị đặt lại
+end
+
+break Đã có attempt PROCESSING chưa đối soát trên cùng order
+  PaySvc -> DB: ROLLBACK
+  PaySvc - -> API: 409 PAYMENT_IN_PROGRESS
+  API - -> UI: 409
+  UI - -> C: Báo đang xử lý; hướng dẫn tra cứu lại cùng key
+end
+
+PaySvc -> DB: INSERT Payment(PROCESSING, key, requestHash, orderId,\namount = order.total, method)\nCOMMIT\n── unique(idempotencyKey) constraint bảo vệ race 20-concurrent ──
+DB - -> PaySvc: Attempt PROCESSING đã ghi
+
+note over PaySvc, GW #E9ECEF
+  <b>Bước 4 — Gọi gateway NGOÀI transaction DB</b>
+  Không giữ lock dài trong khi chờ phản hồi gateway.
+end note
+
+PaySvc -> GW: charge(key, amount, method)
+
+' ════════════════════════════════════════════════════════════════════════
+alt <b>Luồng A — Gateway trả success</b>
+
+  GW - -> PaySvc: {status: "success", gatewayTxId}
+
+  PaySvc -> DB: BEGIN tx finalize\nSELECT FOR UPDATE order + attempt
+  PaySvc -> DB: UPDATE Payment → SUCCEEDED (gatewayTxId, processedAt)
+  PaySvc -> DB: UPDATE Order  → PAID
+  PaySvc -> DB: INSERT OrderStatusHistory\n(PENDING / PAYMENT_FAILED → PAID)
+  PaySvc -> DB: UPDATE InventoryReservation → CONSUMED\n(InventoryReservationItem giữ nguyên snapshot lượng đã giữ)
+
+  opt Có CouponRedemption RESERVED cho đơn này
+    PaySvc -> DB: UPDATE CouponRedemption → CONSUMED (consumedAt)
+  end
+
+  PaySvc -> DB: INSERT LoyaltyTransaction(EARN,\npoints = floor(total / 1000))\nUPDATE User.loyaltyBalance += points\n── hàng rào DB: unique(orderId) EARN và unique SUCCEEDED/order ──
+  PaySvc -> DB: COMMIT
+  DB - -> PaySvc: Commit xác nhận
+
+  PaySvc - -> API: Snapshot SUCCEEDED + PAID + earnedPoints
+  API - -> UI: 201 Created\n{paymentStatus: SUCCEEDED, orderStatus: PAID,\norderId, total, earnedPoints}
+  UI - -> C: Xóa phần giỏ đã checkout\nChuyển màn xác nhận UC-09
+
+' ────────────────────────────────────────────────────────────────────────
+else <b>Luồng B — Gateway từ chối xác định (decline)</b>
+
+  GW - -> PaySvc: {status: "declined", failureCode}
+
+  PaySvc -> DB: BEGIN tx finalize\nSELECT FOR UPDATE order + attempt
+  PaySvc -> DB: UPDATE Payment → FAILED (failureCode, processedAt)
+  PaySvc -> DB: UPDATE Order  → PAYMENT_FAILED
+  PaySvc -> DB: INSERT OrderStatusHistory (→ PAYMENT_FAILED)
+  PaySvc -> DB: COMMIT
+  DB - -> PaySvc: Commit xác nhận
+
+  note over PaySvc #E9ECEF
+    Không consume reservation, không EARN.
+    Tồn kho giữ nguyên; khách có thể retry bằng key mới.
+  end note
+
+  PaySvc - -> API: Payment FAILED
+  API - -> UI: 200 PAYMENT_FAILED
+  UI - -> C: Thông báo thanh toán thất bại\nHiển thị nút "Thử lại"
+
+  note over C, UI #E9ECEF
+    <b>Retry sau PAYMENT_FAILED (Luồng A4):</b>
+    Khách sinh Idempotency-Key MỚI → POST /payments lại.
+    API chuyển đơn về PENDING trước khi tạo attempt mới.
+    Không reserve tồn lần hai — reservation vẫn ACTIVE.
+    Không cho retry nếu reservation đã hết hạn.
+  end note
+
+' ────────────────────────────────────────────────────────────────────────
+else <b>Luồng C — Gateway timeout / kết quả chưa xác định</b>
+
+  GW - -> PaySvc: Timeout / lỗi mạng / kết quả không đọc được
+
+  note over PaySvc #E9ECEF
+    Giữ attempt PROCESSING.
+    Không đoán FAILED, không hoàn tồn kho.
+    Không charge key mới.
+  end note
+
+  PaySvc -> GW: lookup(key)
+
+  alt Mock đã lưu kết quả bền vững — lookup thành công
+    GW - -> PaySvc: Kết quả thực tế (success hoặc declined)
+    note over PaySvc: Finalize theo kết quả — xem Luồng A hoặc B
+  else Lookup cũng chưa có kết quả
+    PaySvc - -> API: Kết quả chưa xác định
+    API - -> UI: 503 tạm thời + Retry-After header
+    UI - -> C: Báo đang kiểm tra; không xóa giỏ\nKhông charge mới; tra cứu lại cùng key sau
+
+    note over C, UI #E9ECEF
+      <b>Client offline (E10):</b>
+      Giữ giỏ; không queue mutation khi offline.
+      Khi online, tra cứu UC-09 trước khi retry.
+    end note
+  end
+
+' ────────────────────────────────────────────────────────────────────────
+else <b>Luồng D — DB lỗi tại bước finalize</b>
+
+  PaySvc -> DB: BEGIN tx finalize → lỗi DB\n(timeout / deadlock / unique constraint)
+  DB - -> PaySvc: Lỗi
+
+  note over PaySvc #E9ECEF
+    Attempt vẫn PROCESSING; không có side-effect kép.
+    Recovery job sẽ lookup và finalize đúng một lần.
+  end note
+
+  PaySvc - -> API: Lỗi finalize tạm thời
+  API - -> UI: 503 tạm thời + Retry-After header
+  UI - -> C: Giữ giỏ; báo đang kiểm tra;\nrecovery sẽ xử lý sau
+
+end
+
+' ════════════════════════════════════════════════════════════════════════
+== UC-09: Xem xác nhận (sau payment success) ==
+' ════════════════════════════════════════════════════════════════════════
+
+C -> UI: Mở màn xác nhận đơn
+UI -> API: GET /api/v1/orders/:id + Bearer JWT
+API -> DB: SELECT order + items + payments + history\nWHERE userId = principal.id
+DB - -> API: Snapshot đơn đã PAID
+API - -> UI: 200 — {orderId, orderNumber, status: PAID,\nitems, total, payment, earnedPoints, statusHistory}
+UI - -> C: Hiển thị xác nhận: mã đơn, tổng tiền, trạng thái PAID\nĐiểm tích lũy, lịch sử trạng thái
+
+legend bottom
+  UC-06: Đặt hàng → Order PENDING + giữ nguyên liệu. Không gọi gateway.
+  UC-08: Thanh toán → Payment attempt, gateway mock, finalize nguyên tử.
+  UC-06 và UC-08 là hai use case độc lập; UC-08 dùng orderId đã có từ UC-06.
+  Ownership check TRƯỚC idempotency check để chặn replay của người khác.
+  Gateway gọi NGOÀI transaction DB để tránh lock dài.
+  Mock adapter lưu kết quả bền vững theo key; lookup sau restart vẫn trả đúng.
+  Unique: uq_one_successful_payment_per_order và uq_earn_per_order tại DB.
+  Retry sau PAYMENT_FAILED: key mới, đơn về PENDING, không reserve tồn lần hai.
+  floor(total VND / 1000) = điểm EARN; tỷ lệ cần PO review trước code production.
+endlegend
+
+@enduml
+
+@startuml
+autonumber
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam maxMessageSize 280
+skinparam backgroundColor #FFFFFF
+
+skinparam participant {
+  BackgroundColor #F8F9FA
+  BorderColor     #000000
+  FontColor       #000000
+  FontSize        13
+}
+
+skinparam actor {
+  BackgroundColor #F8F9FA
+  BorderColor     #000000
+  FontColor       #000000
+  FontSize        13
+}
+
+skinparam sequence {
+  ArrowColor                #000000
+  ArrowFontColor            #000000
+  ArrowFontSize             12
+  LifeLineBorderColor       #ADB5BD
+  LifeLineBackgroundColor   #FFFFFF
+  DividerBackgroundColor    #DEE2E6
+  DividerBorderColor        #ADB5BD
+  DividerFontColor          #000000
+  DividerFontSize           12
+  GroupBackgroundColor      #F8F9FA
+  GroupBorderColor          #ADB5BD
+  GroupHeaderFontColor      #000000
+  GroupHeaderFontSize       12
+  GroupBodyBackgroundColor  #FFFFFF
+  BoxBackgroundColor        #F8F9FA
+  BoxBorderColor            #ADB5BD
+  BoxFontColor              #000000
+  ReferenceBackgroundColor  #F8F9FA
+  ReferenceBorderColor      #ADB5BD
+  ReferenceFontColor        #000000
+}
+
+skinparam note {
+  BackgroundColor #E9ECEF
+  BorderColor     #ADB5BD
+  FontColor       #000000
+  FontSize        12
+}
+
+skinparam SequenceGroupBackgroundColor       #F8F9FA
+skinparam SequenceGroupBorderColor           #ADB5BD
+skinparam SequenceGroupBodyBackgroundColor   #FFFFFF
+skinparam SequenceGroupHeaderFontColor       #000000
+skinparam SequenceGroupHeaderBackgroundColor #DEE2E6
+
+<style>
+  .group {
+    BackgroundColor #F8F9FA
+    BorderColor     #ADB5BD
+    FontColor       #000000
+    HeaderBackgroundColor #DEE2E6
+  }
+  note {
+    BackgroundColor #E9ECEF
+    BorderColor     #ADB5BD
+    FontColor       #000000
+  }
+</style>
+
+skinparam legend {
+  BackgroundColor #F8F9FA
+  BorderColor     #ADB5BD
+  FontColor       #000000
+  FontSize        12
+}
+
+title <b><size:16>BrewLite — Sequence Checkout\nUC-06: Đặt hàng → UC-08: Thực hiện thanh toán</size></b>
+
+actor      "Khách hàng"                      as C
+boundary   "Next.js UI"                      as UI
+control    "NestJS API"                      as API
+control    "OrdersService"                   as Orders
+control    "InventoryService"                as Inventory
+control    "PaymentsService"                 as PaySvc
+control    "PaymentGateway\n(Mock Adapter)"  as GW
+database   "PostgreSQL"                      as DB
+
+== UC-06: Đặt hàng ==
+
+C -> UI: Kiểm tra giỏ, chọn tùy chọn size/topping/đường/đá/note\nvà nhập coupon tùy chọn rồi nhấn Đặt hàng
+
+opt Chưa có phiên CUSTOMER
+  ref over C, API: UC-02: Đăng nhập; giữ giỏ rồi tiếp tục khi có JWT
+end
+
+UI -> API: POST /api/v1/orders + Bearer JWT\nBody: {items, couponCode?} — không gửi giá/userId/status
+
+API -> API: Validate JWT / role CUSTOMER / ValidationPipe\nChuẩn hóa: 1..20 dòng, quantity 1..20, topping hợp lệ/không trùng\nsugar/ice null hoặc 0..100, note trim <=500
+
+break JWT/role/DTO không hợp lệ
+  API - -> UI: 401 / 403 / 400 — không ghi DB
+  UI - -> C: Báo lỗi, giữ giỏ
+end
+
+API -> Orders: createOrder(principal.id, dto)
+Orders -> Orders: Chuẩn hóa/gộp dòng; null khác 0; trim note
+
+loop Attempt đầu hoặc retry conflict tạm thời (tối đa 3 lần)
+
+  Orders -> DB: BEGIN Serializable
+  Orders -> DB: Kiểm tra CUSTOMER active; đọc variant/product/topping\nRecipeItem + ToppingRecipeItem + Ingredient (stockQuantity/version)
+  DB - -> Orders: Catalog, giá, BOM và tồn kho nguyên liệu
+
+  Orders -> Orders: Cộng nhu cầu ingredient trên mọi dòng/variant/topping\nKiểm tra công thức đủ và ingredient active
+
+  break Thiếu BOM hoặc ingredient inactive
+    Orders -> DB: ROLLBACK
+    Orders - -> API: 409 OUT_OF_STOCK
+    API - -> UI: 409 — không ghi DB
+    UI - -> C: Thông báo hết hàng; giữ giỏ
+  end
+
+  opt Có coupon (UC-07: Áp dụng coupon)
+    Orders -> DB: Khóa coupon; kiểm tra active/thời gian/min-order/quota/per-user
+    DB - -> Orders: Discount hợp lệ
+
+    break Coupon không hợp lệ hoặc hết lượt
+      Orders -> DB: ROLLBACK
+      Orders - -> API: 422 COUPON_NOT_APPLICABLE
+      API - -> UI: 422 — không thay giá, không đặt đơn
+      UI - -> C: Thông báo mã coupon không hợp lệ; giữ giỏ
+    end
+  end
+
+  Orders -> Orders: Tính subtotal - discount = total >= 0\nOrderItem.unitPrice = giá variant; topping snapshot riêng\nlineTotal = (unitPrice + Σ topping.unitPrice) × quantity
+
+  Orders -> DB: INSERT Order(PENDING) + OrderItem + OrderItemTopping\n(snapshot tên/giá/đường/đá/note; reservationExpiresAt từ config)
+  DB - -> Orders: orderId trong transaction
+
+  Orders -> Inventory: reserve(tx, orderId, expiresAt, ingredientNeeds)
+
+  loop Ingredient theo ingredientId tăng dần
+    Inventory -> DB: UPDATE Ingredient SET stockQuantity -= need, version += 1\nWHERE id = ? AND version = expected AND stockQuantity >= need AND isActive
+    DB - -> Inventory: rowCount = 1
+
+    break rowCount = 0 — race condition tồn kho
+      Inventory - -> Orders: Conflict version/serialization
+      Orders -> DB: ROLLBACK (hoàn toàn stockQuantity/version)
+      Orders -> Orders: Retry toàn transaction nếu còn lượt, else INVENTORY_CONFLICT
+    end
+  end
+
+  loop Mỗi variant đã tổng hợp
+    Inventory -> DB: INSERT InventoryReservation(ACTIVE, số ly)\n+ InventoryReservationItem(ingredientId, lượng thực tế đã giữ)
+    DB - -> Inventory: Snapshot nguyên liệu ghi trong cùng tx
+  end
+
+  Inventory - -> Orders: Đã giữ đủ nguyên liệu
+
+  opt Có coupon hợp lệ
+    Orders -> DB: INSERT CouponRedemption(RESERVED, expiresAt)
+  end
+
+  Orders -> DB: INSERT OrderStatusHistory(NULL → PENDING)
+  Orders -> DB: COMMIT
+  DB - -> Orders: Commit xác nhận
+  Orders -> Orders: Thành công; thoát vòng loop
+end
+
+Orders - -> API: Order PENDING + snapshot + total + reservationExpiresAt
+API - -> UI: 201 Created — {orderId, orderNumber, status: PENDING,\nsubtotal, discountAmount, total, items, reservationExpiresAt}
+UI - -> C: Hiển thị tóm tắt đơn PENDING; chưa xóa giỏ\n→ UC-06 kết thúc; khách chuyển tiếp sang UC-08
+
+== UC-08: Thực hiện thanh toán ==
+
+C -> UI: Chọn phương thức E_WALLET / CARD\nvà nhấn Thanh toán
+UI -> UI: Sinh Idempotency-Key mới; khóa nút;\nhiển thị total từ đơn server
+
+UI -> API: POST /api/v1/payments + Bearer JWT\nHeader: Idempotency-Key\nBody: {orderId, method} — không gửi amount/userId
+
+API -> API: Validate JWT / role CUSTOMER / ValidationPipe\nChuẩn hóa orderId/method\nTính requestHash = hash(orderId + method) server-side
+
+break JWT sai/hết hạn hoặc role không phải CUSTOMER
+  API - -> UI: 401 / 403 — không ghi DB
+  UI - -> C: Báo lỗi xác thực; giữ giỏ
+end
+
+break DTO sai: thiếu Idempotency-Key, method không hợp lệ\nhoặc orderId không phải UUID
+  API - -> UI: 400 — không ghi DB
+  UI - -> C: Báo lỗi validation; giữ giỏ
+end
+
+API -> PaySvc: initiatePayment(principal.id, key, requestHash, orderId, method)
+
+note over PaySvc #E9ECEF
+  <b>Bước 1 — Ownership check</b>
+  Bắt buộc TRƯỚC mọi tra cứu idempotency
+  để chặn replay của người khác.
+end note
+
+PaySvc -> DB: SELECT order WHERE id = orderId
+DB - -> PaySvc: Order hoặc null
+
+break Order không tồn tại hoặc không thuộc principal.id
+  PaySvc - -> API: 403 FORBIDDEN
+  API - -> UI: 403 — không lộ nội dung đơn người khác
+  UI - -> C: Báo lỗi quyền truy cập; giữ giỏ
+end
+
+note over PaySvc #E9ECEF
+  <b>Bước 2 — Idempotency check</b>
+end note
+
+PaySvc -> DB: SELECT payment WHERE idempotencyKey = key
+DB - -> PaySvc: Attempt hiện tại hoặc null
+
+alt Key đã tồn tại — attempt đã hoàn tất (SUCCEEDED hoặc FAILED)
+  PaySvc - -> API: Kết quả đã lưu (replay path)
+  API - -> UI: 200 — snapshot kết quả attempt đã có
+  UI - -> C: Hiển thị kết quả đã xác nhận\n(không charge mới)
+
+else Key đã tồn tại — attempt đang PROCESSING chưa đối soát
+  PaySvc - -> API: 409 PAYMENT_IN_PROGRESS
+  API - -> UI: 409 — giữ giỏ; hướng dẫn tra cứu lại cùng key
+  UI - -> C: Báo đang xử lý; hiển thị nút Kiểm tra trạng thái
+
+else Key đã tồn tại — orderId/method khác (hash không khớp)
+  PaySvc - -> API: 409 IDEMPOTENCY_KEY_REUSED
+  API - -> UI: 409 — client sinh key mới nếu muốn thay đổi
+  UI - -> C: Báo lỗi key đã dùng với thông tin khác; giữ giỏ
+end
+
+note over PaySvc #E9ECEF
+  <b>Bước 3 — Tạo attempt mới (key chưa tồn tại)</b>
+end note
+
+PaySvc -> DB: BEGIN tx ngắn\nSELECT FOR UPDATE order\nKiểm tra: status PENDING/PAYMENT_FAILED\nKhông có PROCESSING khác trên cùng order\nReservation chưa hết hạn
+
+break Order không ở PENDING/PAYMENT_FAILED\n(đã PAID, CANCELLED, COMPLETED)
+  PaySvc -> DB: ROLLBACK
+  PaySvc - -> API: 409 ORDER_NOT_PAYABLE
+  API - -> UI: 409
+  UI - -> C: Thông báo đơn không thể thanh toán; giữ giỏ
+end
+
+break Reservation đã hết hạn
+  PaySvc -> DB: ROLLBACK
+  PaySvc - -> API: 409 ORDER_EXPIRED
+  API - -> UI: 409
+  UI - -> C: Thông báo đơn hết hạn; đề nghị đặt lại
+end
+
+break Đã có attempt PROCESSING chưa đối soát trên cùng order
+  PaySvc -> DB: ROLLBACK
+  PaySvc - -> API: 409 PAYMENT_IN_PROGRESS
+  API - -> UI: 409
+  UI - -> C: Báo đang xử lý; hướng dẫn tra cứu lại cùng key
+end
+
+PaySvc -> DB: INSERT Payment(PROCESSING, key, requestHash, orderId,\namount = order.total, method)\nCOMMIT\n── unique(idempotencyKey) constraint bảo vệ race 20-concurrent ──
+DB - -> PaySvc: Attempt PROCESSING đã ghi
+
+note over PaySvc, GW #E9ECEF
+  <b>Bước 4 — Gọi gateway NGOÀI transaction DB</b>
+  Không giữ lock dài trong khi chờ phản hồi gateway.
+end note
+
+PaySvc -> GW: charge(key, amount, method)
+
+alt <b>Luồng A — Gateway trả success</b>
+
+  GW - -> PaySvc: {status: "success", gatewayTxId}
+
+  PaySvc -> DB: BEGIN tx finalize\nSELECT FOR UPDATE order + attempt
+  PaySvc -> DB: UPDATE Payment → SUCCEEDED (gatewayTxId, processedAt)
+  PaySvc -> DB: UPDATE Order  → PAID
+  PaySvc -> DB: INSERT OrderStatusHistory\n(PENDING / PAYMENT_FAILED → PAID)
+  PaySvc -> DB: UPDATE InventoryReservation → CONSUMED\n(InventoryReservationItem giữ nguyên snapshot lượng đã giữ)
+
+  opt Có CouponRedemption RESERVED cho đơn này
+    PaySvc -> DB: UPDATE CouponRedemption → CONSUMED (consumedAt)
+  end
+
+  PaySvc -> DB: INSERT LoyaltyTransaction(EARN,\npoints = floor(total / 1000))\nUPDATE User.loyaltyBalance += points\n── hàng rào DB: unique(orderId) EARN và unique SUCCEEDED/order ──
+  PaySvc -> DB: COMMIT
+  DB - -> PaySvc: Commit xác nhận
+
+  PaySvc - -> API: Snapshot SUCCEEDED + PAID + earnedPoints
+  API - -> UI: 201 Created\n{paymentStatus: SUCCEEDED, orderStatus: PAID,\norderId, total, earnedPoints}
+  UI - -> C: Xóa phần giỏ đã checkout\nChuyển màn xác nhận UC-09
+
+else <b>Luồng B — Gateway từ chối xác định (decline)</b>
+
+  GW - -> PaySvc: {status: "declined", failureCode}
+
+  PaySvc -> DB: BEGIN tx finalize\nSELECT FOR UPDATE order + attempt
+  PaySvc -> DB: UPDATE Payment → FAILED (failureCode, processedAt)
+  PaySvc -> DB: UPDATE Order  → PAYMENT_FAILED
+  PaySvc -> DB: INSERT OrderStatusHistory (→ PAYMENT_FAILED)
+  PaySvc -> DB: COMMIT
+  DB - -> PaySvc: Commit xác nhận
+
+  note over PaySvc #E9ECEF
+    Không consume reservation, không EARN.
+    Tồn kho giữ nguyên; khách có thể retry bằng key mới.
+  end note
+
+  PaySvc - -> API: Payment FAILED
+  API - -> UI: 200 PAYMENT_FAILED
+  UI - -> C: Thông báo thanh toán thất bại\nHiển thị nút "Thử lại"
+
+  note over C, UI #E9ECEF
+    <b>Retry sau PAYMENT_FAILED (Luồng A4):</b>
+    Khách sinh Idempotency-Key MỚI → POST /payments lại.
+    API chuyển đơn về PENDING trước khi tạo attempt mới.
+    Không reserve tồn lần hai — reservation vẫn ACTIVE.
+    Không cho retry nếu reservation đã hết hạn.
+  end note
+
+else <b>Luồng C — Gateway timeout / kết quả chưa xác định</b>
+
+  GW - -> PaySvc: Timeout / lỗi mạng / kết quả không đọc được
+
+  note over PaySvc #E9ECEF
+    Giữ attempt PROCESSING.
+    Không đoán FAILED, không hoàn tồn kho.
+    Không charge key mới.
+  end note
+
+  PaySvc -> GW: lookup(key)
+
+  alt Mock đã lưu kết quả bền vững — lookup thành công
+    GW - -> PaySvc: Kết quả thực tế (success hoặc declined)
+    note over PaySvc: Finalize theo kết quả — xem Luồng A hoặc B
+  else Lookup cũng chưa có kết quả
+    PaySvc - -> API: Kết quả chưa xác định
+    API - -> UI: 503 tạm thời + Retry-After header
+    UI - -> C: Báo đang kiểm tra; không xóa giỏ\nKhông charge mới; tra cứu lại cùng key sau
+
+    note over C, UI #E9ECEF
+      <b>Client offline (E10):</b>
+      Giữ giỏ; không queue mutation khi offline.
+      Khi online, tra cứu UC-09 trước khi retry.
+    end note
+  end
+
+else <b>Luồng D — DB lỗi tại bước finalize</b>
+
+  PaySvc -> DB: BEGIN tx finalize → lỗi DB\n(timeout / deadlock / unique constraint)
+  DB - -> PaySvc: Lỗi
+
+  note over PaySvc #E9ECEF
+    Attempt vẫn PROCESSING; không có side-effect kép.
+    Recovery job sẽ lookup và finalize đúng một lần.
+  end note
+
+  PaySvc - -> API: Lỗi finalize tạm thời
+  API - -> UI: 503 tạm thời + Retry-After header
+  UI - -> C: Giữ giỏ; báo đang kiểm tra;\nrecovery sẽ xử lý sau
+
+end
+
+== UC-09: Xem xác nhận (sau payment success) ==
+
+C -> UI: Mở màn xác nhận đơn
+UI -> API: GET /api/v1/orders/:id + Bearer JWT
+API -> DB: SELECT order + items + payments + history\nWHERE userId = principal.id
+DB - -> API: Snapshot đơn đã PAID
+API - -> UI: 200 — {orderId, orderNumber, status: PAID,\nitems, total, payment, earnedPoints, statusHistory}
+UI - -> C: Hiển thị xác nhận: mã đơn, tổng tiền, trạng thái PAID\nĐiểm tích lũy, lịch sử trạng thái
+
+legend bottom
+  UC-06: Đặt hàng → Order PENDING + giữ nguyên liệu. Không gọi gateway.
+  UC-08: Thanh toán → Payment attempt, gateway mock, finalize nguyên tử.
+  UC-06 và UC-08 là hai use case độc lập; UC-08 dùng orderId đã có từ UC-06.
+  Ownership check TRƯỚC idempotency check để chặn replay của người khác.
+  Gateway gọi NGOÀI transaction DB để tránh lock dài.
+  Mock adapter lưu kết quả bền vững theo key; lookup sau restart vẫn trả đúng.
+  Unique: uq_one_successful_payment_per_order và uq_earn_per_order tại DB.
+  Retry sau PAYMENT_FAILED: key mới, đơn về PENDING, không reserve tồn lần hai.
+  floor(total VND / 1000) = điểm EARN; tỷ lệ cần PO review trước code production.
+endlegend
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 17:25:05 GMT+07:00 2021)
+(MIT source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
