@@ -26,10 +26,18 @@ function verify(token: string, secret: string): JwtPayload {
   if (parts.length !== 3) throw new Error('malformed token');
   const [header, body, sig] = parts;
   const expected = createHmac('sha256', secret).update(`${header}.${body}`).digest('base64url');
-  // constant-time compare
+  // constant-time compare — lengths must match before timingSafeEqual
   const a = Buffer.from(sig, 'base64url');
   const b = Buffer.from(expected, 'base64url');
-  if (a.length !== b.length || !timingSafeEqual(a, b)) throw new Error('invalid signature');
+  let valid = a.length === b.length;
+  if (valid) {
+    try {
+      valid = timingSafeEqual(a, b);
+    } catch {
+      valid = false;
+    }
+  }
+  if (!valid) throw new Error('invalid signature');
   const payload = JSON.parse(Buffer.from(body, 'base64url').toString('utf8')) as JwtPayload & { exp: number };
   if (typeof payload.exp === 'number' && payload.exp < Math.floor(Date.now() / 1000)) {
     throw new Error('token expired');

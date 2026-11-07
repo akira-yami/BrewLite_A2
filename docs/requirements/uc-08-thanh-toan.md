@@ -1,12 +1,16 @@
 # UC-08: Thực hiện thanh toán
 
-Phiên bản 1.0 · 06/11/2026 · [A2-1.3.2 / #6](https://github.com/akira-yami/BrewLite_A2/issues/6).
+Phiên bản 1.1 · 07/11/2026 · [A2-1.3.2 / #6](https://github.com/akira-yami/BrewLite_A2/issues/6) · [A2-2.2.2 / #9](https://github.com/akira-yami/BrewLite_A2/issues/9).
 
-[Nguồn PlantUML use-case](../diagrams/use-case-uc08.puml) · [SVG](../diagrams/use-case-uc08.svg) · [PNG](../diagrams/use-case-uc08.png) · [Chỉnh sửa trực tuyến (draw.io)](https://app.diagrams.net/#G1FNDTtNJdXpwdBC4I4odtzJzhnXiy5YuZ#%7B%22pageId%22%3A%22ZMIl_fwBii4pXiM0QtPu%22%7D)
+[Nguồn PlantUML use-case](../diagrams/use-case-uc08.puml) · [SVG](../diagrams/use-case-uc08.svg) · [PNG](../diagrams/use-case-uc08.png) · [Chỉnh sửa sơ đồ trực tuyến (draw.io)](https://app.diagrams.net/#G1iec3HEIGhhwMGesnvXXwvqJSkOI5Z0jw#%7B%22pageId%22%3A%22GQHZdUctXlZdyJI08YLY%22%7D)
 
 ![UC-08: Thực hiện thanh toán](../diagrams/use-case-uc08.png)
 
-[Nguồn PlantUML sequence](../diagrams/sequence-payment.puml) · [SVG](../diagrams/sequence-payment.svg) · [PNG](../diagrams/sequence-payment.png) · [Xem sơ đồ trực tuyến (draw.io)](https://app.diagrams.net/#G1iec3HEIGhhwMGesnvXXwvqJSkOI5Z0jw#%7B%22pageId%22%3A%22wp84j0caUSDRGD1WpoII%22%7D)
+**Sequence UC-08 riêng** (payment only):
+[Nguồn PlantUML](../diagrams/sequence-payment.puml) · [SVG](../diagrams/sequence-payment.svg) · [PNG](../diagrams/sequence-payment.png) · [Chỉnh sửa sơ đồ trực tuyến (draw.io)](https://app.diagrams.net/#G1iec3HEIGhhwMGesnvXXwvqJSkOI5Z0jw#%7B%22pageId%22%3A%22wp84j0caUSDRGD1WpoII%22%7D)
+
+**Sequence Checkout thống nhất** (UC-06 Đặt hàng → UC-08 Thanh toán → UC-09 Xác nhận):
+[Nguồn PlantUML](../diagrams/sequence-checkout.puml) · [SVG](../diagrams/sequence-checkout.svg) · [PNG](../diagrams/sequence-checkout.png) · [Chỉnh sửa sơ đồ trực tuyến (draw.io)](https://app.diagrams.net/#G1iec3HEIGhhwMGesnvXXwvqJSkOI5Z0jw#%7B%22pageId%22%3A%22wp84j0caUSDRGD1WpoII%22%7D)
 
 ## 1. Phạm vi và tác nhân
 
@@ -84,13 +88,20 @@ Xem [SRS FR-07/10](srs.md), [NFR-05](non-functional-requirements.md), [ADR-004](
 
 ## 6. Kết xuất
 
-Java + PlantUML 1.2026.8, từ root repository:
+Java + PlantUML, từ root repository (thay đường dẫn JAR theo máy):
 
 ```powershell
+# Use-case UC-08
 java '-Djava.awt.headless=true' '-DPLANTUML_LIMIT_SIZE=16000' -jar C:/tools/plantuml-1.2026.8.jar -charset UTF-8 -tsvg docs/diagrams/use-case-uc08.puml
 java '-Djava.awt.headless=true' '-DPLANTUML_LIMIT_SIZE=16000' -jar C:/tools/plantuml-1.2026.8.jar -charset UTF-8 -tpng docs/diagrams/use-case-uc08.puml
+
+# Sequence UC-08 riêng (payment only)
 java '-Djava.awt.headless=true' '-DPLANTUML_LIMIT_SIZE=16000' -jar C:/tools/plantuml-1.2026.8.jar -charset UTF-8 -tsvg docs/diagrams/sequence-payment.puml
 java '-Djava.awt.headless=true' '-DPLANTUML_LIMIT_SIZE=16000' -jar C:/tools/plantuml-1.2026.8.jar -charset UTF-8 -tpng docs/diagrams/sequence-payment.puml
+
+# Sequence Checkout thống nhất UC-06 -> UC-08 -> UC-09 (A2-2.2.2)
+java '-Djava.awt.headless=true' '-DPLANTUML_LIMIT_SIZE=16000' -jar C:/tools/plantuml-1.2026.8.jar -charset UTF-8 -tsvg docs/diagrams/sequence-checkout.puml
+java '-Djava.awt.headless=true' '-DPLANTUML_LIMIT_SIZE=16000' -jar C:/tools/plantuml-1.2026.8.jar -charset UTF-8 -tpng docs/diagrams/sequence-checkout.puml
 ```
 
 Commit source và bản xuất cùng PR; kiểm tra nhãn, lifeline, nhánh alt/opt và quan hệ actor. Sơ đồ tổng thể gốc của nhóm được giữ nguyên.
