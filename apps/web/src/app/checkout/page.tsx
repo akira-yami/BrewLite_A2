@@ -27,7 +27,7 @@ function paymentFailureMessage(failureCode?: string | null, message?: string) {
     return 'Số dư hoặc hạn mức thanh toán không đủ. Giỏ hàng của bạn vẫn được giữ nguyên.';
   }
 
-  return message ?? 'Thanh toán chưa thành công. Giỏ hàng của bạn vẫn được giữ nguyên để thử lại.';
+  return message ?? failureCode ?? 'Thanh toán chưa thành công. Giỏ hàng của bạn vẫn được giữ nguyên để thử lại.';
 }
 
 export default function CheckoutPage() {
@@ -109,9 +109,9 @@ export default function CheckoutPage() {
 
       // Chỉ failure đã xác nhận mới cấp key mới. Lỗi mạng giữ key để replay,
       // tránh một click thử lại trở thành một giao dịch thanh toán khác.
-      if (payment.status !== 'SUCCEEDED' || payment.success === false) {
+      if (payment.status !== 'SUCCEEDED') {
         paymentAttemptKey.current = null;
-        setError(paymentFailureMessage(payment.errorCode));
+        setError(paymentFailureMessage(payment.failureCode, payment.errorCode ? String(payment.errorCode) : undefined));
         return;
       }
 
