@@ -62,7 +62,7 @@ jobs:
             --build-arg "NEXT_PUBLIC_API_URL=$API_ORIGIN/api/v1" \
             --label "org.opencontainers.image.revision=$REVISION" \
             --tag "brewlite-a2-web:$REVISION" apps/web
-          docker image inspect --format '{{.Id}} {{join .RepoTags ", "}}' \
+          docker image inspect --format '{{.Id}} {{json .RepoTags}}' \
             "brewlite-a2-api:$REVISION" "brewlite-a2-web:$REVISION"
 
       - name: Install Railway CLI
