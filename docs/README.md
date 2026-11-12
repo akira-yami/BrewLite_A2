@@ -14,6 +14,7 @@
 | Kiến trúc/ADR | [#12](https://github.com/akira-yami/BrewLite_A2/issues/12), phối hợp #13–#15 |
 | Deployment production | [Railway A2](deployment.md) |
 | Backlog/kế hoạch | [Backlog](scrum/product-backlog.md), [Sprint 1](scrum/sprint-01.md), [Sprint 2](scrum/sprint-02.md) |
+| Biên bản Review & Retrospective | [Sprint 1](scrum/sprint1-review-retro.md), [Sprint 2](scrum/sprint2-review-retro.md) |
 | Quy trình/chất lượng | [Contributing](../CONTRIBUTING.md), [DoD](scrum/definition-of-done.md) |
 | FR -> UC/thiết kế -> code/test | [Ma trận truy vết](traceability-matrix.md) |
 

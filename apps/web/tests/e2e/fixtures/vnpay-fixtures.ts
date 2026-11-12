@@ -47,7 +47,8 @@ export const test = base.extend<VnpayFixtures>({
     await use(page);
   },
   apiUrl: async ({}, use) => {
-    const url = process.env.E2E_API_URL ?? 'http://localhost:3101/api/v1';
+    const port = process.env.E2E_API_PORT ?? '3101';
+    const url = process.env.E2E_API_URL ?? `http://localhost:${port}/api/v1`;
     await use(url);
   },
 

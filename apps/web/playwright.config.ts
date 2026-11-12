@@ -5,6 +5,7 @@ const webPort = Number(process.env.E2E_WEB_PORT ?? 3100);
 const apiPort = Number(process.env.E2E_API_PORT ?? 3101);
 const webUrl = `http://localhost:${webPort}`;
 const apiUrl = `http://localhost:${apiPort}`;
+const mobileChromium = { ...devices['Desktop Chrome'], viewport: { width: 390, height: 844 } };
 
 // Dùng port riêng; không vô tình kiểm tra server dev đang chạy trên 3000/3001.
 export default defineConfig({
@@ -18,12 +19,17 @@ export default defineConfig({
     {
       name: 'chromium',
       testIgnore: ['vnpay/**'],
-      use: { ...devices['Desktop Chrome'], viewport: { width: 390, height: 844 } },
+      use: mobileChromium,
+    },
+    {
+      name: 'delivery',
+      testDir: '../../tests/e2e',
+      use: mobileChromium,
     },
     {
       name: 'vnpay',
       testMatch: ['vnpay/**'],
-      use: { ...devices['Desktop Chrome'], viewport: { width: 390, height: 844 } },
+      use: mobileChromium,
     },
   ],
   webServer: process.env.E2E_EXTERNAL_BASE_URL ? undefined : [
