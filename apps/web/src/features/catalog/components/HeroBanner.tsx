@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { InstallButton } from '@/features/pwa/InstallButton';
 
 interface HeroBannerProps {
   onExploreClick?: () => void;
@@ -117,6 +118,8 @@ export const HeroBanner = ({ onExploreClick }: HeroBannerProps) => {
           <span>Rang mộc · Pha tươi mỗi ngày</span>
         </div>
       </section>
+
+      <InstallButton />
 
 {/* 3 Cam kết chất lượng bên dưới */}
       <div className="grid grid-cols-1 border-b border-[#E8DFC8] py-3 sm:grid-cols-3 sm:py-3.5">
