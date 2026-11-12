@@ -187,9 +187,20 @@ Tóm tắt:
 
 ---
 
+## Tạo phẩm bàn giao (Deliverables)
+
+- **Production Frontend (HTTPS):** [https://web-a2-production.up.railway.app/menu](https://web-a2-production.up.railway.app/menu)
+- **Production API & Health Check:** [https://api-a2-production.up.railway.app/api/v1/health](https://api-a2-production.up.railway.app/api/v1/health)
+- **Video Demo Trực tiếp Luồng End-to-End (Google Drive):** [Xem thư mục video demo](https://drive.google.com/drive/folders/1R0mMpga32tXJx-Pg-UcuiGaUncPrsqSE?hl=vi)
+- **Hướng dẫn kịch bản demo và tài khoản test:** [`demo/README.md`](../demo/README.md)
+
+---
+
 ## Liên quan
 
 - [Repository](https://github.com/akira-yami/BrewLite_A2)
+- [Video Demo & Bàn giao (Google Drive)](https://drive.google.com/drive/folders/1R0mMpga32tXJx-Pg-UcuiGaUncPrsqSE?hl=vi)
+- [Hướng dẫn Demo](../demo/README.md)
 - [Issue #40](https://github.com/akira-yami/BrewLite_A2/issues/40)
 - [CI/CD workflow](../.github/workflows/pr-ci.yml)
 - [Architecture](architecture/system-architecture.md)

@@ -8,11 +8,25 @@ Repository chính: [akira-yami/BrewLite_A2](https://github.com/akira-yami/BrewLi
 
 Luồng ứng dụng gồm menu → chi tiết món → giỏ hàng → đăng nhập → tạo đơn → thanh toán VNPay → xác nhận/lịch sử. API có logging và readiness. Xem hướng dẫn [API](apps/api/README.md) và [Web](apps/web/README.md).
 
+- **Production Frontend**: [https://web-a2-production.up.railway.app/menu](https://web-a2-production.up.railway.app/menu)
+- **Production API & Health**: [https://api-a2-production.up.railway.app/api/v1/health](https://api-a2-production.up.railway.app/api/v1/health)
+- **Video Demo & Bàn giao**: [Thư mục Video Demo trên Google Drive](https://drive.google.com/drive/folders/1R0mMpga32tXJx-Pg-UcuiGaUncPrsqSE?hl=vi) (Xem chi tiết tại [`demo/README.md`](demo/README.md))
 - **API**: 161 unit tests pass, NestJS với Catalog/Auth/Orders/Payments/Inventory/Coupon/Loyalty
 - **Web**: 38 unit tests pass, Next.js với App Router, React Query, Tailwind CSS
 - **CI**: GitHub Actions required check `PR quality gate` chặn merge khi lint/test/build lỗi
 - **Release notes**: xem [`docs/RELEASE-NOTES-v1.0.0.md`](docs/RELEASE-NOTES-v1.0.0.md)
 - **Rollback guide**: xem [`docs/evidence/cd/rollback-guide.md`](docs/evidence/cd/rollback-guide.md)
+
+## 🎥 Video Demo & Minh chứng Bàn giao (Task 5.4)
+
+* 🎬 **Thư mục Video Demo End-to-End (Google Drive):** [Xem Video Demo tại đây](https://drive.google.com/drive/folders/1R0mMpga32tXJx-Pg-UcuiGaUncPrsqSE?hl=vi)
+* 📖 **Hướng dẫn kịch bản & tài khoản test:** Xem tại [`demo/README.md`](demo/README.md)
+* 🌐 **Môi trường Production trực tuyến:**
+  * Frontend Web (HTTPS): [https://web-a2-production.up.railway.app/menu](https://web-a2-production.up.railway.app/menu)
+  * Backend API Readiness: [https://api-a2-production.up.railway.app/api/v1/health](https://api-a2-production.up.railway.app/api/v1/health)
+* 👤 **Tài khoản Demo:**
+  * Khách hàng: `customer@brewlite.test` / Liên hệ nhóm
+  * Barista: `barista@brewlite.test` / Liên hệ nhóm
 
 Xem hướng dẫn chi tiết [API](apps/api/README.md) và [Web](apps/web/README.md). Docker Compose local (#36), browser E2E (#34), production deployment A2 (#39) còn trong backlog.
 

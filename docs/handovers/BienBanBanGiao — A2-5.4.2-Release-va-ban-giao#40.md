@@ -242,7 +242,7 @@ Tổng: 199 tests, 0 failed
 | CI required check chặn merge khi fail | ✅ Đang hoạt động | `PR quality gate` trên GitHub |
 | Có README local/test/build/deploy/rollback | ✅ Hoàn thiện | README root + RELEASE-NOTES |
 | Tag/release notes | ⚠ Chờ merge | Tag `v1.0.0` sẽ tạo sau merge vào main |
-| Demo URL production | ⚠ Chờ #39 | Production A2 Railway chưa deploy |
+| Demo URL production & Video | ✅ Đã bàn giao | [Google Drive Demo](https://drive.google.com/drive/folders/1R0mMpga32tXJx-Pg-UcuiGaUncPrsqSE?hl=vi) & [Railway Production](https://web-a2-production.up.railway.app/menu) |
 | Evidence deploy thực tế | ⚠ Chờ #37/#39 | CD quality gate và production URL |
 
 ### Khoảng trống (Gap)
