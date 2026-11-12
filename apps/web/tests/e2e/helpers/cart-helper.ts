@@ -25,7 +25,10 @@ export async function setupCartWithProduct(
 
   // Reload to apply token
   await page.reload();
+  await addFirstAvailableProduct(page);
+}
 
+export async function addFirstAvailableProduct(page: Page): Promise<void> {
   // Match the catalog button exactly. The offscreen cart also has "Sửa tùy chọn".
   const productButton = page
     .getByRole('button', { name: 'Tùy chọn', exact: true, disabled: false })

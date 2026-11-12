@@ -20,4 +20,4 @@ Rủi ro: concurrency, payment unknown, scope lớn, hosting chưa chốt. Spike
 
 ## Review / exit
 
-Demo happy path/chưa login/hết hàng/decline/unknown; nguyên liệu đủ 5 ly/20 request, idempotency, transition sai, ownership, coupon/loyalty. Evidence E2E/browser/NFR, checkout sạch, CI/CD, HTTPS/health, image/release/migration và restore/rollback. Đối chiếu [DoD](definition-of-done.md). Chưa có kết quả demo/Review/Retro/burndown, sẽ bổ sung từ dữ kiện thực tế.
+Demo happy path/chưa login/hết hàng/decline/unknown; nguyên liệu đủ 5 ly/20 request, idempotency, transition sai, ownership, coupon/loyalty. Evidence E2E/browser/NFR, checkout sạch, CI/CD, HTTPS/health, image/release/migration và restore/rollback. Đối chiếu [DoD](definition-of-done.md) và [biên bản Review & Retrospective Sprint 2](sprint2-review-retro.md).

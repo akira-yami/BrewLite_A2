@@ -9,7 +9,27 @@ TC là kế hoạch kiểm chứng. [Ma trận truy vết](../traceability-matri
 - DB PostgreSQL test riêng, không chạy concurrency/fault injection trên production hoặc DB dùng chung. Reset fixture giữa lượt, không reset khi đang đo. Ghi commit, version, seed, command, UTC và log đã che bí mật.
 - Fixture tối thiểu: customer A/B, Barista; product/variant/topping active/inactive; BOM và ingredient có tồn đủ 0 hoặc 5 ly, có ingredient dùng chung giữa món/topping; coupon hợp lệ/hết hạn/hạn mức 1; mock Ví/Thẻ cho bộ test API và fixture callback/QueryDr cho VNPay. Không có dữ liệu thẻ thật.
 - Unit cho hàm giá/normalization/state policy; HTTP test qua guard/validation thật; integration dùng PostgreSQL thật cho transaction/constraint/concurrency; browser E2E đi qua UI -> API -> DB, không stub API trong ca nghiệm thu end-to-end.
-- Endpoint/đường dẫn executable test chưa được chốt. Issue code/test trong matrix chịu trách nhiệm bổ sung file/case/evidence. Tách test UI fixture có chủ đích khỏi E2E thật và ghi rõ loại.
+- Tra đường dẫn các ca đã hiện thực trong ma trận. Ghi rõ những phần được mô phỏng trong từng ca.
+
+<a id="e2e-checkout"></a>
+## E2E menu đến xác nhận đơn
+
+[Ca checkout](../../tests/e2e/checkout-flow.spec.ts) mở menu trên Chromium ở kích thước màn hình 390 × 844, đăng nhập qua UI, chọn món và thanh toán. Playwright mô phỏng cổng VNPay và gửi callback có chữ ký thử nghiệm. Next.js và NestJS chạy local với PostgreSQL thật. Kết quả mong đợi là trang xác nhận hiển thị mã đơn khớp API và trạng thái `PAID`.
+
+Sau khi cài dependencies cho hai app, đặt `DATABASE_URL` trỏ tới PostgreSQL local dành cho kiểm thử, với tên DB có hậu tố `_e2e`. Từ thư mục gốc, chạy:
+
+```powershell
+npm --prefix apps/api run prisma:deploy
+Push-Location apps/api
+npx tsx prisma/seed-e2e.ts
+Pop-Location
+Push-Location apps/web
+npx playwright install chromium
+Pop-Location
+npm --prefix apps/web run test:e2e -- checkout-flow.spec.ts
+```
+
+Playwright tự khởi động Web và API trên các cổng 3100 và 3101. Báo cáo HTML nằm tại `apps/web/playwright-report/index.html`.
 
 <a id="tc-fr-01"></a>
 ## TC-FR-01 - Menu (AT-FR-01.1/.2)

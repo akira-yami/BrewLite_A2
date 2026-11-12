@@ -19,4 +19,4 @@ Rủi ro: lệch contract, chưa có runtime, CI trước scripts, seed không l
 
 ## Review / exit
 
-Demo menu dữ liệu thật và UI states; lưu lint/test/build/CI run, required checks và clean-checkout. Đối chiếu [DoD](definition-of-done.md), FR-01/02 và NFR liên quan. Review/Retro/burndown bổ sung từ dữ kiện thật, hiện chưa ghi nhận. Phần không đạt đưa lại backlog có lý do, không tự ghi Done.
+Demo menu dữ liệu thật và UI states; lưu lint/test/build/CI run, required checks và clean-checkout. Đối chiếu [DoD](definition-of-done.md), FR-01/02 và NFR liên quan. Xem [biên bản Review & Retrospective Sprint 1](sprint1-review-retro.md) để tra các mốc và bằng chứng đã ghi nhận. Phần không đạt đưa lại backlog có lý do, không tự ghi Done.
