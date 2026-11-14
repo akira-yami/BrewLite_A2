@@ -24,6 +24,8 @@ Workflow Railway CD nhận commit của lần PR CI thành công sau push lên `
 
 ## Minh chứng deploy ban đầu
 
+Lần triển khai tự động đã xác minh cho commit `53b9321` có [ảnh và log nghiệm thu](railway-53b9321/README.md).
+
 Ngày 10/11/2026, Railway triển khai trực tiếp commit `b3ec642` từ nhánh PR #91 vào [project BrewLite A2](https://railway.com/project/a07749a5-2382-4497-a7fd-63d79b5e523c), environment `a2-production`. Web và API có domain riêng. PostgreSQL có volume 500 MB và chỉ mở mạng nội bộ, không có public domain hoặc TCP proxy.
 
 - [Web](https://web-a2-production.up.railway.app/menu) và [Web health](https://web-a2-production.up.railway.app/health) trả HTTP 200. Bundle menu trỏ tới API A2.
