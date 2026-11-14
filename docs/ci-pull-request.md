@@ -3,7 +3,7 @@
 Workflow [Pull Request CI](../.github/workflows/pr-ci.yml) chạy trên mọi PR vào
 `main` (kể cả chỉ sửa tài liệu), push `main`, merge queue và chạy thủ công.
 Không dùng path filter hoặc `continue-on-error` cho required check.
-Token workflow chỉ có `contents: read`; không cần secret hay DB production.
+Token workflow chỉ có `contents: read`. Các bước tích hợp dùng PostgreSQL riêng trên runner, với hai database test cho API và trình duyệt.
 
 ## Contract ứng dụng
 
@@ -39,10 +39,12 @@ exit code CLI và pipeline fixture bằng npm thật. Fixture tạm không có d
 test chủ động tạo unit test trả mã 7 và xác nhận runner trả lỗi, không chạy Web.
 Kết quả fixture **không phải** kết quả unit/build của Web/API.
 
+Sau build, workflow chạy migration trên DB rỗng, integration, API E2E, seed DB trình duyệt và Playwright Chromium. Job Compose độc lập dựng Web/API/PostgreSQL từ checkout sạch, kiểm tra thanh toán mô phỏng, chạy lại migration/seed và kiểm tra trạng thái đơn sau restart. Báo cáo Playwright và log Compose gắn với SHA của workflow trong mục Artifacts.
+
 ## Required check
 
 Required check cho `main`: **`PR quality gate`**. Job này dùng `always()` và chỉ
-pass khi cả `CI runner tests` lẫn `Install, lint, unit test and build` đều
+pass khi `CI runner tests`, `Install, lint, unit test and build` và `Compose from clean checkout` đều
 `success`; fail/cancel/skip không được coi là pass. Giữ tên này ổn định để tránh
 required check bị treo khi đổi tên job.
 

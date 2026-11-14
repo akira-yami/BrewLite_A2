@@ -3,7 +3,7 @@ import { test, expect } from './fixtures/vnpay-fixtures';
 import { setupCartWithProduct, proceedToCheckout } from './helpers/cart-helper';
 import { enrichVnpayPaymentResponse } from './helpers/vnpay-test-helper';
 
-const api = process.env.E2E_API_URL ?? 'http://localhost:3101/api/v1';
+const api = process.env.E2E_API_URL ?? `http://localhost:${process.env.E2E_API_PORT ?? '3101'}/api/v1`;
 
 test('menu → cart → VNPay → confirmation', async ({ page, request, testUser, vnpayHelper }) => {
   await setupCartWithProduct(page, testUser.accessToken);

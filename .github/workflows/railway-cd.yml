@@ -5,9 +5,11 @@ on:
     workflows: [Pull Request CI]
     types: [completed]
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: railway-a2-production
@@ -16,14 +18,15 @@ concurrency:
 jobs:
   deploy:
     if: >-
-      github.event.workflow_run.conclusion == 'success' &&
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+      (github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.event == 'push' &&
-      github.event.workflow_run.head_repository.full_name == github.repository
+      github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     environment: a2-production
     env:
-      REVISION: ${{ github.event.workflow_run.head_sha }}
+      REVISION: ${{ github.event.workflow_run.head_sha || github.sha }}
       API_ORIGIN: ${{ vars.A2_API_ORIGIN }}
       WEB_ORIGIN: ${{ vars.A2_WEB_ORIGIN }}
       PROJECT_ID: ${{ vars.RAILWAY_PROJECT_ID }}
@@ -33,25 +36,42 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
 
       - name: Validate deployment configuration
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          EVIDENCE_DIR: ${{ runner.temp }}/brewlite-cd
         run: |
+          mkdir -p "$EVIDENCE_DIR"
+          echo "EVIDENCE_DIR=$EVIDENCE_DIR" >> "$GITHUB_ENV"
+          printf 'Revision: %s\nRun: %s/%s/actions/runs/%s\n' \
+            "$REVISION" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" \
+            | tee "$EVIDENCE_DIR/revision.txt"
+          test -n "$RAILWAY_TOKEN" || { echo "::error::Missing a2-production GitHub secret RAILWAY_TOKEN"; exit 1; }
           test "$(git rev-parse HEAD)" = "$REVISION"
           for id in "$PROJECT_ID" "$ENVIRONMENT_ID" "$API_SERVICE_ID" "$WEB_SERVICE_ID"; do
-            [[ "$id" =~ ^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$ ]] ||
+            [[ "$id" =~ ^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$ ]] || \
               { echo "::error::Missing or invalid A2 Railway ID"; exit 1; }
           done
           test "$API_SERVICE_ID" != "$WEB_SERVICE_ID"
           for origin in "$API_ORIGIN" "$WEB_ORIGIN"; do
-            [[ "$origin" =~ ^https://[a-zA-Z0-9.-]+$ ]] ||
+            [[ "$origin" =~ ^https://[a-zA-Z0-9.-]+$ ]] || \
               { echo "::error::Use an HTTPS origin without a trailing slash"; exit 1; }
           done
           test "$API_ORIGIN" != "$WEB_ORIGIN"
+
+      - name: Verify quality gate for manual deployment
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/pr-ci.yml/runs?head_sha=$REVISION&branch=main&event=push&status=success" \
+            | jq -e --arg sha "$REVISION" 'any(.workflow_runs[]; .head_sha == $sha)' >/dev/null
 
       - name: Build and tag Docker images
         run: |
@@ -63,7 +83,8 @@ jobs:
             --label "org.opencontainers.image.revision=$REVISION" \
             --tag "brewlite-a2-web:$REVISION" apps/web
           docker image inspect --format '{{.Id}} {{json .RepoTags}}' \
-            "brewlite-a2-api:$REVISION" "brewlite-a2-web:$REVISION"
+            "brewlite-a2-api:$REVISION" "brewlite-a2-web:$REVISION" \
+            | tee "$EVIDENCE_DIR/ci-images.txt"
 
       - name: Install Railway CLI
         run: npm install --global @railway/cli@5.71.0
@@ -72,18 +93,42 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          test -n "$RAILWAY_TOKEN" || { echo "::error::Missing A2 Railway project token"; exit 1; }
-          remote_revision="$(git ls-remote origin refs/heads/main | cut -f1)"
-          test "$remote_revision" = "$REVISION" ||
-            { echo "::error::A newer main revision superseded this deploy"; exit 1; }
-          railway up --ci \
-            --project "$PROJECT_ID" --environment "$ENVIRONMENT_ID" \
-            --service "$API_SERVICE_ID" --message "BrewLite A2 API $REVISION"
-          railway up --ci \
-            --project "$PROJECT_ID" --environment "$ENVIRONMENT_ID" \
-            --service "$WEB_SERVICE_ID" --message "BrewLite A2 Web $REVISION"
+          bash scripts/railway-deploy.sh api "$API_SERVICE_ID"
+          bash scripts/railway-deploy.sh web "$WEB_SERVICE_ID"
+
+      - name: Verify the serving Railway deployments
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          for service in api web; do
+            if [[ "$service" == api ]]; then service_id="$API_SERVICE_ID"; else service_id="$WEB_SERVICE_ID"; fi
+            expected="$(jq -er .id "$EVIDENCE_DIR/$service-deployment.json")"
+            railway deployment list --project "$PROJECT_ID" --service "$service_id" \
+              --environment "$ENVIRONMENT_ID" --limit 10 --json \
+              | jq -e --arg id "$expected" '[.[] | select(.status == "SUCCESS")][0].id == $id' >/dev/null
+          done
 
       - name: Smoke test production
         run: |
-          node apps/api/scripts/smoke.mjs "$API_ORIGIN"
-          curl --fail --silent --show-error --retry 5 --retry-all-errors --max-time 10 "$WEB_ORIGIN/health"
+          {
+            node apps/api/scripts/smoke.mjs "$API_ORIGIN"
+            curl --fail --silent --show-error --retry 5 --retry-all-errors --max-time 10 "$WEB_ORIGIN/health" \
+              | jq -e 'select(.status == "ok")'
+            curl --fail --silent --show-error --location --max-time 15 "$WEB_ORIGIN/menu" -o /dev/null
+            echo 'Web health and menu passed'
+          } 2>&1 | tee "$EVIDENCE_DIR/smoke.log"
+
+      - name: Upload deployment evidence
+        if: ${{ always() && !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: railway-${{ env.REVISION }}
+          path: ${{ env.EVIDENCE_DIR }}/
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Deployment failure instructions
+        if: ${{ failure() }}
+        run: |
+          echo 'Check the failed step and the recorded deployment IDs before retrying.' >> "$GITHUB_STEP_SUMMARY"
+          echo "[Rollback and database compatibility guide]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/blob/$REVISION/docs/evidence/cd/rollback-guide.md)" >> "$GITHUB_STEP_SUMMARY"

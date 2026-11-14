@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-const api = process.env.E2E_API_URL ?? 'http://localhost:3101/api/v1';
+const api = process.env.E2E_API_URL ?? `http://localhost:${process.env.E2E_API_PORT ?? '3101'}/api/v1`;
 test('Barista inventory is read-only on desktop and mobile', async ({ page, request }) => {
  const response = await request.post(`${api}/auth/login`, { data: { username: 'barista01', password: 'Barista@123' } });
  expect(response.ok()).toBeTruthy();

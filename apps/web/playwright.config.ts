@@ -55,6 +55,7 @@ export default defineConfig({
       url: `${webUrl}/menu`,
       env: {
         NEXT_PUBLIC_API_URL: `${apiUrl}/api/v1`,
+        NEXT_PUBLIC_API_BASE_URL: `${apiUrl}/api/v1`,
       },
       reuseExistingServer: false,
       timeout: 120000,

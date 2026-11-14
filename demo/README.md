@@ -25,7 +25,7 @@ Toàn bộ video demo luồng nghiệp vụ trên môi trường Production th�
 
 ## 2. Đường dẫn Hệ thống Production Trực tuyến
 
-Hệ thống được đóng gói container Docker và triển khai tự động qua Continuous Delivery lên nền tảng **Railway** với HTTPS:
+Hệ thống chạy container Docker trên **Railway** qua HTTPS. Trạng thái theo revision và bằng chứng CD nằm trong [hồ sơ nghiệm thu](../docs/evidence/a2-delivery.md).
 
 * 🚀 **Ứng dụng Web (Frontend Next.js):** [https://web-a2-production.up.railway.app/menu](https://web-a2-production.up.railway.app/menu)
 * 💓 **Máy chủ API (Backend NestJS Health Check):** [https://api-a2-production.up.railway.app/api/v1/health](https://api-a2-production.up.railway.app/api/v1/health)
@@ -34,10 +34,6 @@ Hệ thống được đóng gói container Docker và triển khai tự động
 
 ## 3. Tài khoản Demo Trải nghiệm
 
-Dữ liệu mẫu đã được nạp sẵn vào cơ sở dữ liệu để phục vụ việc kiểm thử và nghiệm thu:
+Form đăng nhập dùng **tên đăng nhập**. Trên production, khách có thể tự đăng ký hoặc dùng tài khoản demo do nhóm cung cấp. Khi nghiệm thu nghiệp vụ nhân viên, nhận thông tin tài khoản Barista trực tiếp từ nhóm.
 
-| Vai trò | Email đăng nhập | Mật khẩu | Quyền hạn và phạm vi trải nghiệm |
-|:---|:---|:---|:---|
-| **Khách hàng (Customer)** | `customer@brewlite.test` | Liên hệ nhóm | Xem menu, tùy chọn món, tạo đơn hàng, thanh toán, xem lịch sử đơn của bản thân |
-| **Nhân viên quầy (Barista)** | `barista@brewlite.test` | Liên hệ nhóm | Quản lý công thức pha chế, kiểm tra tồn kho nguyên liệu BOM, cập nhật trạng thái đơn |
-| **Quản trị viên (Admin)** | `admin@brewlite.test` | Liên hệ nhóm | Toàn quyền kiểm soát hệ thống |
+Khi chạy Compose local với bước seed, catalog mẫu có sẵn và hai tài khoản demo là `customer01` và `barista01`. Cấu hình và mật khẩu demo local xem trong [mẫu môi trường](../.env.example).
