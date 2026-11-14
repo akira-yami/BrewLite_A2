@@ -99,6 +99,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     env:
+      NODE_ENV: test
       JWT_SECRET: test-jwt-secret-for-isolated-tests-only-32bytes-long
       MOCK_PAYMENT_MODE: deterministic
     steps:
@@ -111,6 +112,7 @@ jobs:
           docker compose --env-file .env.example -f compose.yaml -p brewlite-a2-ci --profile demo config --quiet
           docker compose --env-file .env.example -f compose.yaml -p brewlite-a2-ci --profile demo build
       - name: Start, smoke and check persistence
+        shell: bash
         run: bash scripts/verify-compose.sh 2>&1 | tee "$RUNNER_TEMP/compose.log"
       - name: Upload Compose evidence
         if: ${{ always() && !cancelled() }}

@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     environment: a2-production
+    defaults:
+      run:
+        shell: bash
     env:
       REVISION: ${{ github.event.workflow_run.head_sha || github.sha }}
       API_ORIGIN: ${{ vars.A2_API_ORIGIN }}
@@ -110,13 +113,11 @@ jobs:
 
       - name: Smoke test production
         run: |
-          {
-            node apps/api/scripts/smoke.mjs "$API_ORIGIN"
-            curl --fail --silent --show-error --retry 5 --retry-all-errors --max-time 10 "$WEB_ORIGIN/health" \
-              | jq -e 'select(.status == "ok")'
-            curl --fail --silent --show-error --location --max-time 15 "$WEB_ORIGIN/menu" -o /dev/null
-            echo 'Web health and menu passed'
-          } 2>&1 | tee "$EVIDENCE_DIR/smoke.log"
+          node apps/api/scripts/smoke.mjs "$API_ORIGIN" 2>&1 | tee "$EVIDENCE_DIR/smoke.log"
+          curl --fail --silent --show-error --retry 5 --retry-all-errors --max-time 10 "$WEB_ORIGIN/health" \
+            | jq -e 'select(.status == "ok")' | tee -a "$EVIDENCE_DIR/smoke.log"
+          curl --fail --silent --show-error --location --max-time 15 "$WEB_ORIGIN/menu" -o /dev/null
+          echo 'Web health and menu passed' | tee -a "$EVIDENCE_DIR/smoke.log"
 
       - name: Upload deployment evidence
         if: ${{ always() && !cancelled() }}
