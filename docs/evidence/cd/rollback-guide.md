@@ -67,9 +67,7 @@ npm run prisma:deploy
 
 ```powershell
 cd apps/api
-npm run db:migrate      # prisma migrate deploy
-# hoặc
-npm run prisma:deploy   # alias dùng trong Railway config
+npm run prisma:deploy
 ```
 
 **Kiểm tra trạng thái migration hiện tại:**
@@ -77,7 +75,7 @@ npm run prisma:deploy   # alias dùng trong Railway config
 ```powershell
 cd apps/api
 # Cần DATABASE_URL trong .env
-npm run db:status       # prisma migrate status
+npx prisma migrate status       # prisma migrate status
 ```
 
 **Kết quả mong đợi khi migration thành công:**
@@ -111,36 +109,24 @@ Khi `prisma migrate deploy` gặp lỗi (constraint violation, syntax error, net
 
 > **⚠ Lưu ý:** Rollback app revision chỉ hoạt động khi schema DB tương thích với revision cũ. Nếu migration đã chạy và thêm NOT NULL column không có default, revision cũ sẽ fail. Xem mục 3.3.
 
-### 3.1. Rollback qua Railway Dashboard (≤3 phút)
+### 3.1. Rollback qua Railway Dashboard
 
 1. Mở [Railway Dashboard](https://railway.app/dashboard)
-2. Chọn project → service **api**
+2. Chọn project và service **api** hoặc **web** theo thành phần cần quay lui
 3. Mở tab **Deployments**
 4. Tìm revision lành mạnh cuối cùng (status: SUCCESS, trước revision lỗi)
-5. Click **⋮** → **Redeploy** (hoặc **Rollback to this deployment**)
+5. Trên deployment đích, mở **⋮** → **Rollback** theo [hướng dẫn Railway](https://docs.railway.com/deployments/deployment-actions#rollback)
 6. Xác nhận → Railway start lại container từ image revision cũ
 7. Đợi health check pass (~60–120 giây)
 8. Chạy smoke test để xác nhận (xem mục 6)
 
 ```
-Mục tiêu thời gian: ≤5 phút từ khi phát hiện lỗi đến health check pass
+Mục tiêu NFR-11 trên môi trường test: ≤10 phút từ khi bắt đầu rollback đến khi smoke pass
 ```
 
-### 3.2. Rollback qua Railway CLI
+### 3.2. Chọn đúng deployment từ artifact CD
 
-```powershell
-# Cài Railway CLI nếu chưa có
-npm install -g @railway/cli
-
-# Login
-railway login
-
-# Liệt kê deployments gần nhất
-railway deployments --service api
-
-# Rollback về deployment cụ thể
-railway rollback --deployment-id <DEPLOYMENT_ID> --service api
-```
+Mở artifact theo SHA của lần CD đã thành công. Lấy ID từ JSON của service Web hoặc API rồi đối chiếu ID trên Railway Dashboard trước khi bấm Rollback. Kiểm tra API health và Web health/menu sau khi chuyển.
 
 ### 3.3. Khi schema mới không tương thích với app cũ
 
@@ -301,18 +287,16 @@ Sau mỗi deploy hoặc rollback, chạy smoke test để xác nhận API health
 
 ```powershell
 # Chạy từ gốc repo, target production URL
-$env:BASE_URL = "https://api-production-1be6.up.railway.app"
+$env:BASE_URL = "https://api-a2-production.up.railway.app"
 node apps/api/scripts/smoke.mjs $env:BASE_URL
 
-# Hoặc dùng npm script
-cd apps/api
-BASE_URL=https://api-production-1be6.up.railway.app npm run smoke
+curl.exe -f https://web-a2-production.up.railway.app/health
 ```
 
 **Kết quả mong đợi:**
 
 ```
-🔍  Smoke test — https://api-production-1be6.up.railway.app
+🔍  Smoke test — https://api-a2-production.up.railway.app
     Started at: 2026-11-07T14:30:00.000Z
     Timeout: 10000ms per request | Retries: 3
 
@@ -337,7 +321,7 @@ BASE_URL=https://api-production-1be6.up.railway.app npm run smoke
 railway logs --service api
 
 # Kiểm tra health thủ công
-Invoke-WebRequest -Uri "https://api-production-1be6.up.railway.app/api/v1/health" | Select-Object -ExpandProperty Content
+Invoke-WebRequest -Uri "https://api-a2-production.up.railway.app/api/v1/health" | Select-Object -ExpandProperty Content
 ```
 
 ---
@@ -357,13 +341,13 @@ Theo **AT-NFR-11** và **TC-NFR-11** trong [test-plan.md](../../testing/test-pla
 | URL production HTTPS | `Invoke-WebRequest https://...` | HTTP 200, cert valid |
 | Secret không trong Git | `git log --all -S "password"` (không kết quả) | Không tìm thấy secret |
 
-### Trạng thái hiện tại (07/11/2026)
+### Snapshot lịch sử (07/11/2026)
 
 | Tiêu chí | Trạng thái | Ghi chú |
 |---|---|---|
 | Dockerfile.railway API | ✅ Tạo xong | `apps/api/Dockerfile.railway` |
 | prisma:deploy alias | ✅ Tạo xong | `package.json` script `prisma:deploy` |
-| db:status script | ✅ Tạo xong | `package.json` script `db:status` |
+| Kiểm tra migration | Có | Dùng `npx prisma migrate status` trong apps/api |
 | Smoke test script | ✅ Tạo xong | `apps/api/scripts/smoke.mjs` |
 | Rollback guide | ✅ Tài liệu này | `docs/evidence/cd/rollback-guide.md` |
 | Chạy CI lint/test/build pass | ✅ Xác nhận | Xem bên dưới |
@@ -391,7 +375,7 @@ SCENARIO B: Deploy thành công nhưng có bug nghiêm trọng
 ──────────────────────────────────────────────────────────
 1. Railway Dashboard → api → Deployments
 2. Chọn revision cuối SUCCESS (trước revision lỗi)
-3. Redeploy → chờ health pass (~60-120s)
+3. Rollback về deployment đã chọn → chờ health pass
 4. Chạy: node apps/api/scripts/smoke.mjs <URL>
 5. Ghi thời điểm phát hiện → health pass (mục tiêu: ≤10 phút)
 6. Kiểm tra số orders không thay đổi
@@ -407,11 +391,13 @@ SCENARIO C: Data corruption / cần restore backup
 SCENARIO D: Migration sai cần rollback schema
 ──────────────────────────────────────────────────────────
 1. Tạo migration mới đảo ngược thay đổi (forward-only)
-2. npm run db:status để xem migrations applied
+2. npx prisma migrate status để xem migrations applied
 3. Push migration mới → Railway pre-deploy apply tự động
 4. Không dùng prisma migrate revert / xóa migration đã apply
 ```
 
 ---
 
-*Tài liệu này được cập nhật cùng PR chứa Dockerfile.railway và smoke.mjs. Evidence thực thi sẽ bổ sung tại [docs/evidence/cd/](.) sau khi deployment A2 production được thiết lập.*
+Minh chứng production có tại [Railway CD và smoke test](railway-53b9321/README.md).
+
+Kết quả diễn tập local đổi revision Web/API, migration bù và restore được lưu trong [biên bản rollback bốn lớp](rollback-local-2026-11-14/README.md).

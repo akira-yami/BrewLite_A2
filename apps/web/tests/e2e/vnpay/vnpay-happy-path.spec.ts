@@ -1,9 +1,10 @@
+// Kiểm tra checkout VNPay thành công và xác nhận sau callback.
 import { enrichVnpayPaymentResponse } from '../helpers/vnpay-test-helper.js';
 import { randomUUID } from 'node:crypto';
 import { test, expect } from '../fixtures/vnpay-fixtures.js';
 import { setupCartWithProduct, proceedToCheckout } from '../helpers/cart-helper.js';
 
-test('VNPAY happy path: checkout → payment → confirmation', async ({
+test('Luồng VNPay thành công: đặt món → thanh toán → xác nhận', async ({
   page,
   request,
   vnpayHelper,
@@ -83,7 +84,7 @@ test('VNPAY happy path: checkout → payment → confirmation', async ({
   ).toBeVisible();
 });
 
-test('signed Sandbox Return confirms the order on the first status check', async ({ page, testUser, vnpayHelper }) => {
+test('Callback Sandbox có chữ ký xác nhận đơn ở lần tra cứu đầu', async ({ page, testUser, vnpayHelper }) => {
   test.skip(Boolean(process.env.E2E_EXTERNAL_BASE_URL), 'Uses the isolated Sandbox configuration');
   await page.route(/^https:\/\/sandbox\.vnpayment\.vn\/paymentv2\/vpcpay\.html\?/, async route => {
     const gateway = new URL(route.request().url()).searchParams;

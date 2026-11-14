@@ -16,7 +16,7 @@ Chỉ biểu diễn UC-06: Tạo đơn, đúng tên/ranh giới của [use case 
 
 ## Ranh giới transaction và lỗi
 
-- Transaction đọc RecipeItem của variant và ToppingRecipeItem của mọi topping, nhân quantity và cộng theo ingredientId trên toàn đơn. Ingredient.stockQuantity/version mới là nguồn tồn; availableServings riêng một món không thay kiểm tra tổng nhu cầu các món dùng chung nguyên liệu.
+- Transaction Read Committed đọc RecipeItem của variant và ToppingRecipeItem của mọi topping, nhân quantity và cộng theo ingredientId trên toàn đơn. Ingredient.stockQuantity là nguồn tồn. UPDATE kiểm tra nguyên liệu đang hoạt động và lượng tồn hiện tại đủ, rồi tăng version; availableServings riêng một món không thay kiểm tra tổng nhu cầu các món dùng chung nguyên liệu.
 - Tạo Order/items trước reservation có FK orderId; InventoryReservation mỗi order/variant lưu số ly, InventoryReservationItem lưu lượng nguyên liệu gồm món/topping. Coupon RESERVED và history cùng transaction. Một lỗi rollback cả stockQuantity/version và mọi bản ghi.
 - OrdersService retry tối đa ba attempt cho các lỗi xung đột tạm thời được phân loại. Lỗi hết nguyên liệu, option hoặc coupon trả về để khách điều chỉnh.
 - OrderItem.unitPrice lưu giá variant; topping price/quantity snapshot riêng; mapper tính lineTotal từ giá món + tổng topping rồi nhân item.quantity. Đổi đường/đá/note không đổi giá; code tham chiếu không điều chỉnh BOM theo mức đường/đá.

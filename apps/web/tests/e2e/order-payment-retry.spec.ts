@@ -1,3 +1,4 @@
+// Kiểm tra thử thanh toán lại trên đúng đơn cũ.
 import { expect, test } from '@playwright/test';
 
 const orderId = 'retry-order';
@@ -18,7 +19,7 @@ for (const { path, confirmedImmediately } of [
   { path: `/orders/${orderId}`, confirmedImmediately: false },
   { path: `/orders/${orderId}`, confirmedImmediately: true },
 ]) {
-  test(`retry from ${path} confirms the original order ${confirmedImmediately ? 'immediately' : 'after returning from VNPay'}`, async ({ page, baseURL }) => {
+  test(`Thử lại từ ${path} xác nhận đúng đơn gốc ${confirmedImmediately ? 'ngay lập tức' : 'sau khi quay lại từ VNPay'}`, async ({ page, baseURL }) => {
     const payload = Buffer.from(JSON.stringify({ exp: Math.floor(Date.now() / 1000) + 600 })).toString('base64url');
     await page.addInitScript((token) => localStorage.setItem('brewlite_token', token), `e30.${payload}.test`);
     await page.route('**/api/v1/auth/me', route => route.fulfill({ json: { data: {

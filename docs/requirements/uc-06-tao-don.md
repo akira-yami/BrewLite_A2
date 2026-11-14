@@ -28,11 +28,11 @@ UC-07: Áp dụng coupon là phần mở rộng tùy chọn của UC-06. UC-02: 
 | M1 | Khách kiểm tra size/topping/đường/đá/note/quantity, nhập coupon nếu có | Web tạm tính, giữ giỏ; thiếu phiên đi qua UC-02 rồi quay lại |
 | M2 | Web gửi POST /api/v1/orders với JWT, items, couponCode? | Không gửi giá/userId/status làm dữ liệu quyết định nghiệp vụ; khóa nút trong lúc chờ |
 | M3 | API kiểm tra JWT/CUSTOMER/DTO và chuẩn hóa | 1..20 dòng; quantity 1..20 sau gộp; topping hợp lệ/không trùng; sugar/ice null hoặc 0..100, 0 khác null; note trim <=500, trống thành null |
-| M4 | Orders mở transaction Serializable, kiểm tra user active, đọc catalog, RecipeItem và ToppingRecipeItem kèm Ingredient | Giá/tên từ DB. Tổng nhu cầu từng ingredient bằng công thức món và mỗi topping được chọn nhân quantity qua mọi dòng; kiểm tra cả nguyên liệu dùng chung giữa variant/topping |
+| M4 | Orders mở transaction ReadCommitted, kiểm tra user active, đọc catalog, RecipeItem và ToppingRecipeItem kèm Ingredient | Giá/tên từ DB. Tổng nhu cầu từng ingredient bằng công thức món và mỗi topping được chọn nhân quantity qua mọi dòng; kiểm tra cả nguyên liệu dùng chung giữa variant/topping |
 | M5 | Nếu có coupon: khóa/kiểm tra và tính discount; tạo Order PENDING/items/topping snapshots | OrderItem.unitPrice là giá variant; topping snapshot có unitPrice và quantity=1 mỗi ly. lineTotal=(giá variant + tổng giá topping mỗi ly) x quantity; total=subtotal-discount >=0 |
-| M6 | Inventory giữ nguyên liệu theo ingredientId tăng dần | UPDATE Ingredient WHERE version=expected AND stockQuantity>=need, giảm stockQuantity/tăng version. Tạo InventoryReservation mỗi order/variant và InventoryReservationItem lưu lượng từng ingredient đã giữ, gồm cả topping |
+| M6 | Inventory giữ nguyên liệu theo ingredientId tăng dần | UPDATE Ingredient WHERE isActive AND stockQuantity>=need, giảm stockQuantity/tăng version. Tạo InventoryReservation mỗi order/variant và InventoryReservationItem lưu lượng từng ingredient đã giữ, gồm cả topping |
 | M7 | Giữ coupon RESERVED nếu có, ghi history NULL -> PENDING rồi commit | Tất cả thao tác cùng transaction client; một lỗi không để dữ liệu dở dang |
-| M8 | API trả 201 với snapshot/tổng tiền/orderId/expiry | Web hiển thị đơn đã đặt ở PENDING; chưa xóa giỏ vì chưa thanh toán; UC-06 kết thúc. Khách có thể chọn UC-08 riêng sau đó |
+| M8 | API trả 201 với snapshot/tổng tiền/orderId/expiry | Web hiển thị đơn đã đặt ở PENDING; chưa xóa giỏ vì chưa thanh toán; UC-06 kết thúc. Checkout tiếp tục sang UC-08 trong cùng thao tác thanh toán nếu tạo đơn thành công |
 
 Công thức kho theo [A1 commit 7beb0cb](https://github.com/akira-yami/BrewLite_A1/tree/7beb0cb06a2a89bc53a119bcb8d905cf596f548b): ProductVariant không có stock/version; Ingredient mới là nơi lưu tồn. availableServings chỉ được tính từ công thức. Đường/đá/note là snapshot, code tham chiếu chưa đổi lượng BOM theo các mức này. Không diễn giải mức đường/đá thành công thức mới ngoài implementation.
 
@@ -43,7 +43,7 @@ Công thức kho theo [A1 commit 7beb0cb](https://github.com/akira-yami/BrewLite
 | A1 | M1–M3: chưa login hoặc hết phiên | Giữ giỏ, UC-02 rồi tiếp tục; request 401 không ghi order |
 | A2 | M4–M7: không có coupon | discount=0, không tạo CouponRedemption |
 | A3 | M3: khác note/tùy chọn trên cùng variant | Giữ item riêng nhưng cộng nhu cầu ingredient trên toàn đơn; cùng mọi lựa chọn thì gộp trong giới hạn |
-| A4 | M6: version/serialization/deadlock conflict, vẫn còn hàng | Rollback và đọc/tính lại toàn transaction; A1 tham chiếu giới hạn 3 attempt tổng cộng, TTL lấy từ config theo phút. Không retry lỗi hết nguyên liệu hoặc chỉ retry phần ghi |
+| A4 | M6: cập nhật tồn có điều kiện thất bại hoặc transaction gặp xung đột ghi/deadlock | Rollback và đọc/tính lại toàn transaction; tối đa 3 attempt tổng cộng, TTL lấy từ config theo phút. Không retry lỗi hết nguyên liệu hoặc chỉ retry phần ghi |
 
 ## 4. Ngoại lệ
 
@@ -53,7 +53,7 @@ Công thức kho theo [A1 commit 7beb0cb](https://github.com/akira-yami/BrewLite
 | E2 | DTO/UUID/quantity/note/topping trùng hoặc trường giả mạo | 400, không tạo order; hiển thị lỗi, giữ giỏ |
 | E3 | Variant/topping inactive, không thuộc product, không có công thức hoặc ingredient inactive | Không cho đặt; phân biệt option sai 400 và không đủ khả năng cung ứng 409 theo API contract |
 | E4 | Thiếu ingredient sau cộng toàn bộ món/topping, dù từng variant riêng có vẻ còn hàng | 409 OUT_OF_STOCK, rollback toàn bộ order/items/reservation/items/coupon/history/stockQuantity/version |
-| E5 | Coupon sai/hết hạn/hết lượt/không đạt minimum | 422 COUPON_NOT_APPLICABLE theo contract A1; không tự bỏ mã để đặt giá khác |
+| E5 | Coupon sai/hết hạn/hết lượt/không đạt minimum | 422 COUPON_NOT_APPLICABLE theo contract hiện hành; không tự bỏ mã để đặt giá khác |
 | E6 | Hết retry conflict | 409 INVENTORY_CONFLICT, không giả báo hết hàng; không có ghi dở dang |
 | E7 | DB lỗi xác định trước commit | Rollback; 500 chung với requestId, không lộ stack/connection string |
 | E8 | Mất response hoặc không rõ ACK commit | Không giả rollback, không tự POST /orders lại vì endpoint chưa idempotent. Giữ giỏ, kiểm tra UC-09 trước khi khách chủ động đặt lại |

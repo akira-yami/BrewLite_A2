@@ -1,0 +1,87 @@
+{
+  "testRunAtUTC": "2026-11-14T08:51:59.093Z",
+  "environment": {
+    "platform": "win32 (Windows 11)",
+    "database": "PostgreSQL 18.3",
+    "apiTarget": "http://localhost:3001",
+    "sourceDb": "brewlite",
+    "drillRestoreDb": "brewlite_test_drill",
+    "stableRevision": "v1.1.0 (commit 391f6d8)",
+    "faultyRevision": "v1.2.0-rc1 (simulated regression)"
+  },
+  "phases": {
+    "preSnapshot": {
+      "orderCount": 2161,
+      "recentOrders": [
+        {
+          "id": "ad060ffd-59e2-45ca-82b3-5521bb8d1197",
+          "order_number": "ORD-PERF-000990",
+          "status": "COMPLETED",
+          "total": "36000",
+          "created_at": "2026-11-14T08:37:57.499Z"
+        },
+        {
+          "id": "9a9ab9aa-5f16-4f72-a614-923510f81302",
+          "order_number": "ORD-PERF-000960",
+          "status": "COMPLETED",
+          "total": "37000",
+          "created_at": "2026-11-14T08:37:57.482Z"
+        },
+        {
+          "id": "4fc42c6b-50b9-4b83-abd6-df1c67335638",
+          "order_number": "ORD-PERF-000930",
+          "status": "COMPLETED",
+          "total": "35000",
+          "created_at": "2026-11-14T08:37:57.466Z"
+        },
+        {
+          "id": "8a92c364-576a-416f-b5a5-05fdeb66d568",
+          "order_number": "ORD-PERF-000900",
+          "status": "COMPLETED",
+          "total": "30000",
+          "created_at": "2026-11-14T08:37:57.450Z"
+        },
+        {
+          "id": "a9794992-74b5-487f-a019-b6ef491998e5",
+          "order_number": "ORD-PERF-000870",
+          "status": "COMPLETED",
+          "total": "50000",
+          "created_at": "2026-11-14T08:37:57.433Z"
+        }
+      ],
+      "productCount": 100
+    },
+    "backup": {
+      "file": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cd\\backup-drill-nfr11.dump",
+      "sizeBytes": 609617,
+      "durationMs": 322,
+      "status": "SUCCESS"
+    },
+    "restore": {
+      "targetDb": "brewlite_test_drill",
+      "durationMs": 478,
+      "drillOrderCount": 2161,
+      "sourceOrderCount": 2161,
+      "match": true,
+      "status": "SUCCESS"
+    },
+    "rollbackDrill": {
+      "startTimeUTC": "2026-11-14T08:51:59.983Z",
+      "endTimeUTC": "2026-11-14T08:52:06.230Z",
+      "elapsedSeconds": 6.25,
+      "thresholdSeconds": 600,
+      "passed": true,
+      "smokeTestOutput": "🔍  Smoke test — http://localhost:3001\n    Started at: 2026-11-14T08:52:05.978Z\n    Timeout: 10000ms per request | Retries: 3\n\n  ✅  GET /api/v1/health → 200 với DB connectivity\n  ✅  GET /api/v1/products/not-a-uuid → 400\n  ✅  GET /api/v1/products/:nonExistentId → 404\n  ✅  GET /api/v1/products → 200 array response\n\n────────────────────────────────────────\n  Passed: 4/4\n  Failed: 0/4\n  Ended at: 2026-11-14T08:52:06.218Z\n────────────────────────────────────────\n\n✅  Smoke test PASSED. API is healthy."
+    },
+    "dataIntegrity": {
+      "orderCountBefore": 2161,
+      "orderCountAfter": 2161,
+      "ordersLost": 0,
+      "passed": true
+    }
+  },
+  "conclusion": {
+    "passed": true,
+    "summary": "Diễn tập Rollback ứng dụng thành công hoàn hảo theo đúng chuẩn NFR-11: Thời gian <= 10 phút, 0 đơn hàng bị mất, backup/restore toàn vẹn."
+  }
+}

@@ -1,3 +1,4 @@
+// Kiểm tra luồng thanh toán VNPay giả lập và chống gửi lại khi bấm đúp hoặc tải lại.
 import { randomUUID } from 'node:crypto';
 import { test, expect } from './fixtures/vnpay-fixtures';
 import { setupCartWithProduct, proceedToCheckout } from './helpers/cart-helper';
@@ -5,7 +6,7 @@ import { enrichVnpayPaymentResponse } from './helpers/vnpay-test-helper';
 
 const api = process.env.E2E_API_URL ?? `http://localhost:${process.env.E2E_API_PORT ?? '3101'}/api/v1`;
 
-test('menu → cart → VNPay → confirmation', async ({ page, request, testUser, vnpayHelper }) => {
+test('Menu → giỏ hàng → VNPay → xác nhận đơn', async ({ page, request, testUser, vnpayHelper }) => {
   await setupCartWithProduct(page, testUser.accessToken);
   await proceedToCheckout(page);
   const attempt = page.waitForResponse(r => r.url() === api + '/payments' && r.request().method() === 'POST');
@@ -20,7 +21,7 @@ test('menu → cart → VNPay → confirmation', async ({ page, request, testUse
   await expect(page.getByRole('heading', { name: 'Giỏ hàng đang trống' })).toBeVisible();
 });
 
-test('double click and reload query payment status, replaying POST only when the status row is absent', async ({ page, request }) => {
+test('Bấm đúp và tải lại tra cứu thanh toán, chỉ gửi lại POST khi chưa có bản ghi', async ({ page, request }) => {
   const registration = await request.post(`${api}/auth/register`, {
     data: {
       username: `e2e_pending_${randomUUID().replaceAll('-', '').slice(0, 18)}`,

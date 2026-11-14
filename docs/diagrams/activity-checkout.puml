@@ -20,7 +20,7 @@ start
 :Chọn món, xem chi tiết, chọn 1 size (S/M/L),\ntopping hợp lệ, mức đường/đá (null hoặc 0..100),\nghi chú (<= 500 ký tự) và số lượng (1..20)\n(UC-04: Xem chi tiết sản phẩm + size + topping);
 
 |Next.js Web / PWA|
-if (Món/topping active & còn khả năng phục vụ\n(availableServings > 0 theo BOM)?) then (Không đủ / Inactive)
+if (Món/topping không khả dụng\nhoặc không đủ nguyên liệu?) then (Không đủ / Inactive)
   |Khách hàng|
   :Nhận thông báo món/topping tạm hết\nhoặc không khả dụng, chọn lại tùy chọn;
   stop
@@ -33,7 +33,7 @@ endif
 :Kiểm tra giỏ hàng, tùy chọn nhập mã coupon\n(UC-07: Áp dụng coupon) và bấm **Đặt hàng**;
 
 |Next.js Web / PWA|
-if (Đã có phiên đăng nhập JWT CUSTOMER hợp lệ?) then (Chưa đăng nhập / Hết hạn JWT [A1])
+if (Thiếu phiên đăng nhập JWT CUSTOMER hợp lệ?) then (Chưa đăng nhập / Hết hạn JWT [A1])
   :Giữ nguyên giỏ hàng trong localStorage;\nchuyển hướng sang màn hình Đăng nhập;
   |Khách hàng|
   :Thực hiện đăng nhập (UC-02: Đăng nhập)\nhoặc đăng ký CUSTOMER mới (UC-01: Đăng ký);
@@ -45,13 +45,13 @@ else (Đã có phiên CUSTOMER hợp lệ)
 endif
 
 |Next.js Web / PWA|
-:Khóa nút gửi và gọi POST /api/v1/orders + Bearer JWT\n(items, couponCode?; không gửi giá/userId/status)\n--- **Bắt đầu UC-06: Đặt hàng** ---;
+:Khóa nút gửi và gọi POST /api/v1/orders + Bearer JWT\n(items, couponCode?; không gửi giá/userId/status)\n**Bắt đầu UC-06: Đặt hàng**;
 
 |NestJS API & PostgreSQL|
-:Kiểm tra JWT, role CUSTOMER, chuẩn hóa DTO (1..20 dòng,\nquantity 1..20, sugar/ice null khác 0, trim note);\nmở transaction **Serializable** (tối đa 3 attempt nếu conflict);
+:Kiểm tra JWT, role CUSTOMER, chuẩn hóa DTO (1..20 dòng,\nquantity 1..20, sugar/ice null khác 0, trim note);\nmở transaction **Read Committed** (tối đa 3 attempt nếu conflict);
 :Đọc catalog active, quy đổi công thức RecipeItem (món)\n+ ToppingRecipeItem (topping) x quantity;\ncộng tổng nhu cầu từng Ingredient trên toàn đơn;
 
-if (DTO/option hợp lệ, coupon hợp lệ (nếu có)\nvà đủ tồn kho mọi Ingredient toàn đơn?) then (Hết hàng [409 OUT_OF_STOCK] /\nConflict [409] / Coupon lỗi [422] / DTO [400])
+if (DTO/option/coupon không hợp lệ\nhoặc thiếu nguyên liệu?) then (Hết hàng [409 OUT_OF_STOCK] /\nConflict [409] / Coupon lỗi [422] / DTO [400])
   :ROLLBACK toàn bộ transaction\n(hoàn nguyên Ingredient.stockQuantity & version,\nkhông ghi Order / Reservation / Coupon dở dang);\ntrả mã lỗi 400 / 409 / 422 kèm requestId;
   |Next.js Web / PWA|
   :Hiển thị thông báo lỗi (hết nguyên liệu / mã giảm giá sai);\n**giữ nguyên giỏ hàng** để khách sửa món hoặc thử lại;
@@ -60,33 +60,44 @@ if (DTO/option hợp lệ, coupon hợp lệ (nếu có)\nvà đủ tồn kho m�
   stop
 else (Đủ nguyên liệu & Hợp lệ)
   |NestJS API & PostgreSQL|
-  :UPDATE Ingredient (stockQuantity -= need, version += 1)\ntheo thứ tự ingredientId tăng dần;\nINSERT Order (status = **PENDING**), OrderItem,\nOrderItemTopping snapshot (unitPrice = giá variant);
+  :Khóa coupon nếu có; INSERT Order PENDING,\nOrderItem và OrderItemTopping snapshot;\nUPDATE Ingredient theo ID tăng dần\nchỉ khi isActive và stockQuantity >= need;\ntrừ tồn và tăng version;
   :INSERT InventoryReservation (status = **ACTIVE**)\n+ InventoryReservationItem (snapshot lượng nguyên liệu),\nCouponRedemption (**RESERVED** nếu có),\nOrderStatusHistory (NULL -> PENDING) và **COMMIT**;
-  :Trả 201 Created (orderId, orderNumber, total,\nreservationExpiresAt) --- **Kết thúc UC-06** ---;
+  :Trả 201 Created (orderId, orderNumber, total,\nreservationExpiresAt) **Kết thúc UC-06**;
 endif
 
 |Next.js Web / PWA|
 :Hiển thị đơn đã đặt ở trạng thái **PENDING**\n(chưa xóa giỏ hàng vì chưa thanh toán);
 
 |Khách hàng|
-repeat :Chọn phương thức thanh toán mock (E_WALLET / CARD)\nvà bấm **Thanh toán** cho orderId đã tạo\n--- **Bắt đầu UC-08: Thực hiện thanh toán** ---;
+:Tiếp tục thanh toán cho orderId đã tạo\n**Bắt đầu UC-08: Thực hiện thanh toán**;
 
 |Next.js Web / PWA|
-:Sinh Idempotency-Key cho lần thử thanh toán;\ngửi POST /api/v1/payments + Bearer JWT + Idempotency-Key;
+:Sinh Idempotency-Key cho lần thử thanh toán;\ngửi POST /api/v1/payments + JWT + Idempotency-Key\n{orderId, method: VNPAY};
 
 |NestJS API & PostgreSQL|
-:Kiểm tra chủ đơn (ownership) trước replay, kiểm tra key/hash;\ntransaction ngắn khóa Order và tạo Payment (status = **PROCESSING**);
+:Kiểm tra chủ đơn (ownership) trước replay, kiểm tra key/hash;\ntransaction ngắn khóa Order, tạo Payment PROCESSING và URL ký;
 
-|Mock Payment Gateway|
-:Xử lý giao dịch giả lập ngoài DB transaction\ntheo phương thức Ví / Thẻ và Idempotency-Key;
+|Next.js Web / PWA|
+:Chuyển khách sang URL VNPay;
+
+|VNPay Sandbox|
+:Khách thực hiện thanh toán; gửi IPN hoặc Return;
 
 |NestJS API & PostgreSQL|
-if (Kết quả phản hồi từ Mock Payment Gateway?) then (Từ chối / Thất bại [Payment FAILED])
+:Xác minh callback, mã giao dịch và số tiền;
+if (Kết quả chưa xác định hoặc cần đối soát?) then (Có)
+  |Next.js Web / PWA|
+  :Tra cứu theo cùng key hoặc theo dõi chi tiết đơn;
+  stop
+else (Đã xác định)
+endif
+|NestJS API & PostgreSQL|
+if (Thanh toán thất bại?) then (Payment FAILED)
   :Transaction cập nhật Payment -> **FAILED**,\nOrder -> **PAYMENT_FAILED**, ghi OrderStatusHistory;\n**không** cộng điểm loyalty; **giữ nguyên** InventoryReservation\n(**ACTIVE**) và CouponRedemption (**RESERVED**) đến hạn;
   |Next.js Web / PWA|
-  :Hiển thị thông báo thanh toán thất bại;\n**giữ nguyên giỏ hàng**, cho phép thử lại hoặc hủy đơn;
+  :Hiển thị thông báo thanh toán thất bại;\nlưu snapshot đơn để thử lại, giữ các món khác trong giỏ;
   |Khách hàng|
-  if (Khách chọn thử lại trước khi hết hạn giữ tồn\n(reservationExpiresAt)?) then (Hủy đơn hoặc hết hạn giữ tồn)
+  if (Khách hủy đơn hoặc hết hạn giữ tồn?) then (Hủy hoặc hết hạn)
     |NestJS API & PostgreSQL|
     :Chuyển Order -> **CANCELLED**;\nInventoryReservation -> **RELEASED** / **EXPIRED**;\nCouponRedemption -> **RELEASED** / **EXPIRED**;\nhoàn nguyên Ingredient.stockQuantity theo\nInventoryReservationItem snapshot đúng 1 lần;
     |Next.js Web / PWA|
@@ -96,12 +107,13 @@ if (Kết quả phản hồi từ Mock Payment Gateway?) then (Từ chối / Th�
     |NestJS API & PostgreSQL|
     :Đơn được phép tạo attempt mới (chuyển về **PENDING**\ntrước attempt mới; không tạo Order mới,\nkhông giữ nguyên liệu lần hai);
   endif
-backward :Chuyển sang lần thử thanh toán mới (merge);
-repeat while (Thực hiện lại bước thanh toán UC-08?) is (Thử lại) not (Đã thanh toán thành công)
+  stop
+else (Thành công)
+endif
 
 |NestJS API & PostgreSQL|
-:Transaction cập nhật Payment -> **SUCCEEDED**,\nOrder -> **PAID**, InventoryReservation -> **CONSUMED**,\nCouponRedemption -> **CONSUMED** (nếu có),\nghi OrderStatusHistory (PENDING/PAYMENT_FAILED -> PAID)\nvà đúng 1 LoyaltyTransaction (**EARN**) + cộng loyaltyBalance;
-:Trả kết quả thanh toán thành công\n--- **Kết thúc UC-08** ---;
+:Transaction cập nhật Payment -> **SUCCEEDED**,\nOrder -> **PAID**, InventoryReservation -> **CONSUMED**,\nCouponRedemption -> **CONSUMED** (nếu có),\nghi OrderStatusHistory (PENDING/PAYMENT_FAILED -> PAID)\nvà cộng điểm một lần khi số điểm dương;
+:Lưu kết quả để Web tra cứu\n**Kết thúc UC-08**;
 
 |Next.js Web / PWA|
 :Xóa các món đã thanh toán khỏi giỏ hàng localStorage;\nchuyển hướng sang trang Xác nhận & Chi tiết đơn hàng;

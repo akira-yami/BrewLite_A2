@@ -1,6 +1,6 @@
 # Deployment production BrewLite A2
 
-Snapshot ngày 10/11/2026 của Railway project `brewlite-a2`, environment `a2-production`, region `sfo`. Web và API cấu hình từ `akira-yami/BrewLite_A2/main`. Deployment gần nhất của hai service là `SUCCESS` tại `2d868b685caa98092d9d1ee77d78365b75021725`.
+Snapshot ngày 10/11/2026 của Railway project `brewlite-a2`, environment `a2-production`, region `sfo`. Web và API cấu hình từ `akira-yami/BrewLite_A2/main`. Tại thời điểm snapshot, hai service ở trạng thái `SUCCESS` tại `2d868b685caa98092d9d1ee77d78365b75021725`.
 
 [Nguồn PlantUML](diagrams/deployment-production.puml) · [SVG](diagrams/deployment-production.svg) · [PNG](diagrams/deployment-production.png) · [Snapshot cấu hình](deployment/railway-snapshot.json) · [Railway project](https://railway.com/project/a07749a5-2382-4497-a7fd-63d79b5e523c).
 

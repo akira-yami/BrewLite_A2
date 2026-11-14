@@ -26,7 +26,7 @@ SRS được chia theo trách nhiệm để review từng issue:
 | FR-04 | Quản lý giỏ và tạm tính | Must | Khách hàng / UC-05 | A2 mục 7.1 |
 | FR-05 | Đăng ký, đăng nhập, phiên JWT và phân quyền | Must | Khách hàng, Barista / UC-01/02 | A2 mục 7.1 |
 | FR-06 | Tạo đơn, tính giá và giữ tồn nguyên tử | Must | Khách hàng / UC-06 | A2 mục 7.1-7.2; quy tắc A1 |
-| FR-07 | Thanh toán Ví/Thẻ mock, chống lặp và thử lại | Must | Khách hàng, Gateway / UC-08 | A2 mục 4.2, 7.1-7.2 |
+| FR-07 | Thanh toán VNPay Sandbox trên Web, Ví/Thẻ mock trong test API, chống lặp và thử lại | Must | Khách hàng, Gateway / UC-08 | A2 mục 4.2, 7.1-7.2 |
 | FR-08 | Xác nhận, chi tiết và lịch sử đơn của mình | Must | Khách hàng / UC-09 | A2 mục 7.1 |
 | FR-09 | Quản lý vòng đời, hủy đơn và tiến độ pha chế | Must | Barista / UC-10; Khách hàng / nhánh hủy trong UC-06/08/09 | A2 mục 3.2, 7.1; state machine A1 |
 | FR-10 | Coupon và loyalty nhất quán | Must | Khách hàng / UC-07/08 | Kế thừa baseline A1, thuộc phạm vi đề xuất A2 |
@@ -61,7 +61,7 @@ SRS được chia theo trách nhiệm để review từng issue:
 
 - **AT-FR-04.1:** Thêm, sửa quantity/tùy chọn và xóa cập nhật đúng dòng, số lượng và tạm tính; giỏ rỗng không checkout. Cùng variant, tập topping, đường/đá và note đã chuẩn hóa gộp thành một dòng trong giới hạn 1..20; khác một thành phần giữ dòng riêng.
 - **AT-FR-04.2:** Reload giữ món/quantity/tùy chọn/note; localStorage lỗi hoặc dữ liệu cũ hỏng không làm ứng dụng crash. Chưa đăng nhập thì chuyển tới đăng nhập trước tạo đơn và giữ giỏ để quay lại checkout.
-- **AT-FR-04.3:** Khi tạo đơn/thanh toán lỗi hoặc chưa rõ kết quả, không xóa dữ liệu giỏ. Khi xác nhận thanh toán thành công, chỉ xóa phần giỏ đã dùng cho đơn đó và giữ các món mới thêm sau checkout.
+- **AT-FR-04.3:** Lỗi tạo đơn hoặc thanh toán chưa rõ kết quả phải giữ dữ liệu giỏ. Khi thanh toán thành công, Web bỏ các dòng đã dùng cho đơn đó và giữ món mới. Khi thanh toán thất bại xác định, Web chuyển phần giỏ đã đặt sang đơn đang theo dõi để thử lại từ snapshot của đơn; các món mới trong giỏ được giữ.
 - Kiểm chứng: store/component test và browser E2E reload, đăng nhập, thất bại/retry. UC-05.
 
 ### FR-05 - Xác thực và quyền
@@ -76,7 +76,7 @@ SRS được chia theo trách nhiệm để review từng issue:
 
 - **AT-FR-06.1:** Khách đã đăng nhập gửi giỏ hợp lệ tạo mã đơn duy nhất, trạng thái `PENDING`, items/topping snapshot và mốc hết hạn giữ tồn. Chủ đơn lấy từ JWT; tên/giá lấy từ DB. Không nhận giá/tổng/userId do client áp đặt.
 - **AT-FR-06.2:** Snapshot giữ giá/tên món, size, topping, đường/đá (null khác 0) và note; đổi catalog sau đó không đổi đơn cũ. Tổng `subtotal - discountAmount = total >= 0`.
-- **AT-FR-06.3:** Quy đổi mọi dòng qua RecipeItem và ToppingRecipeItem, nhân quantity và cộng nhu cầu theo ingredientId trên toàn đơn. Cập nhật Ingredient.stockQuantity/version có điều kiện đủ tồn/version, tạo InventoryReservation theo order/variant và InventoryReservationItem snapshot lượng nguyên liệu thực tế đã giữ; order/items/coupon/history cùng transaction. Một lỗi rollback tất cả; thiếu nguyên liệu trả 409, không ghi dở dang.
+- **AT-FR-06.3:** Quy đổi mọi dòng qua RecipeItem và ToppingRecipeItem, nhân quantity và cộng nhu cầu theo ingredientId trên toàn đơn. Cập nhật Ingredient.stockQuantity/version chỉ khi nguyên liệu còn hoạt động và tồn hiện tại đủ, tăng version sau khi trừ, tạo InventoryReservation theo order/variant và InventoryReservationItem snapshot lượng nguyên liệu thực tế đã giữ; order/items/coupon/history cùng transaction. Một lỗi rollback tất cả; thiếu nguyên liệu trả 409, không ghi dở dang.
 - **AT-FR-06.4:** Fixture một ly cần 10 đơn vị ingredient X, X.stockQuantity=50, không có topping/nguyên liệu khác là nút thắt, không restock; 20 request đồng thời mua 1 ly: mục tiêu đúng 5 order commit, 15 từ chối nghiệp vụ, tồn X cuối=0, tổng quantity reservation ACTIVE=5 và snapshot X tổng=50, không âm. Thêm ca nhiều variant/topping dùng chung X để kiểm tra cộng nhu cầu toàn đơn.
 - Kiểm chứng: integration với PostgreSQL thật, fault injection sau reserve, cập nhật catalog và ca concurrency. UC-06.
 
@@ -84,11 +84,11 @@ SRS được chia theo trách nhiệm để review từng issue:
 
 FR-07 và các mã AT bên dưới giữ phạm vi Ví/Thẻ mô phỏng của đề bài. Checkout A2 dùng VNPay, còn Ví/Thẻ mock được duy trì trong bộ test API. Hành vi triển khai, API và các nhánh đối soát được mô tả tại [UC-08 hiện tại](uc-08-thanh-toan.md).
 
-- **AT-FR-07.1:** Chủ đơn chọn `E_WALLET` hoặc `CARD`, gửi `orderId`, `method`, header `Idempotency-Key`; amount lấy từ order server. Thiếu key/sai method trả 400. Chỉ thanh toán khi đơn và reservation hợp lệ.
+- **AT-FR-07.1:** Web gửi `VNPAY`; bộ kiểm thử API dùng `E_WALLET` hoặc `CARD`. Client gửi `orderId`, `method`, header `Idempotency-Key`; amount lấy từ order server. Thiếu key/sai method trả 400. Chỉ thanh toán khi đơn và reservation hợp lệ.
 - **AT-FR-07.2:** Gateway thành công lưu Payment `SUCCEEDED`, Order `PAID`, consume reservation/coupon, ghi history và cộng điểm đúng một lần, cùng transaction. Gateway được gọi ngoài transaction DB dài.
-- **AT-FR-07.3:** Cùng key và payload đã hoàn tất trả kết quả attempt đã lưu, không charge/ghi kép. Attempt đang `PROCESSING` trả 409 `PAYMENT_IN_PROGRESS`; cùng key khác order/method/hash trả 409 `IDEMPOTENCY_KEY_REUSED`. Key mới cũng không được tạo thành công thứ hai cho đơn đã paid.
+- **AT-FR-07.3:** Cùng key và payload đã hoàn tất trả kết quả attempt đã lưu, không charge/ghi kép. Cùng key/hash của attempt VNPay đang `PROCESSING` có thể trả lại URL. Key khác gặp attempt đang `PROCESSING` trả 409 `PAYMENT_IN_PROGRESS`; cùng key khác order/method/hash trả 409 `IDEMPOTENCY_KEY_REUSED`. Key mới cũng không được tạo thành công thứ hai cho đơn đã paid.
 - **AT-FR-07.4:** Gateway từ chối xác định lưu `FAILED`, đơn `PAYMENT_FAILED`, không cộng điểm; giữ reservation đến hạn retry. Retry dùng key mới, chuyển về `PENDING` trước attempt mới, không giữ tồn lần hai. Hết hạn/hủy đơn không được retry.
-- **AT-FR-07.5:** Timeout/lỗi gateway chưa rõ kết quả trả lỗi tạm thời 503; UI báo đang kiểm tra và cho tra cứu/gửi lại cùng key. Không khẳng định thất bại, không tạo attempt mới hoặc hoàn tồn khi chưa đối soát attempt đang xử lý.
+- **AT-FR-07.5:** Khi chưa rõ kết quả, Web tra cứu trạng thái theo cùng key. Timeout 503 là nhánh của mock gateway trong bộ kiểm thử. Không khẳng định thất bại, không tạo attempt mới hoặc hoàn tồn khi chưa đối soát attempt đang xử lý.
 - Kiểm chứng: gateway stub success/decline/timeout; integration replay nối tiếp và đồng thời, payload khác, key khác cùng đơn, sai chủ và lỗi trước commit. UC-08.
 
 ### FR-08 - Xác nhận và lịch sử
@@ -122,7 +122,7 @@ FR-07 và các mã AT bên dưới giữ phạm vi Ví/Thẻ mô phỏng của �
 
 - **AT-FR-10.1:** Coupon là tùy chọn, tối đa một mã/đơn. Server kiểm tra active, thời gian, minimum subtotal, phạm vi và hạn mức tổng/theo user. Coupon sai/hết hạn/hết lượt không được giảm giá; thông báo để khách bỏ/sửa mã trước đặt đơn.
 - **AT-FR-10.2:** Quote chỉ để xem trước; tạo đơn kiểm tra lại và giữ lượt dùng nguyên tử. Ví dụ subtotal 114.000, giảm cố định 10.000 cho total 104.000; giảm không vượt subtotal, total không âm. Hủy/hết hạn đơn chưa thanh toán giải phóng lượt đúng một lần; đơn PAID consume lượt đúng một lần.
-- **AT-FR-10.3:** Quy ước nhóm đề xuất để chốt phép kiểm chứng: `floor(total VND / 1000)` sau payment SUCCEEDED; ví dụ total 104.000 nhận 104 điểm. Tài liệu tham khảo chưa chốt tỷ lệ điểm, nên tỷ lệ này cần PO review trước triển khai. Lưu ledger `EARN` gắn order và cập nhật balance cùng transaction. Replay/đồng thời không tăng thêm; payment FAILED không có EARN. Hủy PAID giữ điểm theo luật FR-09.
+- **AT-FR-10.3:** Runtime hiện cộng `floor(total VND / 10)` sau payment SUCCEEDED; ví dụ total 104.000 nhận 10.400 điểm. Lưu ledger `EARN` gắn order và cập nhật balance cùng transaction. Replay/đồng thời không tăng thêm; payment FAILED không có EARN. Hủy PAID giữ điểm theo luật FR-09.
 - Kiểm chứng: unit biên thời gian/số tiền, integration coupon hạn mức 1 với request đồng thời và payment replay; kiểm tra ledger/balance. UC-07 và UC-08; loyalty là hậu điều kiện backend của thanh toán, không có thao tác đổi điểm trong MVP.
 
 ### FR-11..15 - Ưu tiên bổ sung

@@ -49,7 +49,7 @@ Thành phẩm (ly cà phê, trà sữa...) **không có số lượng trong CSDL
 
 | Bảng | Vai trò |
 |---|---|
-| `ingredients` | Nguyên liệu thô. `stock_quantity` tính theo đơn vị cơ sở của `unit` (`G`, `ML`, `PCS`); `version` dùng cho compare-and-set khi trừ kho. |
+| `ingredients` | Nguyên liệu thô. `stock_quantity` tính theo đơn vị cơ sở của `unit` (`G`, `ML`, `PCS`); `version` tăng sau mỗi lần ghi tồn; các luồng dùng khóa phiên bản kiểm tra giá trị này. |
 | `recipe_items` | Công thức (BOM): khóa chính `(product_variant_id, ingredient_id)`, `quantity` là lượng nguyên liệu cho 1 ly. |
 | `inventory_reservation_items` | Lượng nguyên liệu thực tế đã giữ cho từng reservation, dùng để hoàn đúng số lượng khi hủy hoặc hết hạn, kể cả khi công thức đổi sau đó. |
 
@@ -62,7 +62,7 @@ Mỗi ly kèm một phần topping, nguyên liệu của topping được trừ 
 
 API menu/detail trả `variants[].available` (boolean): công thức có đủ nguyên liệu để pha ít nhất một phần hay không. Không trả số lượng tồn của từng món/size. Các size và món có thể dùng chung nguyên liệu nên khả dụng tại lúc đọc không phải cam kết giữ hàng. Backend cộng dồn nhu cầu của toàn giỏ (gồm topping) rồi giữ nguyên liệu trong transaction; UI chỉ hiển thị “Có thể pha / Tạm hết nguyên liệu”.
 
-Khi tạo đơn, hệ thống quy đổi số ly thành nhu cầu nguyên liệu theo công thức, cộng dồn các nguyên liệu dùng chung giữa các dòng, rồi trừ kho nguyên liệu bằng `UPDATE ... WHERE version = ? AND stock_quantity >= ?` theo thứ tự ID trong transaction `Serializable`. Migration `20261101090000_ingredient_recipe_inventory` tạo ba bảng trên và xóa `product_variants.stock`/`version`. Số lượng thành phẩm cũ không được chuyển đổi; sau khi `npm run prisma:deploy`, chạy `npm run db:seed` để có nguyên liệu và công thức mẫu.
+Khi tạo đơn, hệ thống quy đổi số ly thành nhu cầu nguyên liệu theo công thức, cộng dồn các nguyên liệu dùng chung giữa các dòng, rồi trừ kho nguyên liệu bằng `UPDATE ... WHERE is_active = true AND stock_quantity >= ?` theo thứ tự ID trong transaction `ReadCommitted`. Migration `20261101090000_ingredient_recipe_inventory` tạo ba bảng trên và xóa `product_variants.stock`/`version`. Số lượng thành phẩm cũ không được chuyển đổi; sau khi `npm run prisma:deploy`, chạy `npm run db:seed` để có nguyên liệu và công thức mẫu.
 
 ## Kiểm tra
 
@@ -74,7 +74,7 @@ npm run test:e2e
 npm run build
 ```
 
-`test/checkout.e2e-spec.ts` kiểm tra HTTP/DB thật cho checkout: preview coupon, tạo đơn có giảm giá, thanh toán Wallet thành công, Card thất bại, replay idempotency key và retry bằng key mới. Test yêu cầu `SMOKE_DATABASE_URL` trỏ đến database disposable có tên bắt đầu bằng `brewlite_foundation_smoke`.
+`test/e2e/checkout.e2e-spec.ts` kiểm tra HTTP/DB thật cho checkout: preview coupon, tạo đơn có giảm giá, thanh toán Wallet thành công, Card thất bại, replay idempotency key và retry bằng key mới. Test yêu cầu `SMOKE_DATABASE_URL` trỏ đến database disposable có tên bắt đầu bằng `brewlite_foundation_smoke`.
 
 Build/typecheck tự generate client; `src/generated/prisma` được bỏ qua trong Git. Docker dùng migration one-shot trước backend. Không sửa migration đã chạy trên database chia sẻ.
 
@@ -101,7 +101,7 @@ Script không đọc `.env`, không reset/drop database và từ chối DB khôn
 
 Integration kiểm tra CHECK, FK, partial unique payment/loyalty và rollback; chưa chứng minh implementation Task 10 (state machine, payment idempotency service, inventory concurrency), vốn thuộc các Sprint sau.
 
-`test/s1.integration-spec.ts` bổ sung kiểm tra HTTP qua AppModule với PostgreSQL thật: Register → Login → JWT/profile, hash/response an toàn, whitelist, credential lỗi và Menu đọc giá từ DB. Bộ này chạy cùng `test:migration`/`test:integration` và chỉ ghi fixture vào `SMOKE_DATABASE_URL` đã được kiểm tra tên.
+`test/integration/s1.integration-spec.ts` bổ sung kiểm tra HTTP qua AppModule với PostgreSQL thật: Register → Login → JWT/profile, hash/response an toàn, whitelist, credential lỗi và Menu đọc giá từ DB. Bộ này chạy cùng `test:migration`/`test:integration` và chỉ ghi fixture vào `SMOKE_DATABASE_URL` đã được kiểm tra tên.
 
 ## Hợp đồng Orders và tài liệu dữ liệu
 

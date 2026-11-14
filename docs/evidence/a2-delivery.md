@@ -15,9 +15,13 @@ Kiểm tra cục bộ ngày 14/11/2026 trên nhánh `codex/a2-release-verificati
 | Unit, lint và build | `node scripts/ci-projects.mjs lint`, `test`, `build` với cùng runner | API 525/525 và Web 103/103. Lint exit 0 với cảnh báo có sẵn. Build API và Web exit 0. |
 | Runner và cấu hình | `node --test scripts/*.test.mjs` | 19/19. |
 | Migration và integration | `npm --prefix apps/api run test:migration` | 21 migration trên DB rỗng, replay no-op, 91/91 ca integration. |
-| Tạo đơn/thanh toán API | `npm --prefix apps/api run test:e2e` | 32/32. [Checkout HTTP](../../apps/api/test/checkout.e2e-spec.ts) dùng DB thật và Ví/Thẻ mock. [Readiness](../../apps/api/test/app.e2e-spec.ts) kiểm tra gọi DB và trả 503 khi truy vấn lỗi. |
-| Browser E2E | `npm --prefix apps/web run test:e2e` | 19/19, chạy với Web 55472 và API 55471. [Ca nghiệm thu](../../tests/e2e/checkout-flow.spec.ts) kiểm tra mã xác nhận và trạng thái `PAID` qua API và PostgreSQL local. Callback VNPay được mô phỏng. |
+| Tạo đơn/thanh toán API | `npm --prefix apps/api run test:e2e` | 32/32. [Checkout HTTP](../../apps/api/test/e2e/checkout.e2e-spec.ts) dùng DB thật và Ví/Thẻ mock. [Readiness](../../apps/api/test/e2e/app.e2e-spec.ts) kiểm tra gọi DB và trả 503 khi truy vấn lỗi. |
+| Browser E2E | `npm --prefix apps/web run test:e2e` | 19/19, chạy với Web 55472 và API 55471. [Ca nghiệm thu](../../apps/web/tests/e2e/delivery/checkout-flow.spec.ts) kiểm tra mã xác nhận và trạng thái `PAID` qua API và PostgreSQL local. Callback VNPay được mô phỏng. |
 | Compose | [Job Compose trên PR CI](../../.github/workflows/pr-ci.yml) | Log cục bộ phát hiện thiếu Prisma schema tại bước npm install, đã sửa Dockerfile. Dùng artifact của job Compose để xác nhận build, khởi động, seed lặp và đơn `PAID` sau restart. |
+
+[Ảnh chạy local ngày 14/11/2026](testing/local-2026-11-14/README.md) ghi nhận kết quả test API, Web, API E2E và Browser E2E.
+
+Minh chứng bổ sung trong workspace gồm [đo tải NFR-01](perf/nfr-01-load-test-report.md) và [diễn tập rollback bốn lớp](cd/rollback-local-2026-11-14/README.md). Các kết quả này ghi nhận lượt chạy local của từng bộ minh chứng.
 
 [Test plan](../testing/test-plan.md) và [ma trận truy vết](../traceability-matrix.md) nối các ca với FR/NFR.
 

@@ -1,0 +1,171 @@
+{
+  "testRunAtUTC": "2026-11-14T09:57:34.809Z",
+  "system": {
+    "cpuModel": "13th Gen Intel(R) Core(TM) i7-13620H",
+    "cpuCores": 16,
+    "totalMemMB": 16088,
+    "usedMemMB": 13939,
+    "memUsagePercent": 86.6,
+    "nodeVersion": "v24.21.0",
+    "platform": "win32",
+    "release": "10.0.26200"
+  },
+  "databaseBefore": {
+    "productCount": 100,
+    "orderCount": 6668,
+    "totalStock": "329972630"
+  },
+  "databaseAfter": {
+    "productCount": 100,
+    "orderCount": 6768,
+    "totalStock": "330029325"
+  },
+  "routes": [
+    {
+      "endpoint": "GET /api/v1/products",
+      "startTimeUTC": "2026-11-14T09:53:33.303Z",
+      "endTimeUTC": "2026-11-14T09:54:33.433Z",
+      "durationSeconds": 60.13,
+      "concurrency": 20,
+      "totalRequests": 7162,
+      "requestsPerSecond": 119.1,
+      "percentiles": {
+        "min": 67.36,
+        "avg": 167.74,
+        "p50": 166.24,
+        "p90": 190.31,
+        "p95": 199.12,
+        "p99": 227.66,
+        "max": 313.68
+      },
+      "successPercentiles": {
+        "min": 67.36,
+        "avg": 167.74,
+        "p50": 166.24,
+        "p90": 190.31,
+        "p95": 199.12,
+        "p99": 227.66,
+        "max": 313.68
+      },
+      "successCount": 7162,
+      "statusCodes": {
+        "200": 7162
+      },
+      "errorSamples": {},
+      "errors5xx": 0,
+      "errors4xx": 0,
+      "timeouts": 0,
+      "errorRate5xxPercent": 0,
+      "thresholdP95": 500,
+      "thresholdErrorRate": 1,
+      "passLatency": true,
+      "passErrorRate": true,
+      "passed": true
+    },
+    {
+      "endpoint": "GET /api/v1/products/8f0d98b5-b08e-45ca-b98b-3e388d76b98e",
+      "startTimeUTC": "2026-11-14T09:55:03.469Z",
+      "endTimeUTC": "2026-11-14T09:56:03.481Z",
+      "durationSeconds": 60.01,
+      "concurrency": 20,
+      "totalRequests": 47185,
+      "requestsPerSecond": 786.3,
+      "percentiles": {
+        "min": 10.73,
+        "avg": 25.43,
+        "p50": 19.58,
+        "p90": 46.12,
+        "p95": 52.68,
+        "p99": 68.36,
+        "max": 146.45
+      },
+      "successPercentiles": {
+        "min": 10.73,
+        "avg": 25.43,
+        "p50": 19.58,
+        "p90": 46.12,
+        "p95": 52.68,
+        "p99": 68.36,
+        "max": 146.45
+      },
+      "successCount": 47185,
+      "statusCodes": {
+        "200": 47185
+      },
+      "errorSamples": {},
+      "errors5xx": 0,
+      "errors4xx": 0,
+      "timeouts": 0,
+      "errorRate5xxPercent": 0,
+      "thresholdP95": 500,
+      "thresholdErrorRate": 1,
+      "passLatency": true,
+      "passErrorRate": true,
+      "passed": true
+    },
+    {
+      "endpoint": "GET /api/v1/orders/me",
+      "startTimeUTC": "2026-11-14T09:56:33.532Z",
+      "endTimeUTC": "2026-11-14T09:57:33.538Z",
+      "durationSeconds": 60.01,
+      "concurrency": 20,
+      "totalRequests": 59597,
+      "requestsPerSecond": 993.1,
+      "percentiles": {
+        "min": 9.94,
+        "avg": 20.14,
+        "p50": 18.78,
+        "p90": 26.64,
+        "p95": 28.92,
+        "p99": 35.96,
+        "max": 66.17
+      },
+      "successPercentiles": {
+        "min": 9.94,
+        "avg": 20.14,
+        "p50": 18.78,
+        "p90": 26.64,
+        "p95": 28.92,
+        "p99": 35.96,
+        "max": 66.17
+      },
+      "successCount": 59597,
+      "statusCodes": {
+        "200": 59597
+      },
+      "errorSamples": {},
+      "errors5xx": 0,
+      "errors4xx": 0,
+      "timeouts": 0,
+      "errorRate5xxPercent": 0,
+      "thresholdP95": 500,
+      "thresholdErrorRate": 1,
+      "passLatency": true,
+      "passErrorRate": true,
+      "passed": true
+    },
+    {
+      "endpoint": "POST /api/v1/payments (VNPay: tạo liên kết thanh toán)",
+      "note": "Đo riêng theo yêu cầu SRS mục 2: tách biệt latency thanh toán khỏi API thông thường. Phương thức VNPAY; đo thời gian API tạo payment PROCESSING và liên kết thanh toán, không gồm bước khách thanh toán trên VNPay.",
+      "samples": 100,
+      "orderSetupFailures": 0,
+      "orderSetupErrorSamples": {},
+      "percentiles": {
+        "min": 3.38,
+        "avg": 4.39,
+        "p50": 4.12,
+        "p90": 4.73,
+        "p95": 5.02,
+        "p99": 15.7,
+        "max": 15.7
+      },
+      "statusCodes": {
+        "200": 100
+      },
+      "errorSamples": {},
+      "errors5xx": 0,
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}

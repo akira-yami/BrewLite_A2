@@ -1,6 +1,6 @@
 # BrewLite - Assignment 2
 
-Ứng dụng đặt đồ uống tại quầy: menu -> chọn món/tùy chọn -> giỏ -> đăng nhập -> tạo đơn -> Ví/Thẻ mô phỏng -> xác nhận/lịch sử. Công nghệ theo đề: **Next.js/PWA, NestJS, PostgreSQL**.
+Ứng dụng đặt đồ uống tại quầy: menu -> chọn món/tùy chọn -> giỏ -> đăng nhập -> tạo đơn -> VNPay Sandbox -> xác nhận/lịch sử. Công nghệ theo đề: **Next.js/PWA, NestJS, PostgreSQL**.
 
 Repository chính: [akira-yami/BrewLite_A2](https://github.com/akira-yami/BrewLite_A2). Thiết lập và quy trình: [A2-4.1 / #17](https://github.com/akira-yami/BrewLite_A2/issues/17).
 
@@ -13,17 +13,12 @@ Luồng ứng dụng gồm menu → chi tiết món → giỏ hàng → đăng n
 - **Video Demo & Bàn giao**: [Thư mục Video Demo trên Google Drive](https://drive.google.com/drive/folders/1R0mMpga32tXJx-Pg-UcuiGaUncPrsqSE?hl=vi) (Xem chi tiết tại [`demo/README.md`](demo/README.md))
 - **Kiểm thử và minh chứng**: [Task 4.4, 5.2, 5.3 và 5.4](docs/evidence/a2-delivery.md)
 - **CI**: `PR quality gate` bắt buộc cho lint, unit test, build, integration PostgreSQL, API E2E và Playwright.
-- **Phiên bản**: [GitHub Releases](https://github.com/akira-yami/BrewLite_A2/releases) và [ghi chú v1.0.0](docs/RELEASE-NOTES-v1.0.0.md).
+- **Phiên bản**: [GitHub Releases](https://github.com/akira-yami/BrewLite_A2/releases) và [v1.0.2 · 53b9321](https://github.com/akira-yami/BrewLite_A2/releases/tag/v1.0.2).
 - **Rollback guide**: xem [`docs/evidence/cd/rollback-guide.md`](docs/evidence/cd/rollback-guide.md)
 
-## 🎥 Video Demo & Minh chứng Bàn giao (Task 5.4)
+Xem hướng dẫn chi tiết [API](apps/api/README.md) và [Web](apps/web/README.md). Docker Compose và browser E2E đã đạt trong [CI của PR #102](https://github.com/akira-yami/BrewLite_A2/actions/runs/43571751138). Revision `53b9321` đã qua [Railway CD #11](https://github.com/akira-yami/BrewLite_A2/actions/runs/43572616665). Commit `e9ace66` trên `main` cũng đã qua [CI](https://github.com/akira-yami/BrewLite_A2/actions/runs/43575835639) và [Railway CD](https://github.com/akira-yami/BrewLite_A2/actions/runs/43576208668).
 
-* 🎬 **Thư mục Video Demo End-to-End (Google Drive):** [Xem Video Demo tại đây](https://drive.google.com/drive/folders/1R0mMpga32tXJx-Pg-UcuiGaUncPrsqSE?hl=vi)
-* 📖 **Hướng dẫn kịch bản & tài khoản test:** Xem tại [`demo/README.md`](demo/README.md)
-* 🌐 **Môi trường Production trực tuyến:**
-  * Frontend Web (HTTPS): [https://web-a2-production.up.railway.app/menu](https://web-a2-production.up.railway.app/menu)
-  * Backend API Readiness: [https://api-a2-production.up.railway.app/api/v1/health](https://api-a2-production.up.railway.app/api/v1/health)
-* 👤 **Tài khoản Demo:** Xem tên đăng nhập và cách nhận thông tin truy cập trong [hướng dẫn demo](demo/README.md).
+Nếu nộp báo cáo PDF, đính kèm file PDF trực tiếp trong gói nộp. Thư mục `report/` là thư mục local được Git bỏ qua.
 
 ## Clone và đọc hồ sơ
 
@@ -49,7 +44,7 @@ docker compose -f compose.yaml run --rm --no-deps seed
 node apps/api/scripts/smoke.mjs http://localhost:3001
 ```
 
-Mở [menu local](http://localhost:3000/menu). Profile `demo` nạp catalog và tài khoản mẫu cục bộ. Dừng bằng `docker compose -f compose.yaml --profile demo down`. Volume PostgreSQL giữ dữ liệu giữa các lượt chạy. `docker-compose.yml` là cấu hình tương thích cho các máy đang dùng luồng local cũ.
+Mở [menu local](http://localhost:3000/menu). Profile `demo` nạp catalog và tài khoản mẫu cục bộ. Để thanh toán trên Web local, bật `VNPAY_ENABLED=true` và cấu hình thông tin VNPay Sandbox theo [hướng dẫn API](apps/api/README.md) và `.env.example`. Compose mặc định tắt VNPay. Dừng bằng `docker compose -f compose.yaml --profile demo down`. Volume PostgreSQL giữ dữ liệu giữa các lượt chạy. `docker-compose.yml` là cấu hình tương thích cho các máy đang dùng luồng local cũ.
 
 ## Chạy Local (không cần Docker)
 

@@ -1,9 +1,10 @@
+// Kiểm tra chu kỳ tra cứu và điều kiện dừng khi có kết quả thanh toán.
 import { enrichVnpayPaymentResponse } from '../helpers/vnpay-test-helper.js';
 import { test, expect } from '../fixtures/vnpay-fixtures.js';
 import { setupCartWithProduct, proceedToCheckout } from '../helpers/cart-helper.js';
 
-test.describe('VNPAY Polling Behavior', () => {
-  test('polling occurs at 5-second intervals', async ({
+test.describe('Tra cứu trạng thái VNPay', () => {
+  test('Tra cứu trạng thái mỗi 5 giây', async ({
     page,
     testUser,
   }) => {
@@ -31,7 +32,7 @@ test.describe('VNPAY Polling Behavior', () => {
     expect(interval).toBeLessThan(6000);
   });
 
-  test('polling stops on SUCCEEDED', async ({
+  test('Dừng tra cứu khi trạng thái SUCCEEDED', async ({
     page,
     request,
     vnpayHelper,
@@ -74,7 +75,7 @@ test.describe('VNPAY Polling Behavior', () => {
     expect(statusRequestsAfterSuccess).toBe(0);
   });
 
-  test('polling stops on FAILED', async ({
+  test('Dừng tra cứu khi trạng thái FAILED', async ({
     page,
     request,
     vnpayHelper,
@@ -113,7 +114,7 @@ test.describe('VNPAY Polling Behavior', () => {
     expect(statusRequestsAfterFailure).toBe(0);
   });
 
-  test('polling includes correct Idempotency-Key header', async ({
+  test('Gửi đúng header Idempotency-Key khi tra cứu', async ({
     page,
     testUser,
   }) => {

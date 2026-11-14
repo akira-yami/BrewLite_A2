@@ -38,7 +38,7 @@ Unit test thuần với **Vitest + vi.fn() mock** — không dùng NestJS Test M
 | File | Loại |
 |---|---|
 | `apps/api/test/orders.service.spec.ts` | Unit test mới — 47 test cases |
-| `apps/api/test/orders.controller.spec.ts` | Unit test mới — 13 test cases |
+| `apps/api/test/unit/orders.controller.spec.ts` | Unit test mới — 13 test cases |
 
 ### Điều kiện tiên quyết
 ```powershell

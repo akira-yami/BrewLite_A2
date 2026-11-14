@@ -171,7 +171,7 @@ Logic an toàn: kiểm tra length trước, wrap `timingSafeEqual` trong try-cat
 
 **Test kết quả sau sửa:**
 ```
-✓ test/jwt.spec.ts (5 tests) — tất cả 5 pass trong 16ms
+✓ test/unit/jwt.spec.ts (5 tests) — tất cả 5 pass trong 16ms
   ✓ signs and verifies a token with correct payload
   ✓ rejects a token signed with a different secret
   ✓ rejects a token that is expired
@@ -233,7 +233,7 @@ Tổng: 199 tests, 0 failed
 | Hướng dẫn local/test/build | ✅ Trong README + RELEASE-NOTES | Clone, install, migrate, start |
 | Hướng dẫn deploy | ✅ Trong `rollback-guide.md` | Railway Dockerfile.railway + pre-deploy |
 | Hướng dẫn rollback | ✅ Có từ #38 | `docs/evidence/cd/rollback-guide.md` |
-| JWT test pass (CI gate) | ✅ Sửa xong | test/jwt.spec.ts 5/5 pass |
+| JWT test pass (CI gate) | ✅ Sửa xong | test/unit/jwt.spec.ts 5/5 pass |
 
 ### Ma trận nghiệm thu NFR-11 (phần release)
 

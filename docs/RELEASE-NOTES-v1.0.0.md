@@ -89,7 +89,7 @@ Copy-Item ..\..\\.env.example .env
 # Sửa .env: thay DATABASE_URL, JWT_SECRET
 
 # Chạy migration và seed
-npm run db:migrate
+npm run prisma:deploy
 npm run db:seed
 
 # Start server

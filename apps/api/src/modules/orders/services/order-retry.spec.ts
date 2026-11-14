@@ -99,17 +99,16 @@ function setup() {
 }
 
 describe('Order transaction regression checks', () => {
-  it('quotes and updates within the same Serializable transaction with the expected ingredient version', async () => {
+  it('định giá và trừ tồn có điều kiện trong cùng transaction Read Committed', async () => {
     const { service, tx, prisma, dto } = setup();
 
     await service.createOrder('user', dto);
     expect(prisma.$transaction).toHaveBeenCalledWith(expect.any(Function), {
-      isolationLevel: 'Serializable',
+      isolationLevel: 'ReadCommitted',
     });
     expect(tx.ingredient.updateMany).toHaveBeenCalledWith({
       where: {
         id: 'bean',
-        version: 7,
         isActive: true,
         stockQuantity: { gte: 10 },
       },
@@ -117,7 +116,7 @@ describe('Order transaction regression checks', () => {
     });
   });
 
-  it('re-quotes after a version conflict and snapshots the new price/version', async () => {
+  it('định giá lại khi cập nhật tồn thất bại và lưu giá mới', async () => {
     const { service, tx, dto, variant } = setup();
     tx.ingredient.updateMany.mockResolvedValueOnce({ count: 0 });
     tx.productVariant.findFirst
@@ -133,7 +132,8 @@ describe('Order transaction regression checks', () => {
     expect(tx.ingredient.updateMany).toHaveBeenLastCalledWith(
       expect.objectContaining({
         where: expect.objectContaining({
-          version: 8,
+          id: 'bean',
+          stockQuantity: { gte: 10 },
         }),
       }),
     );
@@ -177,7 +177,7 @@ describe('Order transaction regression checks', () => {
     expect(numbers.every((value) => value.length <= 30)).toBe(true);
   });
 
-  it('stops after three version conflicts with INVENTORY_CONFLICT', async () => {
+  it('trả INVENTORY_CONFLICT sau ba lần cập nhật tồn thất bại', async () => {
     const { service, tx, prisma, dto } = setup();
     tx.ingredient.updateMany.mockResolvedValue({ count: 0 });
     await expect(service.createOrder('user', dto)).rejects.toMatchObject({

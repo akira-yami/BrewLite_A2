@@ -11,11 +11,11 @@ Web và API tách riêng; khách chỉ được đọc/thanh toán/hủy đơn c
 
 API phát/xác minh access JWT sống ngắn với sub/role/iss/aud/exp; xác minh chữ ký bằng thuật toán cho phép và secret từ môi trường. Chỉ có CUSTOMER/BARISTA; public register luôn CUSTOMER, trường role tự thêm bị từ chối. Mật khẩu bcrypt cost >=10, không trả/log hash hoặc password.
 
-Guard bảo vệ route theo role, service kiểm tra chủ tài nguyên trước đọc/ghi/replay payment. MVP giữ access token trong bộ nhớ web; reload xác minh lại nếu có token hợp lệ hoặc yêu cầu login, giữ giỏ. Logout xóa phiên client, không tuyên bố thu hồi JWT còn hạn. Refresh token/HttpOnly cookie là mở rộng FR-13, cần thiết kế rotate/revoke và CSRF riêng trước khi dùng. CORS chỉ cho origin được cấu hình; production HTTPS; auth/order/payment không vào PWA cache.
+Guard bảo vệ route theo role, service kiểm tra chủ tài nguyên trước đọc/ghi/replay payment. Web lưu access JWT và thông tin phiên trong localStorage. Khi reload, Web xác minh token với API và giữ giỏ độc lập. Logout xóa phiên client, không tuyên bố thu hồi JWT còn hạn. Refresh token/HttpOnly cookie là mở rộng FR-13, cần thiết kế rotate/revoke và CSRF riêng trước khi dùng. CORS chỉ cho origin được cấu hình; production HTTPS; auth/order/payment không vào PWA cache.
 
 ## Lý do và phương án khác
 
-JWT phù hợp yêu cầu bài và guard NestJS. RBAC đơn thuần không ngăn khách xem đơn người khác nên phải thêm ownership. Token memory giảm lưu bền secret trong browser nhưng phải login lại sau reload nếu không có phiên hợp lệ. Không sao chép mặc định localStorage token của A1. Cookie session là phương án khác nhưng không thay thế JWT được yêu cầu; refresh token tăng phạm vi MVP.
+JWT phù hợp yêu cầu bài và guard NestJS. RBAC đơn thuần không ngăn khách xem đơn người khác nên phải thêm ownership. Lưu phiên local cho phép tiếp tục checkout qua reload; token có thể được JavaScript cùng origin đọc, nên cần kiểm soát XSS và xóa phiên khi hết hạn. Cookie session là phương án khác nhưng không thay thế JWT được yêu cầu; refresh token tăng phạm vi MVP.
 
 ## Hệ quả và kiểm chứng
 

@@ -1,9 +1,10 @@
+// Kiểm tra bấm đúp, tải lại và hai yêu cầu thanh toán đồng thời.
 import { enrichVnpayPaymentResponse } from '../helpers/vnpay-test-helper.js';
 import { test, expect } from '../fixtures/vnpay-fixtures.js';
 import { setupCartWithProduct, proceedToCheckout } from '../helpers/cart-helper.js';
 
-test.describe('VNPAY Double-Click Protection', () => {
-  test('double click sends only one POST request', async ({
+test.describe('Chống bấm đúp khi thanh toán VNPay', () => {
+  test('Bấm đúp chỉ gửi một yêu cầu POST', async ({
     page,
     testUser,
   }) => {
@@ -31,7 +32,7 @@ test.describe('VNPAY Double-Click Protection', () => {
     expect(postCount).toBe(1);
   });
 
-  test('status query before replay on page reload', async ({
+  test('Tải lại phải tra cứu trạng thái trước khi gửi lại yêu cầu', async ({
     page,
     request,
     testUser,
@@ -73,7 +74,7 @@ test.describe('VNPAY Double-Click Protection', () => {
     expect(replayPosts, 'Reload should not create another payment attempt').toBe(0);
   });
 
-  test('concurrent payment attempts return 409', async ({
+  test('Hai yêu cầu thanh toán đồng thời trả xung đột 409', async ({
     page,
     request,
     testUser,

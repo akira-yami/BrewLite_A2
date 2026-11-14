@@ -11,10 +11,26 @@ TC là kế hoạch kiểm chứng. [Ma trận truy vết](../traceability-matri
 - Unit cho hàm giá/normalization/state policy; HTTP test qua guard/validation thật; integration dùng PostgreSQL thật cho transaction/constraint/concurrency; browser E2E đi qua UI -> API -> DB, không stub API trong ca nghiệm thu end-to-end.
 - Tra đường dẫn các ca đã hiện thực trong ma trận. Ghi rõ những phần được mô phỏng trong từng ca.
 
+## Vị trí các bộ test
+
+| Bộ test | Thư mục | Lệnh từ thư mục gốc |
+|---|---|---|
+| API unit | `apps/api/test/unit` và các file `*.spec.ts` trong `apps/api/src` | `npm --prefix apps/api test` |
+| API integration | `apps/api/test/integration` | `npm --prefix apps/api run test:integration` |
+| API E2E | `apps/api/test/e2e` | `npm --prefix apps/api run test:e2e` |
+| Web unit/component | `apps/web/tests/unit` | `npm --prefix apps/web test` |
+| Web E2E | `apps/web/tests/e2e`, ca bàn giao ở `delivery`, bộ VNPay ở `vnpay` | `npm --prefix apps/web run test:e2e` hoặc `npm --prefix apps/web run test:e2e:vnpay` |
+
+Dùng tên file và `--reporter=verbose` để lưu log có tên từng ca Vitest. Ví dụ kiểm chứng tồn kho đồng thời trong file tạo đơn trên DB smoke đã migrate:
+
+```bat
+npm --prefix apps/api run test:integration -- orders.integration-spec.ts --reporter=verbose
+```
+
 <a id="e2e-checkout"></a>
 ## E2E menu đến xác nhận đơn
 
-[Ca checkout](../../tests/e2e/checkout-flow.spec.ts) mở menu trên Chromium ở kích thước màn hình 390 × 844, đăng nhập qua UI, chọn món và thanh toán. Playwright mô phỏng cổng VNPay và gửi callback có chữ ký thử nghiệm. Next.js và NestJS chạy local với PostgreSQL thật. Kết quả mong đợi là trang xác nhận hiển thị mã đơn khớp API và trạng thái `PAID`.
+[Ca checkout](../../apps/web/tests/e2e/delivery/checkout-flow.spec.ts) mở menu trên Chromium ở kích thước màn hình 390 × 844, đăng nhập qua UI, chọn món và thanh toán. Playwright mô phỏng cổng VNPay và gửi callback có chữ ký thử nghiệm. Next.js và NestJS chạy local với PostgreSQL thật. Kết quả mong đợi là trang xác nhận hiển thị mã đơn khớp API và trạng thái `PAID`.
 
 Sau khi cài dependencies cho hai app, đặt `DATABASE_URL` trỏ tới PostgreSQL local dành cho kiểm thử, với tên DB có hậu tố `_e2e`. Từ thư mục gốc, chạy:
 
@@ -123,7 +139,7 @@ Các ca mock bên dưới giữ tiêu chí baseline. Để kiểm chứng luồn
 |---|---|---|
 | 10-A / .1 | Không coupon; một/hai mã, inactive, biên thời gian, min subtotal, sai phạm vi, hết hạn mức tổng/user | Tối đa một coupon tùy chọn; mã sai không giảm giá, cho sửa/bỏ trước đặt |
 | 10-B / .2 | Quote rồi đổi quota; coupon limit=1 với hai create đồng thời; subtotal 114.000 giảm 10.000 hoặc vượt subtotal; hủy/expire/replay pay | Create kiểm tra/giữ lượt nguyên tử, không vượt quota; total 104.000 hoặc >=0; release đơn chưa paid/consume khi paid đúng một lần |
-| 10-C / .3 | Success total=104.000, decline, payment replay/concurrent, cancel PAID | Theo tỷ lệ đề xuất floor(total/1000): 104 điểm, một EARN và balance cùng commit; fail không EARN, replay không cộng, cancel PAID giữ điểm. PO phải review tỷ lệ trước code |
+| 10-C / .3 | Success total=104.000, decline, payment replay/concurrent, cancel PAID | Theo runtime floor(total/10): 10.400 điểm, một EARN và balance cùng commit; fail không EARN, replay không cộng, cancel PAID giữ điểm. |
 
 <a id="tc-fr-11"></a>
 ## TC-FR-11 - Phân trang (AC FR-11, Should)
@@ -152,7 +168,7 @@ Manual review code/config/demo: chỉ mock, không live key hoặc dữ liệu t
 
 ## NFR - kế hoạch đo theo nguồn chuẩn
 
-Không thay ngưỡng SRS bằng con số của test plan. Các phép đo sau đều chưa chạy; evidence phải có đủ điều kiện ở SRS, không chỉ screenshot CI xanh.
+Không thay ngưỡng SRS bằng con số của test plan. Mỗi ca cần minh chứng theo điều kiện trong SRS. Các kết quả đã xác minh được ghi tại từng mục.
 
 <a id="tc-nfr-01"></a>
 ### TC-NFR-01 -> AT-NFR-01
@@ -182,7 +198,7 @@ TC-FR-07-C/D/E, TC-FR-05-D và TC-FR-10-C: 20 same-key, replay/restart, khác pa
 <a id="tc-nfr-06"></a>
 ### TC-NFR-06 -> AT-NFR-06
 
-Reviewer clone sạch theo README; compose config/build/up, sau image build healthy <=180s, ghi cold build riêng; migrate/seed hai lần, health 200, menu/tạo/pay đơn thật; restart giữ volume và so đơn. Hiện Compose rỗng, chưa thể thực hiện.
+Reviewer clone sạch theo README; compose config/build/up, sau image build healthy <=180s, ghi cold build riêng; migrate/seed hai lần, health 200, menu/tạo/pay đơn thật; restart giữ volume và so đơn. Kết quả trên checkout sạch của PR #102 đạt. Web/API/PostgreSQL healthy sau **23 giây** kể từ khi image sẵn sàng, smoke **4/4**, đơn thử chuyển sang PAID và giữ trạng thái sau khi dựng lại stack với cùng volume. Chạy lại 21 migration không có migration chờ áp dụng và seed giữ nguyên số bản ghi. [CI và artifact Compose](https://github.com/akira-yami/BrewLite_A2/actions/runs/43571751138).
 
 <a id="tc-nfr-07"></a>
 ### TC-NFR-07 -> AT-NFR-07
