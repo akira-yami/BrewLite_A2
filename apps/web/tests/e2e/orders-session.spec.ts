@@ -1,7 +1,7 @@
 import { expect, test, type Page, type APIRequestContext } from '@playwright/test';
 import { randomUUID } from 'node:crypto';
 
-const api = 'http://localhost:3101/api/v1';
+const api = process.env.E2E_API_URL ?? `http://localhost:${process.env.E2E_API_PORT ?? '3101'}/api/v1`;
 const order = {
   id: 'order-a', orderNumber: 'ORD-SESSION-A', status: 'PAID', total: 40000,
   currency: 'VND', createdAt: '2026-11-01T00:00:00Z', items: [], subtotal: 40000, discountAmount: 0,

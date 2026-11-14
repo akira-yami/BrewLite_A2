@@ -2,7 +2,7 @@
 
 [Issue #37](https://github.com/akira-yami/BrewLite_A2/issues/37)
 
-Workflow Railway CD nhận commit của lần PR CI thành công sau push lên `main`. Job build hai image và tag bằng SHA. Railway CLI tải lên source của đúng commit để Railway build và lưu image cho từng service. Pipeline dùng registry do Railway quản lý. Cấu hình API chạy `prisma migrate deploy` trước khi nhận traffic. Job dừng nếu deploy hoặc smoke test lỗi. Khi cần quay về revision cũ, xem [hướng dẫn rollback](rollback-guide.md).
+Workflow Railway CD nhận commit của lần PR CI thành công sau push lên `main`. Cũng có thể chạy lại bằng Run workflow trên `main` khi CI của cùng SHA đã pass. Job build hai image, lưu tag và ID image theo SHA, rồi dùng Railway CLI upload source cùng revision. Railway build ảnh chạy thực tế và lưu trong registry do Railway quản lý. CD chờ deployment ID của API ở trạng thái `SUCCESS` sau pre-deploy migration và health check trước khi deploy Web. Sau khi xác minh cả hai ID, CD chạy smoke health và catalog/menu. Khi có lỗi, workflow dừng và dẫn tới [runbook rollback](rollback-guide.md).
 
 ## Cấu hình một lần
 
@@ -20,7 +20,7 @@ Workflow Railway CD nhận commit của lần PR CI thành công sau push lên `
 | `A2_API_ORIGIN` | HTTPS origin API, bỏ `/api/v1` và dấu `/` cuối |
 | `A2_WEB_ORIGIN` | HTTPS origin Web, bỏ dấu `/` cuối |
 
-5. Sau khi cấu hình và merge workflow vào `main`, xem run CD sau PR CI. Lưu SHA, ID deployment, log migration và kết quả smoke. Chuẩn bị dữ liệu catalog và cấu hình VNPay Sandbox của A2 trước demo checkout. Smoke hiện chỉ kiểm tra health và HTTP catalog.
+5. Sau khi cấu hình và merge workflow vào `main`, xem run CD sau PR CI. Tải artifact `railway-<SHA>` gồm SHA, image ID của CI, ID/trạng thái của hai deployment và smoke log. Dùng ID API để xem log pre-deploy migration trên Railway. Kiểm tra cả API readiness, catalog có dữ liệu, Web health và Web menu. Ca checkout đầy đủ chạy riêng trong PR CI với PostgreSQL test và cổng mô phỏng.
 
 ## Minh chứng deploy ban đầu
 

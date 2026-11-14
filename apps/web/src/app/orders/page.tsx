@@ -1,29 +1,15 @@
 'use client';
 
 import { useAuthSession } from '@/features/auth/use-auth-session';
-import { useOrderPaymentRetry } from '@/features/checkout/use-order-payment-retry';
 import { getMyOrdersApi, OrdersApiError } from '@/features/orders/api';
 import { OrderStatusBadge } from '@/features/orders/components/OrderStatusBadge';
+import { OrderPaymentRetry, isUnpaidExpired } from '@/features/orders/components/OrderPaymentRetry';
 import type { OrderDetail, OrderListResponse, OrderStatus, OrderSummary } from '@/features/orders/types';
-import { PaymentApiError } from '@/features/payments/api';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
-import { useState } from 'react';
 
 function toItems(response: OrderListResponse | OrderDetail[]) {
   return Array.isArray(response) ? response : response.items;
-}
-
-/**
- * Đơn chưa thanh toán (PENDING/PAYMENT_FAILED) đã quá hạn giữ chỗ được coi như
- * đã hủy — khớp với job hết hạn ở máy chủ sẽ chuyển đơn sang CANCELLED trong ~1 phút.
- */
-function isUnpaidExpired(order: OrderSummary): boolean {
-  if (!['PENDING', 'PAYMENT_FAILED'].includes(order.status)) return false;
-  return Boolean(
-    order.reservationExpiresAt &&
-      new Date(order.reservationExpiresAt).getTime() <= Date.now(),
-  );
 }
 
 /** Trạng thái hiển thị: đơn chưa thanh toán đã quá hạn hiển thị là CANCELLED. */
@@ -32,34 +18,8 @@ function displayStatus(order: OrderSummary): OrderStatus {
 }
 
 function OrderCard({ order, token }: { order: OrderSummary; token: string }) {
-  const client = useQueryClient();
-  const retryOrderPayment = useOrderPaymentRetry();
-  const [isPaying, setIsPaying] = useState(false);
-  const [payError, setPayError] = useState<string | null>(null);
-
   const expired = isUnpaidExpired(order);
   const effectiveStatus = displayStatus(order);
-  const canRetry = !expired && ['PENDING', 'PAYMENT_FAILED'].includes(order.status);
-
-  const handlePayAgain = async () => {
-    if (isPaying) return;
-    setIsPaying(true);
-    setPayError(null);
-    try {
-      await retryOrderPayment(token, order.id);
-    } catch (err: unknown) {
-      if (err instanceof PaymentApiError && err.code === 'ORDER_EXPIRED') {
-        setPayError('Đơn hàng đã hết hạn giữ chỗ và không thể thanh toán.');
-        await client.invalidateQueries({ queryKey: ['orders-history'] });
-      } else {
-        setPayError(
-          err instanceof Error ? err.message : 'Có lỗi xảy ra khi xử lý thanh toán.',
-        );
-      }
-    } finally {
-      setIsPaying(false);
-    }
-  };
 
   return (
     <div className="rounded-2xl border border-[#E8DFC8] bg-white p-5 shadow-sm transition hover:shadow-md">
@@ -80,19 +40,7 @@ function OrderCard({ order, token }: { order: OrderSummary; token: string }) {
         </div>
       </Link>
 
-      {canRetry && (
-        <div className="mt-3 flex flex-col items-end gap-1">
-          <button
-            type="button"
-            onClick={handlePayAgain}
-            disabled={isPaying}
-            className="inline-flex items-center gap-1 rounded-full bg-[#163D2C] px-4 py-1.5 text-xs font-bold text-white shadow-sm transition hover:bg-[#12331f] disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {isPaying ? 'Đang chuyển tới cổng thanh toán...' : 'Thanh toán lại →'}
-          </button>
-          {payError && <p className="text-xs font-medium text-rose-600">{payError}</p>}
-        </div>
-      )}
+      <OrderPaymentRetry order={order} token={token} />
 
       {expired && (
         <div className="mt-3 text-right">

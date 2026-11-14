@@ -10,6 +10,7 @@ import {
   OrdersApiError,
 } from "@/features/orders/api";
 import { OrderDetailView } from "@/features/orders/components/OrderDetailView";
+import { OrderPaymentRetry } from "@/features/orders/components/OrderPaymentRetry";
 import { useAuthSession } from "@/features/auth/use-auth-session";
 import { getCheckoutOrderItems, readPendingCheckout, writeCheckoutCoupon, writePendingCheckout } from "@/features/checkout/session";
 import { cartStore } from "@/stores/cart-store";
@@ -88,6 +89,7 @@ export default function OrderDetailPage() {
         {order && (
           <div className="mt-6">
             <OrderDetailView order={order} />
+            {token && <OrderPaymentRetry order={order} token={token} />}
             {["PENDING", "PAYMENT_FAILED"].includes(order.status) && (
               <section className="mt-5 rounded-2xl border border-[#E8DFC8] bg-white p-5 text-sm">
                 <p className="text-[#756A63]">

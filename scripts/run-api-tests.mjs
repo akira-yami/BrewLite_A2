@@ -30,7 +30,7 @@ async function checkHealth(url = 'http://localhost:3001/api/v1/health') {
     const res = await fetch(url, { signal: AbortSignal.timeout(1500) });
     if (res.ok) {
       const data = await res.json().catch(() => null);
-      return data?.status === 'ok';
+      return data?.success === true && data?.data?.status === 'ok';
     }
   } catch {
     return false;

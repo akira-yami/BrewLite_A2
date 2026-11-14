@@ -1,6 +1,6 @@
 # Ma trận truy vết BrewLite A2
 
-Đối chiếu với source tại `2645b87`. Các mã FR, NFR và AT giữ theo [SRS](requirements/srs.md) và [NFR](requirements/non-functional-requirements.md). Cột kiểm chứng ghi test có trong source hoặc ca dự kiến, còn kết quả chạy cần gắn với revision và môi trường cụ thể. Xem [danh mục nguồn và bản xuất](diagrams/README.md).
+Các mã FR, NFR và AT giữ theo [SRS](requirements/srs.md) và [NFR](requirements/non-functional-requirements.md). Xem [danh mục nguồn và bản xuất](diagrams/README.md) và [kết quả kiểm chứng, CI/CD và bàn giao](evidence/a2-delivery.md).
 
 ## FR → Use Case → sơ đồ → code → test
 
@@ -24,7 +24,7 @@ Các route backend dưới đây có prefix `/api/v1`. Đọc [test plan](testin
 | FR-14 | UC-09, realtime theo kế hoạch | Web đọc trạng thái qua GET | TC-FR-14 |
 | FR-15 | Giới hạn thu tiền thật trong phạm vi đề | Kiểm chứng cấu hình VNPay Sandbox và mock test | TC-FR-15 |
 
-Task 2.1 Activity còn thiếu tạo phẩm. Báo cáo trình bày ba hình riêng cho Task 2.2 gồm [Sequence tạo đơn](diagrams/sequence-create-order.svg), [Sequence thanh toán](diagrams/sequence-payment.svg) và [Sequence checkout](diagrams/sequence-checkout.svg). [Class domain](diagrams/class-domain.svg) và [ERD](../database/BrewLite.svg) cũng có hình riêng.
+Task 2.1 dùng [Activity checkout](diagrams/activity-checkout.svg) cho FR-01 đến FR-08, gồm các nhánh chưa đăng nhập, hết hàng và thanh toán thất bại. Task 2.2 gồm [Sequence tạo đơn](diagrams/sequence-create-order.svg), [Sequence thanh toán](diagrams/sequence-payment.svg) và [Sequence checkout](diagrams/sequence-checkout.svg). [Class domain](diagrams/class-domain.svg) và [ERD](../database/BrewLite.svg) thể hiện các quan hệ dữ liệu.
 
 ## NFR → thiết kế → kiểm chứng
 
@@ -36,7 +36,7 @@ Task 2.1 Activity còn thiếu tạo phẩm. Báo cáo trình bày ba hình riê
 | NFR-04 | [Sequence tạo đơn](diagrams/sequence-create-order.svg), transaction và kiểm thử tồn kho đồng thời | TC-NFR-04 |
 | NFR-05 | [Sequence thanh toán](diagrams/sequence-payment.svg), key/hash, IPN và recovery | TC-NFR-05 |
 | NFR-06 | Compose, migration, seed và persistent volume | TC-NFR-06 |
-| NFR-07 | Health check, request ID, logs và redaction | TC-NFR-07 |
+| NFR-07 | [Readiness qua HTTP, 200 khi DB khỏe và 503 khi lỗi DB](../apps/api/test/app.e2e-spec.ts), request ID, logs và redaction | TC-NFR-07 |
 | NFR-08 | UI mobile và Playwright E2E | TC-NFR-08 |
 | NFR-09 | Recovery, persistence và [runbook rollback](evidence/cd/rollback-guide.md) | TC-NFR-09 |
 | NFR-10 | JWT/ownership và [Railway HTTPS, private DB](deployment.md) | TC-NFR-10 |

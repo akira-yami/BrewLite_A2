@@ -5,6 +5,8 @@ WORKDIR /app
 
 FROM base AS dependencies
 COPY package.json package-lock.json ./
+COPY prisma.config.ts ./
+COPY prisma ./prisma
 RUN --mount=type=cache,target=/root/.npm npm ci
 
 FROM dependencies AS build
@@ -18,6 +20,8 @@ CMD ["npm", "run", "prisma:deploy"]
 
 FROM base AS production-dependencies
 COPY package.json package-lock.json ./
+COPY prisma.config.ts ./
+COPY prisma ./prisma
 RUN --mount=type=cache,target=/root/.npm npm ci --omit=dev
 
 FROM base AS runtime

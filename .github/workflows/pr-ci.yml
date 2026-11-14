@@ -26,16 +26,33 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: node --test scripts/ci-projects.test.mjs
+      - run: node --test scripts/*.test.mjs
 
   quality:
     name: Install, lint, unit test and build
     needs: ci-tests
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     env:
       CI: 'true'
       NEXT_TELEMETRY_DISABLED: '1'
+      SMOKE_DATABASE_URL: postgresql://brewlite:ci-only@localhost:5432/brewlite_foundation_smoke_ci
+      DATABASE_URL: postgresql://brewlite:ci-only@localhost:5432/brewlite_ci_e2e
+      JWT_SECRET: test-jwt-secret-for-isolated-tests-only-32bytes-long
+    services:
+      postgres:
+        image: postgres:18.4-alpine3.23
+        env:
+          POSTGRES_USER: brewlite
+          POSTGRES_PASSWORD: ci-only
+          POSTGRES_DB: brewlite_foundation_smoke_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U brewlite -d brewlite_foundation_smoke_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -51,11 +68,68 @@ jobs:
         run: node scripts/ci-projects.mjs test
       - name: Build
         run: node scripts/ci-projects.mjs build
+      - name: Migrate fresh PostgreSQL and run integration tests
+        run: npm --prefix apps/api run test:migration
+      - name: API E2E
+        env:
+          NODE_ENV: test
+        run: npm --prefix apps/api run test:e2e
+      - name: Prepare the browser test database
+        run: |
+          docker exec "${{ job.services.postgres.id }}" createdb -U brewlite brewlite_ci_e2e
+          npm run prisma:deploy
+          node --import=tsx prisma/seed-e2e.ts
+        working-directory: apps/api
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+        working-directory: apps/web
+      - name: Browser E2E
+        run: npm --prefix apps/web run test:e2e
+      - name: Upload Playwright report
+        if: ${{ always() && !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-${{ github.sha }}
+          path: apps/web/playwright-report/
+          if-no-files-found: ignore
+          retention-days: 30
+
+  compose:
+    name: Compose from clean checkout
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NODE_ENV: test
+      JWT_SECRET: test-jwt-secret-for-isolated-tests-only-32bytes-long
+      MOCK_PAYMENT_MODE: deterministic
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Build Web, API and migration
+        run: |
+          docker compose --env-file .env.example -f compose.yaml -p brewlite-a2-ci --profile demo config --quiet
+          docker compose --env-file .env.example -f compose.yaml -p brewlite-a2-ci --profile demo build
+      - name: Start, smoke and check persistence
+        shell: bash
+        run: bash scripts/verify-compose.sh 2>&1 | tee "$RUNNER_TEMP/compose.log"
+      - name: Upload Compose evidence
+        if: ${{ always() && !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: compose-${{ github.sha }}
+          path: ${{ runner.temp }}/compose.log
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Stop the test stack
+        if: ${{ always() }}
+        run: docker compose --env-file .env.example -f compose.yaml -p brewlite-a2-ci --profile demo down
 
   required:
     name: PR quality gate
     if: ${{ always() }}
-    needs: [ci-tests, quality]
+    needs: [ci-tests, quality, compose]
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
@@ -63,4 +137,5 @@ jobs:
         env:
           RUNNER_TESTS: ${{ needs.ci-tests.result }}
           QUALITY: ${{ needs.quality.result }}
-        run: test "$RUNNER_TESTS" = success && test "$QUALITY" = success
+          COMPOSE: ${{ needs.compose.result }}
+        run: test "$RUNNER_TESTS" = success && test "$QUALITY" = success && test "$COMPOSE" = success

@@ -72,9 +72,8 @@ async function checkHealth() {
     throw new Error(`GET ${url} → HTTP ${res.status}: ${body.slice(0, 200)}`);
   }
   const json = await res.json().catch(() => null);
-  // Health endpoint must return 200; body should have a status field.
-  if (json && json.status && json.status !== 'ok') {
-    throw new Error(`Health status is '${json.status}', expected 'ok'`);
+  if (json?.success !== true || json?.data?.status !== 'ok') {
+    throw new Error('Expected a successful API readiness response');
   }
 }
 
@@ -86,10 +85,9 @@ async function checkProducts() {
     throw new Error(`GET ${url} → HTTP ${res.status}: ${body.slice(0, 200)}`);
   }
   const data = await res.json().catch(() => null);
-  // Should return an array (possibly empty if no seed).
-  // We only verify API is responding correctly, not that catalog is seeded.
-  if (!data || (!Array.isArray(data) && !Array.isArray(data?.data))) {
-    throw new Error(`Expected array response from ${url}, got: ${JSON.stringify(data)?.slice(0, 200)}`);
+  const products = Array.isArray(data) ? data : data?.data;
+  if (!Array.isArray(products) || products.length === 0) {
+    throw new Error('Expected a non-empty product catalog');
   }
 }
 

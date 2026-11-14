@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { randomUUID } from "node:crypto";
 
-const api = process.env.E2E_API_URL ?? "http://localhost:3101/api/v1";
+const api = process.env.E2E_API_URL ?? `http://localhost:${process.env.E2E_API_PORT ?? '3101'}/api/v1`;
 
 test("barista processes a real paid order and enforces employee access on desktop/mobile", async ({
   page,

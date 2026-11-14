@@ -28,18 +28,19 @@ describe('AppController (e2e)', () => {
       .get('/api/v1/health')
       .expect(503);
     expect(response.body).toEqual({
-      message: 'Database is unavailable',
-      error: 'Service Unavailable',
-      statusCode: 503,
+      error: 'SERVICE_UNAVAILABLE',
+      message: 'Service is not ready',
     });
+    expect(queryRaw).toHaveBeenCalledTimes(1);
     expect(JSON.stringify(response.body)).not.toContain('secret');
   });
 
-  it('/api/v1/health (GET)', () => {
-    return request(app.getHttpServer())
+  it('/api/v1/health checks the database before returning 200', async () => {
+    await request(app.getHttpServer())
       .get('/api/v1/health')
       .expect(200)
-      .expect({ status: 'ok' });
+      .expect({ success: true, data: { status: 'ok' } });
+    expect(queryRaw).toHaveBeenCalledTimes(1);
   });
 
   afterEach(async () => {

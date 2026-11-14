@@ -377,6 +377,8 @@ Theo **AT-NFR-11** và **TC-NFR-11** trong [test-plan.md](../../testing/test-pla
 
 ## 8. Phục hồi sự cố nhanh (Quick Reference)
 
+Đợt 14/11/2026 đã thử backup/restore vào PostgreSQL local riêng sau Playwright. So sánh tập bốn ID đơn và trạng thái giữa DB nguồn và DB restore cho kết quả khớp. Xem [hồ sơ nghiệm thu](../a2-delivery.md). Việc quay lui revision trên Railway cần dùng deployment ID tương thích schema từ artifact CD.
+
 ```
 SCENARIO A: Deploy mới fail (migration fail / health fail)
 ──────────────────────────────────────────────────────────
