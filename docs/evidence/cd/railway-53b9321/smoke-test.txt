@@ -1,0 +1,21 @@
+
+🔍  Smoke test — https://api-a2-production.up.railway.app
+    Started at: 2026-11-14T07:51:04.309Z
+    Timeout: 10000ms per request | Retries: 3
+
+  ✅  GET /api/v1/health → 200 với DB connectivity
+  ✅  GET /api/v1/products/not-a-uuid → 400
+  ✅  GET /api/v1/products/:nonExistentId → 404
+  ✅  GET /api/v1/products → 200 array response
+
+────────────────────────────────────────
+  Passed: 4/4
+  Failed: 0/4
+  Ended at: 2026-11-14T07:51:04.759Z
+────────────────────────────────────────
+
+✅  Smoke test PASSED. API is healthy.
+{
+  "status": "ok"
+}
+Web health and menu passed

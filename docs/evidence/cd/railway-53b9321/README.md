@@ -12,7 +12,7 @@ GitHub Actions [Railway CD #11](https://github.com/akira-yami/BrewLite_A2/action
 
 - [Commit và đường dẫn run](revision.txt), [image ID và tag trong CI](ci-images.txt).
 - [Deployment API](api-deployment.json) và [deployment Web](web-deployment.json) đều có trạng thái `SUCCESS`.
-- [Log smoke test](smoke.log) ghi kết quả API và xác nhận Web health cùng menu phản hồi.
+- [Log smoke test](smoke-test.txt) ghi kết quả API và xác nhận Web health cùng menu phản hồi.
 
 ## 3. Migration trước khi khởi động API
 
