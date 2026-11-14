@@ -1,9 +1,10 @@
+// Kiểm tra callback VNPay hợp lệ, sai chữ ký hoặc bị sửa tham số.
 import { enrichVnpayPaymentResponse } from '../helpers/vnpay-test-helper.js';
 import { test, expect } from '../fixtures/vnpay-fixtures.js';
 import { setupCartWithProduct, proceedToCheckout } from '../helpers/cart-helper.js';
 
-test.describe('VNPAY Signature Validation', () => {
-  test('valid signature is accepted and payment succeeds', async ({
+test.describe('Xác minh chữ ký VNPay', () => {
+  test('Chấp nhận chữ ký hợp lệ và hoàn tất thanh toán', async ({
     page,
     request,
     vnpayHelper,
@@ -41,7 +42,7 @@ test.describe('VNPAY Signature Validation', () => {
     expect(ipnResponse.Message).toBe('Confirm Success');
   });
 
-  test('invalid signature is rejected by IPN handler', async ({
+  test('Từ chối chữ ký sai tại IPN', async ({
     request,
     apiUrl,
   }) => {
@@ -68,7 +69,7 @@ test.describe('VNPAY Signature Validation', () => {
     expect(responseData.Message).toMatch(/invalid signature/i);
   });
 
-  test('tampered params fail signature verification', async ({
+  test('Từ chối tham số bị chỉnh sửa khi xác minh chữ ký', async ({
     page,
     request,
     vnpayHelper,

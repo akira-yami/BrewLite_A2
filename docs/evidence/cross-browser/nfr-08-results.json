@@ -1,0 +1,374 @@
+{
+  "testRunAtUTC": "2026-11-14T08:49:48.014Z",
+  "overallPassed": true,
+  "totalScenarios": 6,
+  "passedScenarios": 6,
+  "matrixResults": [
+    {
+      "id": "chrome_desktop",
+      "label": "Chrome Desktop (1440x900)",
+      "browser": "Google Chrome",
+      "browserVersion": "157.0.8103.51",
+      "viewport": "1440x900",
+      "steps": {
+        "menu": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "catalogItemsFound": 9,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_desktop_01_menu.png"
+        },
+        "detailModal": {
+          "passed": true,
+          "modalOpened": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_desktop_02_detail_modal.png"
+        },
+        "cart": {
+          "passed": true,
+          "itemsBeforeReload": 1,
+          "itemsAfterReload": 1,
+          "persistedAfterReload": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_desktop_03_cart.png"
+        },
+        "auth": {
+          "passed": true,
+          "hasProperLabels": true,
+          "keyboardNavPass": true,
+          "focusedAfterFirstTab": "password",
+          "focusedAfterSecondTab": "submit",
+          "loginSucceeded": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_desktop_04_login.png"
+        },
+        "checkout": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "ctaVisible": true,
+          "ctaValid": true,
+          "ctaBox": {
+            "x": 241,
+            "y": 694,
+            "width": 484,
+            "height": 48
+          },
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_desktop_05_checkout.png"
+        },
+        "confirmation": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_desktop_06_confirmation.png"
+        },
+        "history": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_desktop_07_history.png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "chrome_mobile",
+      "label": "Chrome Mobile (375x812)",
+      "browser": "Google Chrome",
+      "browserVersion": "157.0.8103.51",
+      "viewport": "375x812",
+      "steps": {
+        "menu": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "catalogItemsFound": 9,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_mobile_01_menu.png"
+        },
+        "detailModal": {
+          "passed": true,
+          "modalOpened": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_mobile_02_detail_modal.png"
+        },
+        "cart": {
+          "passed": true,
+          "itemsBeforeReload": 1,
+          "itemsAfterReload": 1,
+          "persistedAfterReload": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_mobile_03_cart.png"
+        },
+        "auth": {
+          "passed": true,
+          "hasProperLabels": true,
+          "keyboardNavPass": true,
+          "focusedAfterFirstTab": "password",
+          "focusedAfterSecondTab": "submit",
+          "loginSucceeded": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_mobile_04_login.png"
+        },
+        "checkout": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "ctaVisible": true,
+          "ctaValid": true,
+          "ctaBox": {
+            "x": 37,
+            "y": 797,
+            "width": 301,
+            "height": 48
+          },
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_mobile_05_checkout.png"
+        },
+        "confirmation": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_mobile_06_confirmation.png"
+        },
+        "history": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\chrome_mobile_07_history.png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "edge_desktop",
+      "label": "Edge Desktop (1440x900)",
+      "browser": "Microsoft Edge",
+      "browserVersion": "157.0.4341.46",
+      "viewport": "1440x900",
+      "steps": {
+        "menu": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "catalogItemsFound": 9,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_desktop_01_menu.png"
+        },
+        "detailModal": {
+          "passed": true,
+          "modalOpened": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_desktop_02_detail_modal.png"
+        },
+        "cart": {
+          "passed": true,
+          "itemsBeforeReload": 1,
+          "itemsAfterReload": 1,
+          "persistedAfterReload": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_desktop_03_cart.png"
+        },
+        "auth": {
+          "passed": true,
+          "hasProperLabels": true,
+          "keyboardNavPass": true,
+          "focusedAfterFirstTab": "password",
+          "focusedAfterSecondTab": "submit",
+          "loginSucceeded": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_desktop_04_login.png"
+        },
+        "checkout": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "ctaVisible": true,
+          "ctaValid": true,
+          "ctaBox": {
+            "x": 241,
+            "y": 694,
+            "width": 484,
+            "height": 48
+          },
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_desktop_05_checkout.png"
+        },
+        "confirmation": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_desktop_06_confirmation.png"
+        },
+        "history": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_desktop_07_history.png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "edge_mobile",
+      "label": "Edge Mobile (375x812)",
+      "browser": "Microsoft Edge",
+      "browserVersion": "157.0.4341.46",
+      "viewport": "375x812",
+      "steps": {
+        "menu": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "catalogItemsFound": 9,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_mobile_01_menu.png"
+        },
+        "detailModal": {
+          "passed": true,
+          "modalOpened": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_mobile_02_detail_modal.png"
+        },
+        "cart": {
+          "passed": true,
+          "itemsBeforeReload": 1,
+          "itemsAfterReload": 1,
+          "persistedAfterReload": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_mobile_03_cart.png"
+        },
+        "auth": {
+          "passed": true,
+          "hasProperLabels": true,
+          "keyboardNavPass": true,
+          "focusedAfterFirstTab": "password",
+          "focusedAfterSecondTab": "submit",
+          "loginSucceeded": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_mobile_04_login.png"
+        },
+        "checkout": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "ctaVisible": true,
+          "ctaValid": true,
+          "ctaBox": {
+            "x": 37,
+            "y": 797,
+            "width": 301,
+            "height": 48
+          },
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_mobile_05_checkout.png"
+        },
+        "confirmation": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_mobile_06_confirmation.png"
+        },
+        "history": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\edge_mobile_07_history.png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "firefox_desktop",
+      "label": "Firefox Desktop (1440x900)",
+      "browser": "Mozilla Firefox",
+      "browserVersion": "157.0",
+      "viewport": "1440x900",
+      "steps": {
+        "menu": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "catalogItemsFound": 9,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_desktop_01_menu.png"
+        },
+        "detailModal": {
+          "passed": true,
+          "modalOpened": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_desktop_02_detail_modal.png"
+        },
+        "cart": {
+          "passed": true,
+          "itemsBeforeReload": 1,
+          "itemsAfterReload": 1,
+          "persistedAfterReload": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_desktop_03_cart.png"
+        },
+        "auth": {
+          "passed": true,
+          "hasProperLabels": true,
+          "keyboardNavPass": true,
+          "focusedAfterFirstTab": "password",
+          "focusedAfterSecondTab": "submit",
+          "loginSucceeded": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_desktop_04_login.png"
+        },
+        "checkout": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "ctaVisible": true,
+          "ctaValid": true,
+          "ctaBox": {
+            "x": 241.0500030517578,
+            "y": 693.3999633789062,
+            "width": 484.09996032714844,
+            "height": 48
+          },
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_desktop_05_checkout.png"
+        },
+        "confirmation": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_desktop_06_confirmation.png"
+        },
+        "history": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_desktop_07_history.png"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "firefox_mobile",
+      "label": "Firefox Mobile (375x812)",
+      "browser": "Mozilla Firefox",
+      "browserVersion": "157.0",
+      "viewport": "375x812",
+      "steps": {
+        "menu": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "catalogItemsFound": 9,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_mobile_01_menu.png"
+        },
+        "detailModal": {
+          "passed": true,
+          "modalOpened": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_mobile_02_detail_modal.png"
+        },
+        "cart": {
+          "passed": true,
+          "itemsBeforeReload": 1,
+          "itemsAfterReload": 1,
+          "persistedAfterReload": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_mobile_03_cart.png"
+        },
+        "auth": {
+          "passed": true,
+          "hasProperLabels": true,
+          "keyboardNavPass": true,
+          "focusedAfterFirstTab": "password",
+          "focusedAfterSecondTab": "submit",
+          "loginSucceeded": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_mobile_04_login.png"
+        },
+        "checkout": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "ctaVisible": true,
+          "ctaValid": true,
+          "ctaBox": {
+            "x": 36.95000076293945,
+            "y": 796.0999755859375,
+            "width": 301.3500175476074,
+            "height": 48
+          },
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_mobile_05_checkout.png"
+        },
+        "confirmation": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_mobile_06_confirmation.png"
+        },
+        "history": {
+          "passed": true,
+          "noHorizontalOverflow": true,
+          "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\cross-browser\\screenshots\\firefox_mobile_07_history.png"
+        }
+      },
+      "passed": true
+    }
+  ]
+}

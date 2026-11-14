@@ -24,7 +24,7 @@ end
 API -> Orders: createOrder(principal.id, dto)
 Orders -> Orders: Chuẩn hóa/gộp dòng, null khác 0, trim note
 loop Attempt đầu hoặc retry conflict tạm thời (tối đa 3 attempt)
-  Orders -> DB: BEGIN Serializable
+  Orders -> DB: BEGIN Read Committed
   alt Luồng thành công của attempt
     Orders -> DB: Kiểm tra active CUSTOMER; đọc variant/product/topping\nRecipeItem + ToppingRecipeItem + Ingredient
     DB --> Orders: Catalog, giá và BOM; stockQuantity/version nguyên liệu
@@ -38,7 +38,7 @@ loop Attempt đầu hoặc retry conflict tạm thời (tối đa 3 attempt)
     DB --> Orders: Order/items trong tx, đã có orderId
     Orders -> Inventory: reserve(tx, orderId, expiresAt, needs)
     loop Ingredient theo ID tăng dần (cộng cả món/topping dùng chung)
-      Inventory -> DB: UPDATE Ingredient stockQuantity -= need, version +=1\nWHERE version=expected AND stockQuantity>=need AND isActive
+      Inventory -> DB: UPDATE Ingredient stockQuantity -= need, version +=1\nWHERE stockQuantity>=need AND isActive
       DB --> Inventory: rowCount=1
     end
     loop Mỗi variant đã tổng hợp
@@ -59,7 +59,7 @@ loop Attempt đầu hoặc retry conflict tạm thời (tối đa 3 attempt)
     end ref
     Orders -> DB: ROLLBACK order/items/reservation/items/coupon/history\nhoàn nguyên stockQuantity/version của mọi ingredient
     DB --> Orders: Đã rollback
-    Orders -> Orders: Lỗi nghiệp vụ: không retry\nConflict version/serialization/deadlock: retry toàn tx khi còn lượt\nHết lượt: INVENTORY_CONFLICT
+    Orders -> Orders: Lỗi nghiệp vụ: không retry\nXung đột khi cập nhật tồn hoặc ghi transaction: retry toàn tx khi còn lượt\nHết lượt: INVENTORY_CONFLICT
   end
 end
 alt Commit được xác nhận

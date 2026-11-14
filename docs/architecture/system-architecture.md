@@ -66,7 +66,7 @@ Luồng phụ thuộc chuẩn là `Controller -> Service -> Repository -> Prisma
 
 Route/layout ở `apps/web/src/app`; feature ở `src/features/{catalog,cart,auth,checkout,orders}`; API client dùng chung ở `src/lib`. Form và giỏ dùng state client; giỏ persist lựa chọn, đường/đá/note qua localStorage, có xử lý dữ liệu cũ/hỏng. Không lưu giá client như cam kết thanh toán.
 
-API client ghép base URL có `/api/v1`, gửi Bearer access JWT tới route bảo vệ; JWT/credential không ghi log. MVP dùng access token sống ngắn trong bộ nhớ, xác minh phiên với API; reload có thể yêu cầu login lại nhưng phải giữ giỏ. Không coi network error là 401. Thiết kế session chi tiết và PWA cache thuộc [#14](https://github.com/akira-yami/BrewLite_A2/issues/14), xác thực thuộc [#27](https://github.com/akira-yami/BrewLite_A2/issues/27); không mặc nhiên sao chép token localStorage của A1.
+API client ghép base URL có `/api/v1`, gửi Bearer access JWT tới route bảo vệ; JWT/credential không ghi log. Web lưu access JWT và thông tin phiên trong localStorage, rồi xác minh lại với API khi reload. Phản hồi 401 của phiên hiện tại xóa phiên; lỗi mạng tạm thời cho phép thử lại. Giỏ dùng kho localStorage riêng. Service worker chỉ lưu trang ngoại tuyến.
 
 Khi chờ thanh toán, Web dùng key lưu trong phiên checkout để tra trạng thái và khôi phục điều hướng. Web chuyển trình duyệt qua URL VNPay, rồi xác nhận bằng trạng thái payment hoặc đơn.
 
@@ -93,11 +93,11 @@ Migration one-shot chạy trước API, fail thì không start release mới; kh
 
 ### 5.1. UC-06: Tạo đơn
 
-1. JWT/CUSTOMER và DTO hợp lệ; chuẩn hóa 1..20 dòng, quantity 1..20, đọc catalog/BOM/nguyên liệu cùng transaction Serializable.
+1. JWT/CUSTOMER và DTO hợp lệ; chuẩn hóa 1..20 dòng, quantity 1..20, đọc catalog/BOM/nguyên liệu cùng transaction `ReadCommitted`.
 2. Đọc RecipeItem và ToppingRecipeItem của mọi topping, nhân số ly và cộng theo ingredientId toàn giỏ. Tồn/version ở Ingredient, không ở ProductVariant. Thiếu BOM/inactive ingredient không bán được; availableServings chỉ là thông tin tính toán.
 3. Tính giá server, khóa/quote coupon nếu có, tạo Order PENDING và items/topping snapshots. OrderItem.unitPrice là giá variant; topping snapshot riêng, lineTotal=(giá variant+topping) x quantity.
-4. Theo thứ tự ingredientId ổn định, UPDATE Ingredient SET stockQuantity-=need, version+=1 WHERE version=expected AND stockQuantity>=need. InventoryReservation mỗi order/variant lưu số ly; InventoryReservationItem lưu lượng ingredient thật đã giữ, gồm cả topping.
-5. Coupon RESERVED và history cùng transaction. Lỗi rollback toàn bộ stockQuantity/version/bản ghi; conflict retry toàn transaction có giới hạn, tối đa 3 attempt. TTL từ config. Không retry hết nguyên liệu hoặc giả COMMIT thất bại khi mất ACK.
+4. Theo thứ tự ingredientId ổn định, UPDATE Ingredient SET stockQuantity-=need, version+=1 WHERE isActive AND stockQuantity>=need. InventoryReservation mỗi order/variant lưu số ly; InventoryReservationItem lưu lượng ingredient thật đã giữ, gồm cả topping.
+5. Coupon RESERVED và history cùng transaction. Lỗi rollback toàn bộ stockQuantity/version/bản ghi; conflict retry toàn transaction có giới hạn, tối đa 3 attempt. TTL từ config. Kiểm tra thiếu nguyên liệu trước ghi trả OUT_OF_STOCK. Nếu cập nhật có điều kiện thất bại vì tồn vừa thay đổi, thử lại toàn transaction.
 6. Trả 201 PENDING và kết thúc UC-06; chưa gọi gateway, không tạo payment/consume/EARN. POST /orders chưa idempotent, UI mất response cần tra cứu trước đặt lại.
 
 ### 5.2. UC-08: Thực hiện thanh toán (use case độc lập)

@@ -1,10 +1,11 @@
+// Kiểm tra dữ liệu và cấu hình khởi tạo cho test VNPay.
 import { test, expect } from './vnpay-fixtures.js';
 
 /**
  * Smoke test to verify fixtures are properly initialized
  * This test validates that all fixtures inject correctly and contain expected values
  */
-test('vnpay fixtures initialization', async ({ vnpayHelper, testUser, apiUrl }) => {
+test('Khởi tạo dữ liệu test VNPay', async ({ vnpayHelper, testUser, apiUrl }) => {
   // Verify apiUrl fixture
   expect(apiUrl).toBeTruthy();
   expect(typeof apiUrl).toBe('string');

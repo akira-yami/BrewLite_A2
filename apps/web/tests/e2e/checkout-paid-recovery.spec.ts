@@ -1,3 +1,4 @@
+// Kiểm tra checkout khôi phục đơn đã thanh toán khi trạng thái trả về chậm hoặc khóa đã cũ.
 import { expect, test } from '@playwright/test';
 
 const orderId = 'paid-recovery-order';
@@ -18,7 +19,7 @@ test.beforeEach(async ({ page }) => {
   } } }));
 });
 
-test('checkout resumes an already fulfilled order even when its saved key is stale', async ({ page }) => {
+test('Khôi phục đơn đã hoàn tất dù khóa lưu trên máy đã cũ', async ({ page }) => {
   let paymentPosts = 0;
   await page.route('**/api/v1/payments', async route => {
     paymentPosts++;
@@ -31,7 +32,7 @@ test('checkout resumes an already fulfilled order even when its saved key is sta
   expect(paymentPosts).toBe(0);
 });
 
-test('checkout confirms an order paid while a same-key replay is in flight', async ({ page }) => {
+test('Xác nhận đơn đã trả tiền trong lúc thử lại với cùng khóa', async ({ page }) => {
   let status = 'PENDING';
   await page.route(`**/api/v1/orders/${orderId}`, route => route.fulfill({ json: order(status) }));
   await page.route('**/api/v1/payments/status', route => route.fulfill({
@@ -50,7 +51,7 @@ test('checkout confirms an order paid while a same-key replay is in flight', asy
   expect(replayKeys).toEqual([savedKey]);
 });
 
-test('VNPay return keeps checking the order when payment status is unavailable', async ({ page }) => {
+test('Tiếp tục tra cứu đơn khi VNPay trả về nhưng trạng thái thanh toán chưa có', async ({ page }) => {
   let status = 'PENDING';
   let paymentPosts = 0;
   await page.route('**/api/v1/payments', async route => {

@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test tests/unit/*.test.mjs",
     "test:e2e": "playwright test --project=chromium --project=delivery",
     "test:e2e:vnpay": "playwright test --project=vnpay --reporter=html,list",
     "test:e2e:vnpay:ui": "playwright test --project=vnpay --ui",

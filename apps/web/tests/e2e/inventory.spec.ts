@@ -1,6 +1,7 @@
+// Kiểm tra tồn kho chỉ đọc trên máy tính và thiết bị di động.
 import { expect, test } from '@playwright/test';
 const api = process.env.E2E_API_URL ?? `http://localhost:${process.env.E2E_API_PORT ?? '3101'}/api/v1`;
-test('Barista inventory is read-only on desktop and mobile', async ({ page, request }) => {
+test('Barista chỉ có quyền xem tồn kho trên desktop và mobile', async ({ page, request }) => {
  const response = await request.post(`${api}/auth/login`, { data: { username: 'barista01', password: 'Barista@123' } });
  expect(response.ok()).toBeTruthy();
  const token = (await response.json()).data.accessToken;

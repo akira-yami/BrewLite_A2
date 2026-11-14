@@ -1,9 +1,10 @@
+// Kiểm tra callback đến sớm, trùng hoặc đồng thời với tra cứu.
 import { enrichVnpayPaymentResponse } from '../helpers/vnpay-test-helper.js';
 import { test, expect } from '../fixtures/vnpay-fixtures.js';
 import { setupCartWithProduct, proceedToCheckout } from '../helpers/cart-helper.js';
 
-test.describe('VNPAY IPN Race Conditions', () => {
-  test('IPN arrives before user returns - immediate success display', async ({
+test.describe('Callback IPN đến đồng thời hoặc trùng', () => {
+  test('IPN đến trước khi khách quay lại và hiển thị thành công ngay', async ({
     page,
     request,
     vnpayHelper,
@@ -47,7 +48,7 @@ test.describe('VNPAY IPN Race Conditions', () => {
     expect(orderData.data.status).toBe('PAID');
   });
 
-  test('duplicate IPN is rejected properly', async ({
+  test('Xử lý đúng khi nhận IPN trùng', async ({
     request,
     vnpayHelper,
     page,
@@ -87,7 +88,7 @@ test.describe('VNPAY IPN Race Conditions', () => {
     expect(secondIpn.RspCode).toBe('02');
   });
 
-  test('payment status reflects IPN update before polling', async ({
+  test('Trạng thái thanh toán phản ánh cập nhật IPN trước khi tra cứu', async ({
     page,
     request,
     vnpayHelper,

@@ -9,7 +9,7 @@ Nhiều khách mua phần tồn cuối; client gửi lại payment hoặc mất 
 
 ## Quyết định
 
-1. Tạo order/items/history, giảm Ingredient.stockQuantity có điều kiện/version, reserve inventory/coupon cùng transaction ngắn. Cộng nhu cầu ingredient theo BOM món/topping toàn giỏ, cập nhật theo ingredientId ổn định; reservation mỗi order/variant và snapshot lượng ingredient ở InventoryReservationItem. Lỗi rollback tất cả.
+1. Tạo order/items/history, giảm Ingredient.stockQuantity bằng cập nhật nguyên tử có điều kiện đủ tồn và còn hoạt động trong transaction Read Committed, tăng version sau khi trừ, reserve inventory/coupon cùng transaction ngắn. Cộng nhu cầu ingredient theo BOM món/topping toàn giỏ, cập nhật theo ingredientId ổn định; reservation mỗi order/variant và snapshot lượng ingredient ở InventoryReservationItem. Lỗi rollback tất cả.
 2. Mỗi payment attempt có key unique và hash từ orderId, method và amount. Trạng thái gồm PROCESSING, SUCCEEDED, FAILED, MANUAL_REVIEW và REFUNDED. Kiểm tra JWT/chủ đơn trước replay. Khóa order để chỉ một attempt đang xử lý, kể cả khác key; DB thêm partial unique success/order và EARN/order.
 3. Checkout tạo attempt VNPay và URL trong transaction ngắn. IPN hoặc Return hợp lệ trong Sandbox chốt payment, order, history, reservation, coupon và loyalty trong cùng transaction.
 4. Cùng key/hash trả kết quả đã ghi, gồm URL nếu VNPay còn PROCESSING. Key mới gặp attempt đang xử lý trả 409 PAYMENT_IN_PROGRESS. Key trùng với payload khác trả 409 IDEMPOTENCY_KEY_REUSED. Decline xác định giữ tồn đến hạn retry, key mới và không reserve lần hai. Order PAID không có payment success thứ hai.

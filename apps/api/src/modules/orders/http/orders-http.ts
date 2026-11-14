@@ -1,16 +1,16 @@
 import {
-  ArgumentsHost,
-  CallHandler,
-  Catch,
-  ExceptionFilter,
-  ExecutionContext,
-  HttpException,
-  Injectable,
-  NestInterceptor,
-  Logger,
+    ArgumentsHost,
+    CallHandler,
+    Catch,
+    ExceptionFilter,
+    ExecutionContext,
+    HttpException,
+    Injectable,
+    Logger,
+    NestInterceptor,
 } from '@nestjs/common';
-import { randomUUID } from 'node:crypto';
 import type { Request, Response } from 'express';
+import { randomUUID } from 'node:crypto';
 import { map } from 'rxjs';
 
 function requestId(request: Request, response: Response): string {
@@ -60,7 +60,11 @@ export class OrdersExceptionFilter implements ExceptionFilter {
     const custom =
       body.error ?? (typeof body.code === 'string' ? body : undefined);
     if (status >= 500)
-      this.logger.error(`Order request failed; requestId=${id}`);
+      // Ghi kèm stack để truy được nguyên nhân gốc; response trả client vẫn giữ nguyên thông báo chung.
+      this.logger.error(
+        `Order request failed; requestId=${id}`,
+        exception instanceof Error ? exception.stack : String(exception),
+      );
     const defaults: Record<number, string> = {
       400: 'VALIDATION_ERROR',
       401: 'UNAUTHORIZED',

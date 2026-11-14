@@ -1,9 +1,10 @@
+// Kiểm tra khôi phục hoặc hủy đơn khi cổng thanh toán phản hồi chậm.
 import { enrichVnpayPaymentResponse } from '../helpers/vnpay-test-helper.js';
 import { test, expect } from '../fixtures/vnpay-fixtures.js';
 import { setupCartWithProduct, proceedToCheckout } from '../helpers/cart-helper.js';
 
-test.describe('VNPAY Timeout Recovery', () => {
-  test('checkout keeps order actions available while awaiting VNPay', async ({
+test.describe('Khôi phục VNPay sau khi quá thời gian chờ', () => {
+  test('Checkout vẫn cho thao tác trên đơn khi đang chờ VNPay', async ({
     page,
     testUser,
   }) => {
@@ -23,7 +24,7 @@ test.describe('VNPAY Timeout Recovery', () => {
     await expect(page.getByRole('button', { name: 'Kiểm tra trạng thái giao dịch' })).toBeEnabled();
   });
 
-  test('manual recovery after payment completes late', async ({
+  test('Khôi phục thủ công khi thanh toán hoàn tất muộn', async ({
     page,
     request,
     vnpayHelper,
@@ -72,7 +73,7 @@ test.describe('VNPAY Timeout Recovery', () => {
     expect(orderData.data.status).toBe('PAID');
   });
 
-  test('recovery with payment failure shows error', async ({
+  test('Hiện lỗi khi khôi phục thanh toán thất bại', async ({
     page,
     request,
     vnpayHelper,
@@ -103,7 +104,7 @@ test.describe('VNPAY Timeout Recovery', () => {
     await expect(errorAlert).toContainText('Thanh toán chưa thành công', { timeout: 15000 });
   });
 
-  test('can cancel the pending order after reloading checkout', async ({
+  test('Có thể hủy đơn đang chờ sau khi tải lại checkout', async ({
     page,
     request,
     testUser,
@@ -130,7 +131,7 @@ test.describe('VNPAY Timeout Recovery', () => {
     expect((await order.json()).data.status).toBe('CANCELLED');
   });
 
-  test('replaces a pending VNPay order and pays only for the remaining cart', async ({ page, request, testUser, apiUrl, vnpayHelper }) => {
+  test('Thay đơn VNPay đang chờ và chỉ trả tiền các món còn lại', async ({ page, request, testUser, apiUrl, vnpayHelper }) => {
     await setupCartWithProduct(page, testUser.accessToken);
     await proceedToCheckout(page);
     const firstPayment = page.waitForResponse(response =>

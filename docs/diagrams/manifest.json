@@ -7,10 +7,10 @@
   "entries": [
     {
       "source": "docs/diagrams/activity-checkout.puml",
-      "sha256": "7b9f3abe5baefbf6965be7a8ab56fc3a273ea8d15399987877b1ca67f2058013",
+      "sha256": "7f7f4cb75fdc1c02146d18178a53056781e4d07fcd97f5d9e01c5bc8c03a582c",
       "outputs": {
-        "docs/diagrams/activity-checkout.svg": "dccc65f688661c21b6fa7d33f7e87205faf27b29937379709bd99106550b711d",
-        "docs/diagrams/activity-checkout.png": "84166bd36998e5f5de45a66d29d48f6ff72fb5b92b58382f3251ba8769f79b9e"
+        "docs/diagrams/activity-checkout.svg": "54c4732c52ca8e3b8305906a8f1979d47272bc21e7847f6556b8206fae2ad7c9",
+        "docs/diagrams/activity-checkout.png": "124e9a1d8f312e214bdd87911cfdcd02abbe89588ad80562566806c2f9008142"
       }
     },
     {
@@ -39,10 +39,10 @@
     },
     {
       "source": "docs/diagrams/sequence-create-order.puml",
-      "sha256": "c38458eabd43f7001bac4b0fefa29feba388c3929785d2a1bc9d2df6e8c0f8f6",
+      "sha256": "51b36e7d4445af72bdc4b3389db4e265dd2db1f9c559f339e589d6f6e7dff138",
       "outputs": {
-        "docs/diagrams/sequence-create-order.svg": "c4802ba38be59be10da9b6d107bbd7524afd8e0fcd16fddd122e7f3fdd37fb2e",
-        "docs/diagrams/sequence-create-order.png": "b0adf8cff96eda8e2a4962564b17a06d316b7fde384baca2d58c08d23b3e4153"
+        "docs/diagrams/sequence-create-order.svg": "70010b11cd27ddbe3f7435a1868be1340cc4f10b0a69e637bad6326cefecd353",
+        "docs/diagrams/sequence-create-order.png": "da700d4e1840b3448bbd78b633e0212d83658e523c3c747202e63e0e68e72078"
       }
     },
     {

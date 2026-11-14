@@ -41,10 +41,14 @@ $excludeDirs = @(
     '.turbo',
     'playwright-report',
     'test-results',
+    'blob-report',
+    '.cache',
+    '.swc',
     'outputs',
     '.idea',
     '.vscode',
     '.agents',
+    '__MACOSX',
     'tham_khao'
 )
 
@@ -64,7 +68,15 @@ $excludeFiles = @(
     '*.zip',
     '*.7z',
     '*.rar',
-    '*.tar.gz'
+    '*.tar.gz',
+    '*.bak',
+    '*.swp',
+    '*~',
+    '*.aux',
+    '*.fls',
+    '*.fdb_latexmk',
+    '*.synctex.gz',
+    '.eslintcache'
 )
 
 Write-Host ' [1/3] Dang quet file sach (bo node_modules, .worktrees, cache, build)...' -ForegroundColor Yellow

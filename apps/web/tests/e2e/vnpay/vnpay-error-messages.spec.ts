@@ -1,9 +1,10 @@
+// Kiểm tra tiếng Việt và cách hiển thị lỗi, số tiền, hướng dẫn thanh toán.
 import { enrichVnpayPaymentResponse } from '../helpers/vnpay-test-helper.js';
 import { test, expect } from '../fixtures/vnpay-fixtures.js';
 import { setupCartWithProduct, proceedToCheckout } from '../helpers/cart-helper.js';
 
-test.describe('Vietnamese Error Messages', () => {
-  test('insufficient balance error displays in Vietnamese', async ({
+test.describe('Thông báo lỗi bằng tiếng Việt', () => {
+  test('Báo không đủ số dư bằng tiếng Việt', async ({
     page,
     request,
     vnpayHelper,
@@ -36,7 +37,7 @@ test.describe('Vietnamese Error Messages', () => {
     await expect(errorMessage).toBeVisible({ timeout: 10000 });
   });
 
-  test('an expired VNPay link shows a Vietnamese retry message', async ({
+  test('Liên kết VNPay hết hạn hiển thị lời nhắc thử lại bằng tiếng Việt', async ({
     page,
     request,
     vnpayHelper,
@@ -62,7 +63,7 @@ test.describe('Vietnamese Error Messages', () => {
     await expect(page.getByRole('button', { name: 'Thanh toán lại' })).toBeEnabled();
   });
 
-  test('amount formatting with thousand separators', async ({
+  test('Định dạng số tiền có dấu phân cách hàng nghìn', async ({
     page,
     testUser,
   }) => {
@@ -77,7 +78,7 @@ test.describe('Vietnamese Error Messages', () => {
     expect(amountText).toMatch(/\d{1,3}(\.\d{3})+/);
   });
 
-  test('payment instructions in Vietnamese', async ({
+  test('Hiển thị hướng dẫn thanh toán bằng tiếng Việt', async ({
     page,
     testUser,
   }) => {
@@ -103,7 +104,7 @@ test.describe('Vietnamese Error Messages', () => {
     ).toBeVisible();
   });
 
-  test('all buttons labeled in Vietnamese', async ({
+  test('Hiển thị nhãn nút bằng tiếng Việt', async ({
     page,
     testUser,
   }) => {

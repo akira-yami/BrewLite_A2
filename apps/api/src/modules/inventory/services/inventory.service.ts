@@ -89,7 +89,7 @@ export class InventoryService {
    *
    * needs lấy từ OrdersService.validateAndPriceItems().
    */
-  // OrdersService truyền nguyên liệu và version đã đọc khi báo giá.
+  // OrdersService trừ tồn nguyên tử dựa trên số lượng hiện tại.
   async reserve(
     tx: Prisma.TransactionClient,
     orderId: string,
@@ -137,7 +137,7 @@ export class InventoryService {
         const updated = await this.repository.reserveIngredient(
           tx,
           ingredientId,
-          need.version,
+          undefined,
           need.quantity,
         );
 

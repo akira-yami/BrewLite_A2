@@ -18,9 +18,9 @@ Ba lớp kiểm thử được xây dựng độc lập:
 
 | Lớp | File | Phạm vi |
 |---|---|---|
-| Gateway | `test/mock-gateway.spec.ts` | Idempotency, outcome, lookup, clear |
-| Service | `test/payments.service.spec.ts` (bổ sung) | Edge cases finalize, retry, loyalty, coupon |
-| Controller | `test/payments.controller.spec.ts` | HTTP contract, header validation, error propagation |
+| Gateway | `test/unit/mock-gateway.spec.ts` | Idempotency, outcome, lookup, clear |
+| Service | `test/unit/payments.service.spec.ts` (bổ sung) | Edge cases finalize, retry, loyalty, coupon |
+| Controller | `test/unit/payments.controller.spec.ts` | HTTP contract, header validation, error propagation |
 
 ### Lý do lựa chọn (Rationals)
 
@@ -51,9 +51,9 @@ Ba lớp kiểm thử được xây dựng độc lập:
 
 | File | Loại | Đường dẫn đầy đủ |
 |---|---|---|
-| Test mới — Controller | Test script | `apps/api/test/payments.controller.spec.ts` |
-| Test mới — Gateway | Test script | `apps/api/test/mock-gateway.spec.ts` |
-| Test bổ sung — Service | Test script | `apps/api/test/payments.service.spec.ts` |
+| Test mới — Controller | Test script | `apps/api/test/unit/payments.controller.spec.ts` |
+| Test mới — Gateway | Test script | `apps/api/test/unit/mock-gateway.spec.ts` |
+| Test bổ sung — Service | Test script | `apps/api/test/unit/payments.service.spec.ts` |
 
 ### Điều kiện tiên quyết (Prerequisites)
 
@@ -72,7 +72,7 @@ npm test
 ```powershell
 # Chạy chỉ các file payment tests
 cd apps/api
-npx vitest run test/payments.service.spec.ts test/payments.controller.spec.ts test/mock-gateway.spec.ts
+npx vitest run test/unit/payments.service.spec.ts test/unit/payments.controller.spec.ts test/unit/mock-gateway.spec.ts
 ```
 
 ```powershell

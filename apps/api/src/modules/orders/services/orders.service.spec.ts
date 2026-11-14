@@ -752,7 +752,7 @@ describe('OrdersService- Cổng thanh toán (Unit Test - TDD)', () => {
       expect(txMock.ingredient.updateMany).toHaveBeenCalledWith({
         where: {
           id: 'ingredient-1',
-          version: 0,
+          version: undefined,
           isActive: true,
           stockQuantity: { gte: 20 },
         },
@@ -909,6 +909,37 @@ describe('OrdersService- Cổng thanh toán (Unit Test - TDD)', () => {
         if (prevTtl === undefined) delete process.env.ORDER_RESERVATION_TTL_MINUTES;
         else process.env.ORDER_RESERVATION_TTL_MINUTES = prevTtl;
       }
+    });
+
+    it('thử lại toàn bộ giao dịch khi adapter PostgreSQL báo xung đột ghi', async () => {
+      prismaMock.$transaction.mockRejectedValueOnce(
+        Object.assign(new Error('TransactionWriteConflict'), {
+          name: 'DriverAdapterError',
+          cause: { kind: 'TransactionWriteConflict' },
+        }),
+      );
+      txMock.order.create.mockResolvedValue(mockOrderDb);
+
+      txMock.ingredient.updateMany.mockResolvedValue({ count: 1 });
+      await expect(service.createOrder('u-1', mockDto as any)).resolves.toMatchObject({
+        id: mockOrderDb.id,
+      });
+      expect(prismaMock.$transaction).toHaveBeenCalledTimes(2);
+    });
+
+    it('trả 409 khi adapter PostgreSQL vẫn báo xung đột sau ba lần thử', async () => {
+      prismaMock.$transaction.mockRejectedValue(
+        Object.assign(new Error('TransactionWriteConflict'), {
+          name: 'DriverAdapterError',
+          cause: { kind: 'TransactionWriteConflict' },
+        }),
+      );
+
+      await expect(service.createOrder('u-1', mockDto as any)).rejects.toMatchObject({
+        status: 409,
+        response: { error: { code: 'INVENTORY_CONFLICT' } },
+      });
+      expect(prismaMock.$transaction).toHaveBeenCalledTimes(3);
     });
 
     it('ném ConflictException nếu updateMany nguyên liệu trả về count = 0 (hết nguyên liệu trong transaction)', async () => {

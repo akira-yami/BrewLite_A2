@@ -1,9 +1,10 @@
+// Kiểm tra khôi phục thanh toán sau mất mạng hoặc quay lại checkout.
 import { enrichVnpayPaymentResponse } from '../helpers/vnpay-test-helper.js';
 import { test, expect } from '../fixtures/vnpay-fixtures.js';
 import { setupCartWithProduct, proceedToCheckout } from '../helpers/cart-helper.js';
 
-test.describe('VNPAY Network Loss Recovery', () => {
-  test('user returns after hours and recovers payment', async ({
+test.describe('Khôi phục VNPay sau mất mạng', () => {
+  test('Khách quay lại sau nhiều giờ và khôi phục thanh toán', async ({
     page,
     request,
     vnpayHelper,
@@ -50,7 +51,7 @@ test.describe('VNPAY Network Loss Recovery', () => {
     expect(orderData.data.status).toBe('PAID');
   });
 
-  test('PROCESSING state persists when returning to checkout', async ({
+  test('Giữ trạng thái PROCESSING khi quay lại checkout', async ({
     page,
     testUser,
   }) => {
@@ -88,7 +89,7 @@ test.describe('VNPAY Network Loss Recovery', () => {
     expect(replayPosts, 'Restoring checkout must reuse the existing payment').toBe(0);
   });
 
-  test('inquiry discovers delayed success correctly', async ({
+  test('Tra cứu phát hiện thanh toán thành công đến muộn', async ({
     page,
     request,
     vnpayHelper,

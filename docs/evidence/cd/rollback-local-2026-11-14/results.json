@@ -1,0 +1,39 @@
+{
+  "startedAt": "2026-11-14T16:56:09.891Z",
+  "environment": "local isolated PostgreSQL and Node processes",
+  "stable": "2ea337141219183ee2882bbb3390bdeab47ed7dd",
+  "candidate": "53b9321d1e3e1249fc0c8f22f10e6401be6e9044",
+  "phases": {
+    "api": {
+      "from": "53b9321d1e3e1249fc0c8f22f10e6401be6e9044",
+      "to": "2ea337141219183ee2882bbb3390bdeab47ed7dd",
+      "health": 200,
+      "elapsedMs": 3898,
+      "orderId": "431f5651-e6ad-49ef-a4f8-e36f9f942c6f",
+      "orderStatus": "PENDING",
+      "smoke": "🔍  Smoke test — http://127.0.0.1:55491\n    Started at: 2026-11-14T16:56:18.997Z\n    Timeout: 10000ms per request | Retries: 3\n\n  ✅  GET /api/v1/health → 200 với DB connectivity\n  ✅  GET /api/v1/products/not-a-uuid → 400\n  ✅  GET /api/v1/products → 200 array response\n  ✅  GET /api/v1/products/:nonExistentId → 404\n\n────────────────────────────────────────\n  Passed: 4/4\n  Failed: 0/4\n  Ended at: 2026-11-14T16:56:19.188Z\n────────────────────────────────────────\n\n✅  Smoke test PASSED. API is healthy."
+    },
+    "gitTag": {
+      "fromTag": "v1.0.2",
+      "toTag": "v1.0.1",
+      "toSha": "2ea337141219183ee2882bbb3390bdeab47ed7dd",
+      "bootedFromTaggedBuild": true
+    },
+    "database": {
+      "applied": "20261114235900_drill_add_probe",
+      "compensatedBy": "20261114235901_drill_remove_probe",
+      "probeRemoved": true,
+      "restoredOrderIdsAndStatusesMatch": true,
+      "ordersCompared": 3
+    },
+    "web": {
+      "from": "53b9321d1e3e1249fc0c8f22f10e6401be6e9044",
+      "to": "2ea337141219183ee2882bbb3390bdeab47ed7dd",
+      "health": 200,
+      "menu": 200,
+      "elapsedMs": 1403
+    }
+  },
+  "passed": true,
+  "finishedAt": "2026-11-14T16:56:26.429Z"
+}

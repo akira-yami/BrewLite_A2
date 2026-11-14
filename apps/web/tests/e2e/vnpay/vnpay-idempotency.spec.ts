@@ -1,10 +1,11 @@
+// Kiểm tra khóa chống trùng và quy tắc thử lại sau thất bại.
 import { enrichVnpayPaymentResponse } from '../helpers/vnpay-test-helper.js';
 import { test, expect } from '../fixtures/vnpay-fixtures.js';
 import { setupCartWithProduct, proceedToCheckout } from '../helpers/cart-helper.js';
 import { randomUUID } from 'node:crypto';
 
-test.describe('VNPAY Idempotency & Retry Safety', () => {
-  test('retry after FAILED creates new payment record', async ({
+test.describe('Chống thanh toán trùng và thử lại VNPay', () => {
+  test('Thử lại lượt FAILED tạo bản ghi thanh toán mới', async ({
     page,
     request,
     vnpayHelper,
@@ -75,7 +76,7 @@ test.describe('VNPAY Idempotency & Retry Safety', () => {
     expect(orderData.data.status).toBe('PAID');
   });
 
-  test('retry during PROCESSING returns 409 error', async ({
+  test('Thử lại khi đang PROCESSING trả lỗi 409', async ({
     page,
     request,
     testUser,
@@ -108,7 +109,7 @@ test.describe('VNPAY Idempotency & Retry Safety', () => {
     expect(errorData.code).toBe('PAYMENT_IN_PROGRESS');
   });
 
-  test('multiple keys for same order allowed after FAILED', async ({
+  test('Cho phép khóa mới trên cùng đơn sau lượt FAILED', async ({
     page,
     request,
     vnpayHelper,

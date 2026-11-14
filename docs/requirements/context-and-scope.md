@@ -6,7 +6,7 @@ Phiên bản: 1.1 | Ngày: 04/11/2026 | Phụ trách: Khang | Truy vết: [A2-1.
 
 Tại quầy đồ uống, việc ghi nhận món, size, topping và ghi chú bằng trao đổi thủ công có thể làm sai đơn; khách khó biết số tiền cuối cùng và tiến độ pha chế. Khi nhiều khách đặt cùng lúc, hệ thống cần tránh bán vượt tồn. Mạng chậm hoặc thao tác thanh toán lặp có thể tạo giao dịch, điểm thưởng hoặc lượt dùng coupon trùng.
 
-BrewLite cung cấp luồng: **xem menu -> chọn tùy chọn -> giỏ hàng -> xác thực -> đặt đơn -> thanh toán Ví/Thẻ giả lập -> xác nhận và theo dõi đơn**. Backend quyết định giá, chủ đơn, tồn kho và trạng thái. Nhân viên quầy cập nhật tiến độ qua chức năng được phân quyền.
+BrewLite cung cấp luồng: **xem menu -> chọn tùy chọn -> giỏ hàng -> xác thực -> đặt đơn -> thanh toán VNPay Sandbox -> xác nhận và theo dõi đơn**. Backend quyết định giá, chủ đơn, tồn kho và trạng thái. Nhân viên quầy cập nhật tiến độ qua chức năng được phân quyền.
 
 Mục tiêu nghiệm thu là hoàn thành một đơn end-to-end với số tiền/tùy chọn đúng, không thu lặp khi gửi lại thanh toán, không lộ đơn của người khác; nhóm có thể tái tạo môi trường local và bàn giao bản production truy cập được. Tiêu chí chi tiết thuộc SRS, không suy ra rằng các mục tiêu đã đạt chỉ vì có tài liệu.
 
@@ -36,7 +36,7 @@ MVP cuối Assignment 2 bao gồm cả hai Sprint. MVP Sprint 1 là phần chạ
 | IN-03 | Giỏ client: thêm/sửa/xóa, tạm tính, lưu local và giữ lựa chọn khi reload | Sprint 2; FR-04 |
 | IN-04 | Đăng ký khách hàng, đăng nhập JWT; kiểm soát role và chủ sở hữu | Sprint 2; FR-05 |
 | IN-05 | Tạo đơn `PENDING`; server tính giá, snapshot, giữ nguyên liệu theo công thức món/topping nguyên tử và rollback khi lỗi | Sprint 2; FR-06, baseline A1 |
-| IN-06 | Ví/Thẻ giả lập; lưu payment attempt, idempotency, lỗi/retry và kết quả chưa xác định | Sprint 2; FR-07 |
+| IN-06 | VNPay Sandbox trên Web và Ví/Thẻ giả lập trong test API; lưu payment attempt, idempotency, lỗi/retry và kết quả chưa xác định | Sprint 2; FR-07 |
 | IN-07 | Xác nhận, chi tiết và lịch sử của chính khách hàng; trạng thái đơn và cập nhật tiến độ qua API nhân viên | Sprint 2; FR-08/09; UI quầy đầy đủ là mở rộng |
 | IN-08 | State machine, chống oversell, coupon và cộng loyalty một lần sau thanh toán thành công | Kế thừa yêu cầu A1; FR-09/10, không bỏ chỉ vì A2 không liệt kê lại từng quy tắc |
 | IN-09 | Migration/seed, Docker Compose web/API/DB local, health/log, test unit/integration/E2E | A2 mục 7.2 |

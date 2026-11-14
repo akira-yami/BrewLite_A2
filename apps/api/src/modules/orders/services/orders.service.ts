@@ -192,13 +192,21 @@ export class OrdersService {
               createdAt: order.createdAt.toISOString(),
             };
           },
-          { isolationLevel: Prisma.TransactionIsolationLevel.Serializable },
+          // Coupon usage is serialized by its row lock. Stock is decremented by
+          // a guarded UPDATE that rechecks available quantity after lock waits.
+          { isolationLevel: Prisma.TransactionIsolationLevel.ReadCommitted },
         );
       } catch (error) {
         const prismaError = error as {
+          name?: string;
           code?: string;
           meta?: { target?: unknown };
+          cause?: { kind?: string };
         };
+        // The pg adapter can surface a serialization failure directly at commit.
+        const adapterWriteConflict =
+          prismaError.name === 'DriverAdapterError' &&
+          prismaError.cause?.kind === 'TransactionWriteConflict';
         const uniqueOrderNumber =
           prismaError.code === 'P2002' &&
           JSON.stringify(prismaError.meta?.target ?? '').match(
@@ -207,6 +215,7 @@ export class OrdersService {
         if (
           !(error instanceof InventoryVersionConflict) &&
           !['P2034', '40001', '40P01'].includes(prismaError.code ?? '') &&
+          !adapterWriteConflict &&
           !uniqueOrderNumber
         )
           throw error;

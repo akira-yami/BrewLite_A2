@@ -18,12 +18,12 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      testIgnore: ['vnpay/**'],
+      testIgnore: ['vnpay/**', 'delivery/**'],
       use: mobileChromium,
     },
     {
       name: 'delivery',
-      testDir: '../../tests/e2e',
+      testDir: './tests/e2e/delivery',
       use: mobileChromium,
     },
     {

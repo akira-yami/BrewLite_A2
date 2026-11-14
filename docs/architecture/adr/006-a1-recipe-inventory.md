@@ -11,7 +11,7 @@ SRS/kiến trúc cũ mô tả stock/version ở ProductVariant và loại kho ng
 ## Quyết định
 
 1. Dùng domain A1 làm baseline: ProductVariant chỉ có catalog/size/price/active; Ingredient giữ stockQuantity/version với unit G/ML/PCS. BOM món là RecipeItem, BOM topping PREPACKAGED/PREPARED là ToppingRecipeItem.
-2. Cộng nhu cầu ingredient trên mọi dòng/món/topping; cập nhật đủ tồn/version theo ingredientId có thứ tự. InventoryReservation vẫn theo order/variant nhưng InventoryReservationItem lưu lượng nguyên liệu đã giữ để hoàn đúng khi công thức đổi. Enum expiry giữ EXPIRED theo schema A1.
+2. Cộng nhu cầu ingredient trên mọi dòng/món/topping; cập nhật có điều kiện đủ tồn và nguyên liệu còn hoạt động theo ingredientId có thứ tự, tăng version theo mỗi lần ghi. InventoryReservation vẫn theo order/variant nhưng InventoryReservationItem lưu lượng nguyên liệu đã giữ để hoàn đúng khi công thức đổi. Enum expiry giữ EXPIRED theo schema A1.
 3. Giữ tên model thật Coupon/CouponRedemption; Coupon là Promotion theo nghĩa đề bài. Giữ enum LoyaltyTransactionType và orderId nullable theo schema, không tự thêm chức năng redeem vào MVP.
 4. OrderItem.unitPrice là giá variant, topping.unitPrice/quantity snapshot riêng. Tính lineTotal từ tổng giá món/topping mỗi ly rồi nhân số ly, không cộng topping hai lần.
 5. UC-06 chỉ tạo PENDING/giữ nguyên liệu/coupon/history; UC-08 độc lập mới tạo Payment/consume/EARN. Không có include/extend giữa chúng. Coupon UC-07 extend UC-06; login UC-02 là tiền điều kiện. Giữ nguyên nguồn/PNG sơ đồ tổng thể của nhóm và tên UC đã có trong đó.

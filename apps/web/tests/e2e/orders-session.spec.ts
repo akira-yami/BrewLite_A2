@@ -1,3 +1,4 @@
+// Kiểm tra khôi phục phiên khi mở đơn và xử lý phản hồi đến muộn sau khi đổi phiên.
 import { expect, test, type Page, type APIRequestContext } from '@playwright/test';
 import { randomUUID } from 'node:crypto';
 
@@ -21,7 +22,7 @@ async function persist(page: Page, token: string) {
 }
 
 for (const path of ['/orders', '/orders/order-a', '/orders/confirmation?orderId=order-a']) {
-  test(`restores the real session before loading ${path}`, async ({ page, request }) => {
+  test(`Khôi phục phiên thật trước khi tải ${path}`, async ({ page, request }) => {
     const token = await register(request);
     await persist(page, token);
     let release!: () => void;
@@ -54,7 +55,7 @@ for (const path of ['/orders', '/orders/order-a', '/orders/confirmation?orderId=
 }
 
 for (const status of [401, 403]) {
-  test(`orders ${status} ${status === 401 ? 'invalidates' : 'preserves'} the restored session`, async ({ page, request }) => {
+  test(`API đơn hàng trả ${status} thì ${status === 401 ? 'hủy' : 'giữ'} phiên đã khôi phục`, async ({ page, request }) => {
     const token = await register(request);
     await persist(page, token);
     await page.route(`${api}/orders/**`, route => route.fulfill({ status, json: {
@@ -73,7 +74,7 @@ for (const status of [401, 403]) {
 }
 
 for (const oldStatus of [200, 401]) {
-  test(`ignores a late ${oldStatus} response after switching sessions`, async ({ page, request }) => {
+  test(`Bỏ qua phản hồi ${oldStatus} đến muộn sau khi đổi phiên`, async ({ page, request }) => {
     const oldToken = await register(request);
     const newToken = await register(request);
     await persist(page, oldToken);

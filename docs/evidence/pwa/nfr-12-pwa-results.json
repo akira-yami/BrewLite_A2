@@ -1,0 +1,32 @@
+{
+  "testRunAtUTC": "2026-11-14T08:54:35.053Z",
+  "manifest": {
+    "name": "BrewLite — Cà phê & Trà",
+    "short_name": "BrewLite",
+    "start_url": "/menu",
+    "display": "standalone",
+    "iconsCount": 2,
+    "valid": true
+  },
+  "serviceWorker": {
+    "registered": true,
+    "scope": "http://localhost:3000/",
+    "active": true
+  },
+  "offlineFlow": {
+    "bannerDisplayed": true,
+    "bannerText": "Mất kết nối mạng. Bạn đang ở chế độ ngoại tuyến. Giỏ hàng vẫn được lưu cục bộ; thanh toán trực tuyến cần có kết nối mạng.\nThử lại",
+    "cartItemsCount": 1,
+    "cartPreserved": true,
+    "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\pwa\\nfr-12-offline-banner.png",
+    "passed": true
+  },
+  "reconnectFlow": {
+    "reconnectBannerDisplayed": true,
+    "cartItemsCount": 1,
+    "cartPreserved": true,
+    "screenshot": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\cnpm\\project\\BrewLite_A2\\docs\\evidence\\pwa\\nfr-12-reconnect-banner.png",
+    "passed": true
+  },
+  "passed": true
+}

@@ -53,7 +53,7 @@
 | `apps/api/src/modules/payments/payments.controller.ts` | API Controller | `POST /api/v1/payments` |
 | `apps/api/src/modules/payments/payments.module.ts` | NestJS Module | Wire controller + service |
 | `apps/api/src/app.module.ts` | Root Module | Import AuthModule, OrdersModule, PaymentsModule |
-| `apps/api/test/payments.service.spec.ts` | Unit Test | 14 test cases AT-FR-07.1–07.5 |
+| `apps/api/test/unit/payments.service.spec.ts` | Unit Test | 14 test cases AT-FR-07.1–07.5 |
 
 ### Điều kiện tiên quyết
 
@@ -169,8 +169,8 @@ tests 38 | pass 38 | fail 0
 | `src/modules/payments/payments.controller.ts` | **New** | `POST /payments`, Idempotency-Key guard, CUSTOMER-only |
 | `src/modules/payments/payments.module.ts` | **New** | NestJS module wiring |
 | `prisma/migrations/20261107090000_payment_constraints/migration.sql` | **New** | Unique index + CHECK constraints |
-| `test/payments.service.spec.ts` | **New** | 14 unit tests AT-FR-07.1–07.5 |
-| `test/auth.service.spec.ts` | Fixed | Xóa vi.fn generic incompatible với TS6 (typecheck clean) |
+| `test/unit/payments.service.spec.ts` | **New** | 14 unit tests AT-FR-07.1–07.5 |
+| `test/unit/auth.service.spec.ts` | Fixed | Xóa vi.fn generic incompatible với TS6 (typecheck clean) |
 
 ### Web (`apps/web`)
 

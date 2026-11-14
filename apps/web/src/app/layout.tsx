@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
+import { OfflineBanner } from "@/features/pwa/OfflineBanner";
 
 const playfair = Playfair_Display({
   subsets: ["latin", "vietnamese"],
@@ -18,6 +19,17 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "BrewLite — Cà phê & Trà",
   description: "Đặt đồ uống nhanh chóng và thưởng thức hương vị ấm áp.",
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/pwa-icon-192.png",
+    apple: "/pwa-icon-192.png",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#163D2C",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -32,6 +44,7 @@ export default function RootLayout({
       className={`h-full antialiased ${playfair.variable} ${jakarta.variable}`}
     >
       <body className="flex min-h-full flex-col font-sans bg-[#FBF8F2] text-[#1E1915]">
+        <OfflineBanner />
         <Providers>{children}</Providers>
       </body>
     </html>
