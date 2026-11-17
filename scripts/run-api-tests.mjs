@@ -30,7 +30,7 @@ async function checkHealth(url = 'http://localhost:3001/api/v1/health') {
     const res = await fetch(url, { signal: AbortSignal.timeout(1500) });
     if (res.ok) {
       const data = await res.json().catch(() => null);
-      return data?.success === true && data?.data?.status === 'ok';
+      return data?.status === 'ok' || data?.data?.status === 'ok';
     }
   } catch {
     return false;
@@ -128,7 +128,7 @@ try {
     newmanBin = `"${unixNewman}"`;
   }
 
-  const command = `${newmanBin} run "${collectionPath}" -e "${environmentPath}" --reporters cli,json --reporter-json-export "${reportJsonPath}"`;
+  const command = `${newmanBin} run "${collectionPath}" -e "${environmentPath}" --ignore-redirects --reporters cli,json --reporter-json-export "${reportJsonPath}"`;
   console.log('Executing Postman collection via Newman...\n');
 
   let output = '';
