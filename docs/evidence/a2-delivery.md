@@ -17,6 +17,7 @@ Kiểm tra cục bộ ngày 14/11/2026 trên nhánh `codex/a2-release-verificati
 | Migration và integration | `npm --prefix apps/api run test:migration` | 21 migration trên DB rỗng, replay no-op, 91/91 ca integration. |
 | Tạo đơn/thanh toán API | `npm --prefix apps/api run test:e2e` | 32/32. [Checkout HTTP](../../apps/api/test/e2e/checkout.e2e-spec.ts) dùng DB thật và Ví/Thẻ mock. [Readiness](../../apps/api/test/e2e/app.e2e-spec.ts) kiểm tra gọi DB và trả 503 khi truy vấn lỗi. |
 | Browser E2E | `npm --prefix apps/web run test:e2e` | 19/19, chạy với Web 55472 và API 55471. [Ca nghiệm thu](../../apps/web/tests/e2e/delivery/checkout-flow.spec.ts) kiểm tra mã xác nhận và trạng thái `PAID` qua API và PostgreSQL local. Callback VNPay được mô phỏng. |
+| Postman / Newman API | `node scripts/run-api-tests.mjs` | 50/50 requests, 81/81 assertions passed (0 failures). [Chi tiết minh chứng](testing/postman/README.md) và [Log](testing/postman/postman-newman-test-run.log). |
 | Compose | [Job Compose trên PR CI](../../.github/workflows/pr-ci.yml) | Log cục bộ phát hiện thiếu Prisma schema tại bước npm install, đã sửa Dockerfile. Dùng artifact của job Compose để xác nhận build, khởi động, seed lặp và đơn `PAID` sau restart. |
 
 [Ảnh chạy local ngày 14/11/2026](testing/local-2026-11-14/README.md) ghi nhận kết quả test API, Web, API E2E và Browser E2E.
